@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --color-rocket: #7159c1;
+}
+body {
+    background: #282a36;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.links {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.links a {
+    color: white;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+#links-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.links a:hover {
+    color: rgb(113, 89, 193);
+    transition: color 200ms;
+}
+#wrapper {
+    text-align: center;
+    padding: 32px;
+    padding-bottom: 10px;
+}
+
+#wrapper img {
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 32px;
+    height: 350px;
+}
+
+#wrapper h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: bold;
+}
+
+.list  {
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 600px;
+    margin: 8px auto;
+    position: relative;
+    text-align: center;
+}
+
+.list h2 {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: normal;
+    opacity: 0.8px;
+    max-width: 300px;
+}
+
+.list ul {
+    max-width: 250px;
+    position: absolute;
+    left: 400px;
+    top: 1px;
+}
+
+.titulo-curso h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cards {
+    max-width: 1280px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card__image-container img {
+    width: 100%;
+    height: 269px;
+}
+
+
+.card__content,
+.card__info {
+    padding: 24px;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.card__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card__price {
+    background-color: var(--color-rocket);
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#starter:hover {
+    border: 3px solid #7159C1;
+}
+
+#launchbase:hover {
+    border: 3px solid #FD951F;
+}
+
+#gostack:hover {
+    border: 3px solid #04D361;
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    margin: 10vh auto;
+    position: relative;
+}
+
+.modal .close-modal {
+    color: #000;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal .maximize {
+    color: #000;
+    position: absolute;
+    right: 38px;
+    top: 16px;
+    cursor: pointer;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.full {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+}
+
+    /* === PAGE NOT-FOUND ===  */
+
+    
+.page-not-found {
+    position: relative;
+    top: 200px;
+    max-width: 940px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-not-found h1 {
+    font-size: 75px;
+    line-height: 85px;
+    padding: 5px 0;
+}
+
+.page-not-found h2 {
+    font-size: 50px;
+    line-height: 60px;
+    font-weight: normal;
+    padding: 5px 0;
+}
+
+.page-not-found p {
+    font-size: 30px;
+    line-height: 40px;
+    padding: 5px 0;
+}

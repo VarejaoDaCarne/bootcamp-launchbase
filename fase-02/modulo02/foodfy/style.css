@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+
+header {
+    padding: 20px 0;
+    margin-bottom: 10px;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.links a {
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 20px;
+    color: inherit;
+}
+
+#logo {
+    margin-right: 130px;
+}
+
+.links a:hover{
+    font-weight: bold;
+    transition: 300ms;
+}
+
+main { 
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.home {
+    background: #FBDFDB;
+    border-radius: 30px;
+    height: 366px; 
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.home-content {
+    padding: 0 50px;
+}
+
+.title-subtitle {
+    max-width: 330px;
+    position: absolute;
+    top: 30%
+}
+
+.title-subtitle h1 { 
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.title-subtitle p {
+    font-size: 18px;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.home img {
+    position: absolute;
+    top: 18%;
+    right: 100px;
+}
+
+.wrapper {
+    max-width: 940px;
+    margin: 0 auto 30px;
+    font-size: 24px;
+}
+
+.receipts {
+    max-width: 940px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.receipt__image-container img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.receipt__content {
+    padding: 20px 0;
+}
+
+.receipt__content-receipt  {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.receipt__content-chef{
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+}
+
+.receipt__image-container img {
+    cursor: pointer;
+}
+
+footer {
+    background: #EEEEEE;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    position: absolute;
+    width: 1613px;
+    left: 0;
+}
+
+    /* === SOBRE === */
+
+.about h2 {
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+    /* === MODAL === */
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 660px;
+    height: 413px;
+    border-radius: 16px;
+    position: relative;
+    margin: 20% auto;
+}
+
+.modal-img {
+    width: 600px;
+    height: 200px;
+    border-radius: 15px;
+    position: absolute;
+    margin: 0 4.5%;
+}
+
+.modal-receipt {
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    top: 220px;
+}
+
+.modal-receipt-chef {
+    font-size: 18px;
+    color: #777777;
+    text-align: center;
+    position: relative;
+    top: 225px;
+}
+
+.close-style{
+    font-size: 16px;
+    color: #999999;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    top: 365px;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+{% block head %}
+<title>Portfolio - Raimundo Jakovisck</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}        
+{% block content %}
+<div class="title">
+    <h1>Aulas</h1>
+</div>
+<section class="cards">
+    {% for item in items %}
+    <div class="card" id="{{item.id}}">
+        <div class="card__image-container {{ 'featured-wrapper' if item.featured }}"> 
+            <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" alt="Imagem de {{item.title}}">
+            {% if item.featured %}
+            <div class="featured">Featured</div>
+            {% endif %}
+        </div>
+        <div class="card__content">
+            <p>{{item.title}}</p>
+        </div>
+        <div class="card__info">
+            <p>{{item.duration}}</p>
+            <p class="card__price">{{item.price}}   </p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+<script src="/scripts.js"></script>
+{% endblock %}

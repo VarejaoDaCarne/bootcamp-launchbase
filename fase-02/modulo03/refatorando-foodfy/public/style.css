@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+
+header {
+    margin: 20px auto;
+}
+
+.links a {
+    position: relative;
+    left: -283px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 20px;
+    color: inherit;
+}
+
+#logo {
+    margin-right: 130px;
+}
+
+.links a:hover{
+    font-weight: bold;
+    transition: 300ms;
+}
+
+.home {
+    max-width: 940px;
+    margin: 0 auto;
+    background: #FBDFDB;
+    border-radius: 30px;
+    height: 366px;
+    width: 940px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.home-content {
+    padding: 0 50px;
+}
+
+.title-subtitle {
+    max-width: 330px;
+    position: absolute;
+    top: 30%
+}
+
+.title-subtitle h1 { 
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.title-subtitle p {
+    font-size: 18px;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.home img {
+    position: absolute;
+    top: 18%;
+    right: 100px;
+}
+
+.wrapper {
+    max-width: 940px;
+    margin: 0 auto 30px;
+    font-size: 24px;
+}
+
+.receipts {
+    max-width: 940px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.receipt__image-container img{
+    height: 100px;
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.receipt__content {
+    margin: 20px 0;
+}
+
+.receipt__content-receipt  {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.receipt__content-chef{
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+}
+
+footer {
+    background: #EEEEEE;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    margin-top: auto;
+}
+
+    /* === SOBRE === */
+
+.about {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+    /* === RECIPE PAGE === */
+
+.receipt-page {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.receipt__image img {
+    border-radius: 15px;
+}
+
+.banner-content{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.banner-content h1 {
+    font-size: 36px;
+    line-height: 46px;
+}
+
+.banner-content p {
+    font-size: 20px;
+    line-height: 30px;
+    color: #777777;
+}
+
+.ingredient-container h1 {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.ingredient-container ul {
+    margin-left: 20px;
+}
+
+.ingredient-container li {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+.preparation-container{
+    margin: 40px 0;
+}
+
+.preparation-container h1 {
+    font-size: 24px;
+}
+
+.preparation-container li {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    margin-left: 20px;
+}
+
+.further-information {
+    margin-bottom: 40px;
+}
+
+.further-information h1 {
+    font-size: 24px;
+    line-height: 34px;
+
+}
+
+.further-information ul {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+    /* === SHOW/HIDE === */
+
+.show-hide{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.text-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.text-wrapper h1 {
+    margin-right: 20px;
+}
+
+.text-wrapper h2 {
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: bold;
+    color: #999999;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.show-hide.remove ul {
+    opacity: 0;
+    visibility: hidden;
+ }   
+
+ .show-hide.active ul {
+    opacity: 1;
+    visibility: visible;
+ }  
+

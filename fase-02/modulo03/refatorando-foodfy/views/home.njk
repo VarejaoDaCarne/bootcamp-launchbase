@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Home - Foodfy</title>
+{% endblock %}
+
+{% block content %}
+    <main class="home">
+        
+        <div class="home-content">
+        <div class="title-subtitle">
+            <h1>As melhores receitas</h1>
+            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+        </div>
+
+        <img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/layouts/assets/chef.png" alt="Foodfy chef">
+
+        </div>
+    </main>
+    <section>
+
+        <div class="wrapper">
+            <h1>Mais acessadas</h1>
+        </div>
+        <div class="receipts">
+            {% for item in items %}
+                <article class="receipt"> 
+                    <div class="receipt__image-container">
+
+                        <img src="{{item.image}}" alt="Imagem de {{item.title}}"  class="receipt-img"  >
+                    
+                    </div>
+                    <div class="receipt__content">
+
+                        <p class="receipt__content-receipt">{{item.title}}</p>
+                        <p class="receipt__content-chef">{{item.author}}</p>
+
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+    <script src="/scripts.js"></script>
+{% endblock %}

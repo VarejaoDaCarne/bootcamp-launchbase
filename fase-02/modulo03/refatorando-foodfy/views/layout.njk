@@ -1,0 +1,35 @@
+<!DOCTYPE njk>
+
+<html lang="en">    
+    <head>
+
+        <meta charset="UTF-8">
+
+       {% block head %}
+            <title>Foodfy</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/style.css">
+
+    </head>
+    <body>
+        <header>
+
+            <div class="links">
+
+                <a href="/" id="logo"><img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/layouts/assets/logo.png" alt="Foodfy logo"></a>
+                <a href="/about">Sobre</a>
+                <a href="/recipes">Receitas</a>
+
+            </div>
+
+        </header>
+        {% block content %}
+        {% endblock %}
+        <footer>
+
+            <p>Todos direitos reservados, receitas Foodfy.</p>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+{% block head %}
+<title>Cursos - Rocketseat</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<section class="cards">
+    {% for course in courses %}
+    <div class="card" id="{{course.id}}">
+        <div class="titulo-curso">
+            <h1>{{course.title}}</h1>
+        </div>
+        <div class="card__image-container {{ 'featured-wrapper' if course.featured }}"> 
+            <img src="https://skylab.rocketseat.com.br/static/{{course.img}}.svg" alt="Imagem de {{course.title}}">
+            {% if course.featured %}
+            <div class="featured">Featured</div>
+            {% endif %}
+        </div>
+        <div class="card__content">
+            <p>{{course.description}}</p>
+        </div>
+        <div class="card__info">
+            <p >{{course.duration}}</p >
+            <p class="card__price">{{course.price}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+<script src="/scripts.js"></script>
+{% endblock %}
