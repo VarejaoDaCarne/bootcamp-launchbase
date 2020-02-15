@@ -1,0 +1,22 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "http://google.com",
+      "name": "fafa",
+      "birth": "11234-03-31",
+      "grade": "medio",
+      "type": "presencial",
+      "created_at": 1581681468744
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://google.com",
+      "name": "fofo",
+      "birth": "3333-11-22",
+      "grade": "mestrado",
+      "type": "distância",
+      "created_at": 1581681512848
+    }
+  ]
+}
