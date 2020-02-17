@@ -23,8 +23,4 @@ module.exports = {
 
         return `${year}-${month}-${day}`
     },
-    // graduation: function(graduation) {
-    //     const value = graduation.options[graduation.selectedIndex]
-    //     return value
-    // }
 }
