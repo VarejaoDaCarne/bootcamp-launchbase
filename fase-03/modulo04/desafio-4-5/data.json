@@ -1,41 +1,13 @@
 {
   "teachers": [
     {
-      "id": 1,
-      "avatar_url": "http://google.com",
-      "name": "fafa",
-      "birth": "11234-03-31",
-      "grade": "medio",
-      "type": "presencial",
-      "created_at": 1581681468744
-    },
-    {
-      "id": 2,
-      "avatar_url": "https://google.com",
-      "name": "fofo",
-      "birth": "3333-11-22",
-      "grade": "mestrado",
-      "type": "distância",
-      "created_at": 1581681512848
-    },
-    {
-      "id": 3,
-      "avatar_url": "http://google.com",
-      "name": "titi",
-      "birth": "2000-11-12",
-      "grade": "superior",
-      "type": "distância",
-      "occupations": "a,c",
-      "created_at": 1581770514428
-    },
-    {
-      "id": "4",
+      "id": 4,
       "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
-      "name": "Noro Noro",
-      "birth": -158630400000,
+      "name": "Fafá de Manuas",
+      "birth": -505785600000,
       "grade": "mestrado",
       "type": "Presencial",
-      "occupations": "Fufu",
+      "occupations": "Fufu, Axe",
       "created_at": 1581770651599,
       "graduation": "Superior"
     },
