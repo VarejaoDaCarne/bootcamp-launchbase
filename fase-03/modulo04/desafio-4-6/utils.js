@@ -28,5 +28,16 @@ module.exports = {
             iso: `${year}-${month}-${day}`,
             birthDay: `${day}/${month}`,
         }
+    },
+    graduation: function(value) {
+        if(value == "medio") {
+            return "Ensino Médio Completo"
+        }
+        if(value == "superior") {
+            return "Ensino Superior Completo"
+        }
+        if(value == "mestrado") {
+            return "Mestrado e Doutorado"
+        }
     }
 }

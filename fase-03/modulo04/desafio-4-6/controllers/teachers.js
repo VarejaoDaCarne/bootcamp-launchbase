@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date } = require('../utils')
+const { age, date, graduation } = require('../utils')
 
 exports.index = function(req, res) {
 
@@ -42,8 +42,6 @@ exports.post = function(req, res) {
 
         return res.redirect("/teachers")
     })
-
-    // return res.send(req.body)
 }
 
 exports.show = function(req, res) {
@@ -58,6 +56,7 @@ exports.show = function(req, res) {
     const teacher = {
         ...foundTeacher,
         age: age(foundTeacher.birth),
+        graduation: graduation(foundTeacher.graduation),
         occupations: foundTeacher.occupations.split(","),
         created_at: new Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at),
     }
@@ -76,6 +75,7 @@ exports.edit = function(req, res) {
     const teacher = {
         ...foundTeacher,
         birth: date(foundTeacher.birth).iso,
+        graduation: graduation(foundTeacher.graduation)
     }
 
     return res.render('teachers/edit', { teacher }) 
