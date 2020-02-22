@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { date } = require('../utils')
+const { date, year } = require('../utils')
 
 exports.index = function(req, res) {
 
@@ -23,7 +23,7 @@ exports.post = function(req, res) {
     birth = Date.parse(req.body.birth)
 
     let id = 1
-    const lastStudent = data.students[data.students.length -1]
+    const lastStudent = data.students[data.students.length - 1]
 
     if(lastStudent) {
         id = lastStudent + 1
@@ -53,7 +53,8 @@ exports.show = function(req, res) {
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth).birthDay
+        birth: date(foundStudent.birth).birthDay,
+        year: year(foundStudent.year)
     }
     return res.render("students/show", { student: student })
 }
@@ -69,7 +70,7 @@ exports.edit = function(req, res) {
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth),
+        birth: date(foundStudent.birth).iso,
     }
 
     return res.render('students/edit', { student }) 

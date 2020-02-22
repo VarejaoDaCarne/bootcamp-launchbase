@@ -1,65 +1,25 @@
 {
   "teachers": [
     {
-      "id": 10,
+      "id": 1,
       "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
       "name": "Bob Ross",
-      "birth": "1945-02-18",
-      "graduation": "mestrado",
-      "type": "Presencial",
-      "occupations": "Artes, Fisica",
-      "created_at": 1582325231773
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
-      "name": "Pork Riquenho",
-      "birth": "1911-11-11",
+      "birth": -1519171200000,
       "graduation": "superior",
       "type": "À distância",
-      "occupations": "Quimica,Matematica",
-      "created_at": 1582325438770
-    },
-    {
-      "id": 3,
-      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
-      "name": "Fafá de Manuas",
-      "birth": "1989-01-19",
-      "graduation": "medio",
-      "type": "À distância",
-      "occupations": "Musica, Danca",
-      "created_at": 1582325803009
-    },
-    {
-      "id": 4,
-      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
-      "name": "Naidir Muhamed",
-      "birth": "1998-09-03",
-      "graduation": "medio",
-      "type": "Presencial",
-      "occupations": "Portugues",
-      "created_at": 1582325878301
+      "occupations": "Artes",
+      "created_at": 1582373320986
     }
   ],
   "students": [
     {
       "id": 1,
       "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
-      "name": "Cleiton Rasta",
-      "birth": "1969-09-06",
-      "graduation": "Mestrado",
-      "type": "Presencial",
-      "occupations": "Geometria, Fisica",
-      "created_at": 1582299413117
-    },
-    {
-      "id": "[object Object]1",
-      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
-      "name": "Nerci Noncalves",
-      "birth": 406684800000,
-      "email": "nerci@nerci.com",
-      "year": "1",
-      "week": "12"
+      "name": "Rasta Cleiton ",
+      "birth": 953683200000,
+      "email": "rasta@cleiton.com",
+      "year": "7EF",
+      "week": "8"
     }
   ]
 }

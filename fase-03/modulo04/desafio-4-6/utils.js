@@ -39,5 +39,31 @@ module.exports = {
         if(value == "mestrado") {
             return "Mestrado e Doutorado"
         }
+    },
+    year: function(year) {
+        if(year == "5EF") {
+            return "5º ano do ensino fundamental"
+        }
+        if(year == "6EF") {
+            return "6º ano do ensino fundamental"
+        }
+        if(year == "7EF") {
+            return "7º ano do ensino fundamental"
+        }
+        if(year == "8EF") {
+            return "8º ano do ensino fundamental"
+        }
+        if(year == "9EF") {
+            return "9º ano do ensino fundamental"
+        }
+        if(year == "1EM") {
+            return "1º ano do ensino médio"
+        }
+        if(year == "2EM") {
+            return "2 ano do ensino médio"
+        }
+        if(year == "3EM") {
+            return "3º ano do ensino médio"
+        }
     }
 }

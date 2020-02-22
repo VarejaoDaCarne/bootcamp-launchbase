@@ -5,7 +5,7 @@
 <div class="card">
     <section 
         class="avatar" 
-        style="background: url(https://source.unsplash.com/collection/3465564/500x500) no-repeat  center center / cover">
+        style="background: url({{teacher.avatar_url}}) no-repeat  center center / cover">
     </section>
 
     <section class="details">
@@ -26,5 +26,7 @@
         </form>
     </section>
 </div>
+
+{% include 'confirm.njk'%}
 
 {% endblock %}
