@@ -4,11 +4,28 @@
       "id": 1,
       "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
       "name": "Bob Ross",
-      "birth": -1519171200000,
-      "graduation": "superior",
+      "birth": -1834790400000,
+      "type": "Presencial",
+      "occupations": "Artes, Fisica",
+      "created_at": 1582543352513
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
+      "name": "Toninho Sereno",
+      "birth": 936835200000,
       "type": "À distância",
-      "occupations": "Artes",
-      "created_at": 1582373320986
+      "occupations": "Portugues",
+      "created_at": 1582543622689
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
+      "name": "Cleiton Rasta",
+      "birth": -1164758400000,
+      "type": "À distância",
+      "occupations": "Quimica, Matematica",
+      "created_at": 1582543665603
     }
   ],
   "students": [
@@ -20,6 +37,24 @@
       "email": "rasta@cleiton.com",
       "year": "7EF",
       "week": "8"
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
+      "name": "Firmino Silvino",
+      "birth": 189734400000,
+      "email": "firmino@silvino",
+      "year": "2EM",
+      "week": "6"
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://source.unsplash.com/collection/517198/500x500",
+      "name": "Mauricim Banana",
+      "birth": 589161600000,
+      "email": "mauricim@nana.com",
+      "year": "3EM",
+      "week": "3"
     }
   ]
 }

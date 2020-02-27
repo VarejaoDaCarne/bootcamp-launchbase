@@ -26,7 +26,7 @@ exports.post =  function(req, res) {
     const lastMember = data.members[data.members.length -1]
 
     if(lastMember) {
-        id = lastMember + 1
+        id = lastMember.id + 1
     }
 
      data.members.push({

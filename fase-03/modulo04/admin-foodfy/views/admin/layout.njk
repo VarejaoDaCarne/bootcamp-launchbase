@@ -1,0 +1,28 @@
+<!DOCTYPE njk>
+
+<html lang="en">    
+    <head>
+
+        <meta charset="UTF-8">
+
+       {% block head %}
+            <title>Admin</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="/style.css">
+
+    </head>
+    <body class="body-admin">
+        <header class="header-admin">
+
+            <div class="logo-admin">
+
+                <a href="/admin" ><img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-04/master/layouts/logo.png" alt="Foodfy logo"></a>
+
+            </div>
+
+        </header>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends './layout.njk' %}
+
+{% block head %}
+
+    <title>Criação - Foodfy - Admin</title>
+
+{% endblock %}
+
+{% block content%}
+
+   <form class="create-wrapper" method="POST" action="/admin?_method=PUT">
+
+        {% include 'admin/fields.njk' %}
+
+        <input 
+            type="hidden" 
+            name="id" 
+            value={{instructor.id}}
+        >
+
+   </form>
+
+{% endblock %}

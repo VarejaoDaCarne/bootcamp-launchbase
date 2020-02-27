@@ -26,7 +26,7 @@ exports.post = function(req, res) {
     const lastStudent = data.students[data.students.length - 1]
 
     if(lastStudent) {
-        id = lastStudent + 1
+        id = lastStudent.id + 1
     }
 
     data.students.push({

@@ -1,0 +1,78 @@
+{% extends "./layout.njk" %}
+
+{% block head %}
+    <title>{{item.title}} - Admin</title>
+{% endblock %}
+
+{% block content %}
+    <main class="receipt-page">
+        <div class="upper-wrapper">
+            <h1>Receita: {{item.title}}</h1>
+            <a href="/admin/{{item.id}}/edit" class="new-receipt-save" id="admin-edit-button">Editar receita</a>
+        </div>
+        <div class="banner-container">
+            <div class="receipt__image">
+
+                <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+
+            </div>
+            <div class="banner-content" >
+
+                <h1>{{item.title}}</h1>
+                <p>por {{item.author}}</p> 
+
+            </div>
+        </div>
+        <div class="receipt__all-container">
+            <div class="ingredient-container">
+                <div class="show-hide remove">
+
+                    <div class="text-wrapper">
+
+                        <h1>Ingredientes</h1>
+                        <h2 >MOSTRAR</h2>
+
+                    </div>
+                    <ul>
+                        {% for ingredient in item.ingredients %}
+
+                            <li>{{ingredient}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div> 
+            </div>
+            <div class="preparation-container">
+                <div class="show-hide remove">
+                    <div class="text-wrapper">
+
+                        <h1>Modo de preparo</h1>
+                        <h2>MOSTRAR</h2>
+
+                    </div>
+                    <ul >
+                        {%for preparation in item.preparation%}
+
+                            <li>{{preparation}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div> 
+            </div>
+            <div class="further-information">
+                <div class="show-hide remove">
+                    <div class="text-wrapper">
+
+                        <h1>Informações adicionais</h1>
+                        <h2>MOSTRAR</h2>
+
+                    </div>
+
+                    <ul>{{item.information}}</ul>
+
+                </div> 
+            </div>
+        </div>
+    </main>
+    <script src="/admin.js"></script>
+{% endblock %}

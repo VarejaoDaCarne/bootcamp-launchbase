@@ -184,16 +184,20 @@ a.button {
 .table-container {
     display: block;
     padding: 40px;
+    box-sizing: border-box;
 }
 
 .table-container table {
     border-spacing: 0;
 }
 
+.table-container thead tr th {
+    text-align: left;
+}
+
 td, th {
     padding: 16px;
     border-bottom: 1px solid #d9d9d9;
-    text-align: center;
 }
 
 th {
