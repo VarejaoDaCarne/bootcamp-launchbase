@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-    <main class="receipt-page">
-        <div class="upper-wrapper">
+    <main class="receipt-page" id="admin-show">
+        <div class="upper-wrapper" id="upper-wrapper-button">
             <h1>Receita: {{item.title}}</h1>
-            <a href="/admin/{{item.id}}/edit" class="new-receipt-save" id="admin-edit-button">Editar receita</a>
+            <a href="/admin/{{item.id}}/edit" id="admin-edit-button">Editar receita</a>
         </div>
         <div class="banner-container">
-            <div class="receipt__image">
+            <div class="receipt__image" id="admin-image">
 
                 <img src="{{item.image}}" alt="Imagem de {{item.title}}">
 

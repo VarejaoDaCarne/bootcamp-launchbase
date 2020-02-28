@@ -154,10 +154,6 @@ footer {
     margin: 0 auto;
 }
 
-.receipt__image img {
-    border-radius: 15px;
-}
-
 .banner-content{
     text-align: center;
     margin: 30px 0;
@@ -274,18 +270,18 @@ footer {
 }
 
 .logo-admin {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;    
 }
 
 #section-admin {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 #receipts-admin {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 30px auto;
     grid-template-columns: 1fr 1fr;
 }
@@ -296,14 +292,15 @@ footer {
 }
 
 #receipt__admin-container  {
-    height: 100%;
-    width: 100%;
     margin-bottom: 30px;
-}
-
-#receipt-img {
     border-radius: 8.5px;
     cursor: initial;
+    box-sizing: border-box;
+}
+
+#receipt-img img {
+    height: 100%;
+    width: 100%;
 }
 
 .receipt__content-chef{
@@ -326,32 +323,32 @@ footer {
     /* === ADMIN CREATE === */
 
 .create-wrapper {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .upper-wrapper {
     display: grid;
-    grid-template-columns: 1fr 139px;
+    grid-template-columns: 1fr 139px 139px;
 }
 
-.upper-wrapper h1{
-    margin-top: 5px;
-}
-
-.new-receipt-save {
-    background: #6558C3;
+button[type="submit"],
+#admin-edit-button {
+    background-color: #6558C3;
     border-radius: 6px;
     padding: 13px;
     cursor: pointer;
-}
-
-.new-receipt-save h2 {
     font-size: 15px;
     color: #FFFFFF;
     text-align: center;
+    font-weight: bold;
 }
 
+#form-delete button[type="submit"] {
+    background-color: #DC4747;
+    margin-left: 50px;
+
+}
 .input-wrapper {
     margin-top: 20px ;
 }
@@ -381,7 +378,22 @@ textarea {
     margin-bottom: 20px;
 }
 
-    /* === ADMIN SHOW === */
+/* === ADMIN SHOW === */
+    
+#admin-show {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#admin-edit-button {
+    position: relative;
+    left: 100%;
+}
+
+#admin-image img{
+    width: 100%;
+    border-radius: 15px;
+}
 
 .upper-wrapper {    
     margin-bottom: 20px;

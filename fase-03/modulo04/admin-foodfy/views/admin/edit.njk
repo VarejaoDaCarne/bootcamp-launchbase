@@ -2,22 +2,45 @@
 
 {% block head %}
 
-    <title>Criação - Foodfy - Admin</title>
+    <title>Edição - {{item.title}}</title>
 
 {% endblock %}
 
 {% block content%}
+    <section class="create-wrapper">
+        
+        <div class="upper-wrapper">
+            <h1>Editando receita</h1>
+         
+            <form id="form-delete" method="POST" action="/admin?_method=DELETE">
+                <input type="hidden" name="id" value={{admin.id}}>
+                <button type="submit">Deletar</button>
+            </form>
 
-   <form class="create-wrapper" method="POST" action="/admin?_method=PUT">
+            <button type="submit">Salvar receita</button>
+        </div>
 
-        {% include 'admin/fields.njk' %}
+        <form  method="POST" action="/admin?_method=PUT">
 
-        <input 
-            type="hidden" 
-            name="id" 
-            value={{instructor.id}}
-        >
+            {% include 'admin/fields.njk' %}
 
-   </form>
+            <input 
+                type="hidden" 
+                name="id" 
+                value={{item.id}}
+            >
 
+        </form>
+        
+    </section>
+  
+    <script>
+        const formDelete = document.querySelector("#form-delete")
+        formDelete.addEventListener("submit", function(event) {
+            const confirmation = confirm("Deseja deletar?")
+            if(!confirmation) {
+                event.preventDefault()
+            }
+        })
+    </script>
 {% endblock %}

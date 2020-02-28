@@ -18,7 +18,7 @@ routes.get("/admin/:id", recipes.show);
 routes.get("/admin/:id/edit", recipes.edit) 
 
 routes.post("/admin", recipes.post);
-routes.put("/admin/recipes", recipes.put);
-// routes.delete("/admin/recipes", recipes.delete);
+routes.put("/admin", recipes.put);
+routes.delete("/admin", recipes.delete);
 
 module.exports = routes

@@ -1,7 +1,7 @@
 {% extends "./layout.njk" %}
 
 {% block head %}
-    <title>Receitas - Foodfy - Admin</title>
+    <title>Receitas - Admin - Foodfy</title>
 {% endblock %}
 
 {% block content %}
@@ -22,7 +22,7 @@
                         <a href="/admin/{{item.id}}" class="receipt__content-see">Visualizar</a>
 
                     </div>
-                    {% if recipes.recipeIndex %}
+                    {% if item.recipeIndex %}
                     {% endif %}
                 </article>
             {% endfor %}

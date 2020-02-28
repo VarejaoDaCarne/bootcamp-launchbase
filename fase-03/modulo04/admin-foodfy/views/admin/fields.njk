@@ -1,9 +1,3 @@
-<div class="upper-wrapper">
-    <h1>Criando receita</h1>
-
-    <button type="submit" class="new-receipt-save"><h2>Salvar receita</h2></button>
-</div>
-
 <div class="input-wrapper" id="title">
     <div><h2>Nome da receita</h2></div>
     <div>
@@ -56,7 +50,7 @@
                     type="text" 
                     name="ingredients[]"
                     placeholder="Coloque um ingrediente por campo." 
-                    value=""
+                    value="{{item.preparation}}"
                 >
         {% endif %}
     </div>
@@ -80,7 +74,7 @@
                 type="text" 
                 name="preparation[]" 
                 placeholder="Coloque uma instrução por campo."
-                value="{{item.preparation}}"
+         
             >
         {% endif %}
     </div>
@@ -96,7 +90,7 @@
         cols="30"
         rows="10"
         value="{{item.information}}"
-    ></textarea>
+    >{{item.information}}</textarea>
     </div>
 </div>
 
