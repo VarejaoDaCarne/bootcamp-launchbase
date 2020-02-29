@@ -1,12 +1,15 @@
 {% extends "./layout.njk" %}
 
 {% block head %}
-    <title>Receitas - Admin - Foodfy</title>
+    <title>Admin - Foodfy</title>
 {% endblock %}
 
 {% block content %}
     <section id="section-admin">
-    <div><h1>Gerenciar Receitas</h1></div>
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Gerenciar Receitas</h1>
+            <a href="/admin/create" id="admin-create-button">Criar receita</a>
+        </div>
         <div class="receipts" id="receipts-admin">
             {% for item in items %}
                 <article class="receipt" id="receipt-admin"> 

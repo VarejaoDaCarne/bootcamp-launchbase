@@ -153,6 +153,15 @@ footer {
     max-width: 940px;
     margin: 0 auto;
 }
+.receipt__image {
+    width: 100%;
+    height: 357px;
+}
+.receipt__image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
 
 .banner-content{
     text-align: center;
@@ -274,6 +283,9 @@ footer {
     margin: 0 auto;
     padding: 20px 0;    
 }
+#admin-create-button {
+    text-decoration: none;
+}
 
 #section-admin {
     max-width: 1200px;
@@ -333,7 +345,8 @@ footer {
 }
 
 button[type="submit"],
-#admin-edit-button {
+#admin-edit-button,
+#admin-create-button {
     background-color: #6558C3;
     border-radius: 6px;
     padding: 13px;
@@ -391,8 +404,14 @@ textarea {
     left: 100%;
 }
 
+#admin-image {
+    height: 357px;
+}
+
+
 #admin-image img{
     width: 100%;
+    height: 100%;
     border-radius: 15px;
 }
 

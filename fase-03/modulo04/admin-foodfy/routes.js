@@ -10,9 +10,9 @@ routes.get('/', function(req, res) {
 routes.get("/index", foodfy.index); 
 routes.get("/about", foodfy.about); 
 routes.get("/recipes", foodfy.recipes); 
-routes.get("/recipes/:id", foodfy.recipe); 
+routes.get("/recipes/:id", foodfy.show); 
 
-routes.get("/admin", recipes.index); 
+routes.get("/admin", recipes.index);
 routes.get("/admin/create", recipes.create); 
 routes.get("/admin/:id", recipes.show); 
 routes.get("/admin/:id/edit", recipes.edit) 

@@ -11,40 +11,31 @@
         <div class="upper-wrapper">
             <h1>Editando receita</h1>
         
-            <form id="form-delete" method="POST" action="/admin?_method=DELETE">
-                <input type="hidden" name="id" value={{admin.id}}>
+            <form method="POST" action="/admin?_method=DELETE" id="form-delete">
+                <input type="hidden" name="id" value={{item.id}}>
                 <button type="submit">Deletar</button>
             </form>
-                <div>
-
-            <form method="POST" action="/admin?_method=PUT" id="edit-button-margin">
-
-                <button type="submit">Salvar receita</button>
-                
-                <div id="edit-center">
-                    {% include 'admin/fields.njk' %}
-                </div>
-
-                <input 
-                    type="hidden" 
-                    name="id" 
-                    value={{item.id}}
-                >
-    
-            </form>   
-        </div>
-        </div>
             
-    
+            <div>
+                <form method="POST" action="/admin?_method=PUT" id="edit-button-margin">
+
+                    <button type="submit">Salvar receita</button>
+                    
+                    <div id="edit-center">
+                        {% include 'admin/fields.njk' %}
+                    </div>
+
+                    <input 
+                        type="hidden" 
+                        name="id" 
+                        value={{item.id}}
+                    >
+        
+                </form>   
+            </div>
+        </div>
     </section>
-  
-    <script>
-        const formDelete = document.querySelector("#form-delete")
-        formDelete.addEventListener("submit", function(event) {
-            const confirmation = confirm("Deseja deletar?")
-            if(!confirmation) {
-                event.preventDefault()
-            }
-        })
-    </script>
+
+    {% include 'confirm.njk' %}
+
 {% endblock %}
