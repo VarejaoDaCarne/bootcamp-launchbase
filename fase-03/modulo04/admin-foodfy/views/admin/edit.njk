@@ -8,30 +8,34 @@
 
 {% block content%}
     <section class="create-wrapper">
-        
         <div class="upper-wrapper">
             <h1>Editando receita</h1>
-         
+        
             <form id="form-delete" method="POST" action="/admin?_method=DELETE">
                 <input type="hidden" name="id" value={{admin.id}}>
                 <button type="submit">Deletar</button>
             </form>
+                <div>
 
-            <button type="submit">Salvar receita</button>
+            <form method="POST" action="/admin?_method=PUT" id="edit-button-margin">
+
+                <button type="submit">Salvar receita</button>
+                
+                <div id="edit-center">
+                    {% include 'admin/fields.njk' %}
+                </div>
+
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value={{item.id}}
+                >
+    
+            </form>   
         </div>
-
-        <form  method="POST" action="/admin?_method=PUT">
-
-            {% include 'admin/fields.njk' %}
-
-            <input 
-                type="hidden" 
-                name="id" 
-                value={{item.id}}
-            >
-
-        </form>
-        
+        </div>
+            
+    
     </section>
   
     <script>

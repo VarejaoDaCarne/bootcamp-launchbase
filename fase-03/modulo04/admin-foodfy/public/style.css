@@ -342,11 +342,12 @@ button[type="submit"],
     color: #FFFFFF;
     text-align: center;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
 #form-delete button[type="submit"] {
     background-color: #DC4747;
-    margin-left: 50px;
+    margin-left: 60px;
 
 }
 .input-wrapper {
@@ -408,4 +409,17 @@ textarea {
     text-decoration: none;
     text-align: center;
     font-weight: bold;
+}
+
+    /* === ADMIN EDIT === */
+
+#edit-center {
+    position: absolute;
+    right: 8%;
+    max-width: 1200px;
+    width: 100%;
+}    
+
+.upper-wrapper #edit-button-margin   {
+    margin-left: 10%;
 }

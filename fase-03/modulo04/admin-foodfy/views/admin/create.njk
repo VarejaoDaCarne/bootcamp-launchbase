@@ -7,17 +7,16 @@
 {% endblock %}
 
 {% block content%}
-    <section class="create-wrapper">
+    <form  method="POST" action="/admin">
+        <section class="create-wrapper">
+            <div class="upper-wrapper" id="upper-wrapper-button">
+                <h1>Criando receita</h1>
+            
+                <button type="submit" id="admin-edit-button">Salvar receita</button>
+            </div>
 
-        <div class="upper-wrapper">
-            <h1>Criando receita</h1>
-            <button type="submit">Salvar receita</button>
-        </div>
+                {% include 'admin/fields.njk' %}
 
-        <form  method="POST" action="/admin">
-
-            {% include 'admin/fields.njk' %}
-
-        </form>
-    </section>
+        </section>
+    </form>
 {% endblock %}

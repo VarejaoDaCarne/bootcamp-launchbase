@@ -64,6 +64,7 @@ exports.edit = function(req, res) {
 
     const recipe = {
         ...foundRecipe,
+
     }
 
     return res.render('admin/edit', { item: recipe }) 
