@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Desafio 4-7: Estruturando estudantes
+  Desafio 4-6: Estruturando estudantes
 </h3>
 
 <blockquote align="center">“Tudo o que um sonho precisa para ser realizado é alguém que acredite que ele possa ser realizado.”</blockquote>
