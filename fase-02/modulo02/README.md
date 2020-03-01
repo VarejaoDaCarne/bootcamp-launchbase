@@ -31,6 +31,7 @@
 - [Primeiro HTML](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/desafio-2-1)
 - [Página de descrição](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/desafio-2-2)
 - [Página de cursos e iframe](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/desafio-2-3)
+- [Construindo Foodfy](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/foodfy)
 
 ## :calendar: Entrega
 
