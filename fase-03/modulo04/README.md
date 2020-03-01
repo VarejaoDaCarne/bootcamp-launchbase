@@ -24,7 +24,7 @@
 ## :rocket: Desafios
 
 - [Header](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-1)
-- [Card do Professor](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/06-controle-academia/desafios/desafio-04-2)
+- [Card do Professor](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-2)
 - [Formulário e Rota de cadastro do Professor](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/06-controle-academia/desafios/desafio-04-3)
 - [Apresentação, edição e formatação dos dados de um professor](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/06-controle-academia/desafios/desafio-04-4)
 - [HTTP: PUT e DELETE](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/06-controle-academia/desafios/desafio-04-5)
