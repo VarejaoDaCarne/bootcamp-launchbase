@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Desafio 4-6: Listagem de professores
+  Desafio 4-5: Listagem de professores
 </h3>
 
 <blockquote align="center">“A persistência é o caminho do êxito.”</blockquote>
