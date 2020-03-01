@@ -28,9 +28,9 @@
 
 ## :rocket: Desafios
 
-- [Primeiro HTML](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/02-iniciando-frontend/desafios/desafio-02-1)
-- [Página de descrição](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/02-iniciando-frontend/desafios/desafio-02-2)
-- [Página de cursos e iframe](https://github.com/imsantosrodrigo/bootcamp-launchbase/tree/master/02-iniciando-frontend/desafios/desafio-02-3)
+- [Primeiro HTML](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/desafio-2-1)
+- [Página de descrição](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/desafio-2-2)
+- [Página de cursos e iframe](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo02/desafio-2-3)
 
 ## :calendar: Entrega
 
