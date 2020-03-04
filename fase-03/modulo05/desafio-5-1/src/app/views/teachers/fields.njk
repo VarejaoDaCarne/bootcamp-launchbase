@@ -1,0 +1,103 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input 
+            type="url"
+            name="avatar_url"
+            placeholder="http:///"
+            value="{{teacher.avatar_url}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome completo</div>
+    <div>
+        <input 
+            type="text"
+            name="name"
+            placeholder="Nome do Professor"
+            value="{{teacher.name}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Data de nascimento</div>   
+    <div>
+        <input
+            type="date"
+            name="birth"
+            value="{{teacher.birth}}"
+        >
+    </div>
+</div>
+
+<div class="item">
+    <div>Grau de escolaridade</div>
+    <div>
+        <select name="graduation">
+            <option 
+                value="medio" 
+                {% if teacher.graduation == 'medio' %}
+                    selected
+                {% endif %}
+                >Ensino Médio Completo
+            </option> 
+            <option 
+                value="superior"
+                {% if teacher.graduation == 'superior' %}
+                    selected
+                {% endif %}
+                >Ensino Superior Completo
+            </option>
+            <option 
+                value="mestrado"
+                {% if teacher.graduation == 'mestrado' %}
+                    selected
+                {% endif %}
+                >Mestrado e Doutorado 
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Tipo de aula</div>
+    <div>
+        <span>
+            <input 
+                type="radio" 
+                name="type" 
+                value="Presencial"
+                {% if teacher.type == 'Presencial' %} 
+                    checked
+                {% endif %}
+                >Prensencial
+        </span>
+        <span>
+            <input 
+                type="radio" 
+                name="type" 
+                value="À distância"
+                {% if teacher.type == 'À distância' %}
+                    checked
+                {% endif %}
+                >À distância
+        </span>
+    </div>
+</div>
+
+<div class="item">
+    <div>Área de atuação</div>
+    <div>
+            <input 
+                type="text"
+                name="occupations"
+                placeholder="Separe as matérias por vírgula"
+                value="{{teacher.occupations}}"
+            >
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
