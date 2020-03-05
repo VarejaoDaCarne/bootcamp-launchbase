@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-fases">Fases</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-fases">Fases</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :rocket: Fases
