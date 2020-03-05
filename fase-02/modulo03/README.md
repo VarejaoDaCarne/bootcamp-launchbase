@@ -26,3 +26,8 @@
 - [Arquivos nunjucks e dados dinâmicos](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo03/desafio-3-2)
 - [Página de descrição do curso](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo03/desafio-3-3)
 - [Refatorando Foodfy](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo03/refatorando-foodfy)
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
+
