@@ -16,11 +16,5 @@
   
 </p>
 
-<p align="center">
-  <a href="#rocket-fases">Fases</a>&nbsp;&nbsp;&nbsp;
-</p>
-
-## :rocket: Fases
-
 - [Fase 02](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02)
 - [Fase 03](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03)
