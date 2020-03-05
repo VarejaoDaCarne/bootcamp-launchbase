@@ -17,8 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :rocket: Sobre o desafio
@@ -41,3 +40,7 @@ Você tem liberdade para escolher a estilização que preferir para esse desafio
 - Os cabeçalhos e os valores devem estar centralizados;
 - A imagem deve ser apresentada antes do nome. Deve ter formato circular e tamanho de 40px;
 - O campo `Acompanhamento` deve apresentar as matérias lecionadas de forma separada (array, assim como na página de apresentação de dados de um professor).
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
