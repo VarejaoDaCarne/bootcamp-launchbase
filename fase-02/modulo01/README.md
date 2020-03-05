@@ -26,3 +26,7 @@
 - [Lidando com objetos e vetores](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo01/desafio-01-2)
 - [Funções e estruturas de repetição](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo01/desafio-01-3)
 - [Aplicação: Operações bancárias](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo01/desafio-01-4)
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
