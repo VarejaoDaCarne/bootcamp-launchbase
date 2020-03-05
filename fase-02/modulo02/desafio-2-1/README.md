@@ -49,3 +49,7 @@ Você tem liberdade para escolher a estilização que preferir para esse desafio
 - O header precisa ocupar todo o espaço lateral e superior (body sem margin)
 - O header precisa ter um espaçamento interno de 30px em todas as direções
 - Os links devem ter um espaçamento de 30px entre si
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
