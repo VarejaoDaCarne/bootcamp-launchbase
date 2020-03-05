@@ -124,3 +124,7 @@ No fim exiba todos usuários em telas, seu respectivo saldo e SE o saldo é POSI
 Fulano possui saldo POSITIVO de 43.3
 Sicrano possui saldo NEGATIVO de -90.3
 ```
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
