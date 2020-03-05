@@ -17,8 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :rocket: Sobre o desafio
@@ -51,6 +50,6 @@ Você tem liberdade para escolher a estilização que preferir para esse desafio
 - O header precisa ter um espaçamento interno de 30px em todas as direções
 - Os links devem ter um espaçamento de 30px entre si
 
-## :calendar: Entrega
+---
 
-Esse desafio **não precisa ser entregue** e não receberá correção. Após concluí-lo, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)

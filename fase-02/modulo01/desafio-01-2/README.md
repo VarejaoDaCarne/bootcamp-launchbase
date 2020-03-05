@@ -17,8 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :rocket: Sobre o desafio
@@ -94,6 +93,6 @@ Imprima em tela o nome e especialidade da primeira tecnologia que o usuário uti
 O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop
 ```
 
-## :calendar: Entrega
+---
 
-Esse desafio **não precisa ser entregue** e não receberá correção. Após concluí-lo, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)

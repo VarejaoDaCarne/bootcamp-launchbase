@@ -16,16 +16,11 @@
   
 </p>
 
-<p align="center">
-  <a href="#rocket-fases">Fases</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
-
-## :rocket: Fases
+## :rocket: Desafios
 
 - [Fase 02](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02)
 - [Fase 03](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03)
 
-## :calendar: Entrega
+---
 
-Esses desafios **não precisam ser entregues** e não receberão correção, mas você pode ver um exemplo de solução [aqui](https://github.com/Rocketseat/bootcamp-launchbase-desafios-01/tree/codigos). Após concluí-los, adicionar esses códigos ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)

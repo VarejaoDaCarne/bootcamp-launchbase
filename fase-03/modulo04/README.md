@@ -17,8 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :rocket: Desafios
@@ -30,6 +29,6 @@
 - [Listagem de professores](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-5)
 - [Estruturando estudantes](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-6)
 
-## :calendar: Entrega
+---
 
-Esses desafios **não precisam ser entregues** e não receberão correção. Após concluí-los, adicionar esses códigos ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
