@@ -92,3 +92,7 @@ Imprima em tela o nome e especialidade da primeira tecnologia que o usuário uti
 ```
 O usuário Carlos tem 32 anos e usa a tecnologia C++ com especialidade em Desktop
 ```
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
