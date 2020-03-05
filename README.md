@@ -20,3 +20,7 @@
 
 - [Fase 02](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02)
 - [Fase 03](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03)
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
