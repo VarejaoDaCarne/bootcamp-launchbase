@@ -89,3 +89,7 @@ if (condicao1) {
   // Condição 1 não passou
 }
 ```
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
