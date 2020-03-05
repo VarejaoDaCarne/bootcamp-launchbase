@@ -101,3 +101,7 @@ getAverageTransactionValue(); // 70
 
 getTransactionsCount(); // { credit: 2, debit: 2 }
 ```
+
+---
+
+Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
