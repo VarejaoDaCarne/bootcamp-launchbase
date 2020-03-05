@@ -32,7 +32,7 @@ module.exports = {
             data.email,
             data.school_year,
             data.week_hours,
-            data.teacher.id
+            data.teacher
         ]
 
         db.query(query, values, function(err, results) {
