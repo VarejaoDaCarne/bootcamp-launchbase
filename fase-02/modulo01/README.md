@@ -17,8 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#calendar-entrega">Entrega</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ## :rocket: Desafios
@@ -27,7 +26,3 @@
 - [Lidando com objetos e vetores](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo01/desafio-01-2)
 - [Funções e estruturas de repetição](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo01/desafio-01-3)
 - [Aplicação: Operações bancárias](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02/modulo01/desafio-01-4)
-
-## :calendar: Entrega
-
-Esses desafios **não precisam ser entregues** e não receberão correção. Após concluí-los, adicionar esses códigos ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
