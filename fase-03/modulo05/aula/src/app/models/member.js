@@ -20,7 +20,7 @@ module.exports = {
                 blood,
                 weight,
                 height,
-                instructor_id
+                member_id
             ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
             RETURNING id
         `
@@ -33,7 +33,7 @@ module.exports = {
             data.blood,
             data.weight,
             data.height,
-            data.instructor.id
+            data.member.id
         ]
 
         db.query(query, values, function(err, results){
@@ -44,9 +44,9 @@ module.exports = {
     },
     find(id, callback) {
         db.query(`
-        SELECT members.*, instructors.name AS instructor_name
+        SELECT members.*, members.name AS member_name
         FROM members 
-        LEFT JOIN instructors ON (members.instructor_id = instructors.id)
+        LEFT JOIN members ON (members.member_id = members.id)
         WHERE members.id = $1`, [id], function(err, results) {
             if(err) throw `Database Error! ${err}`
 
@@ -64,7 +64,7 @@ module.exports = {
             blood=($6),
             weight=($7),
             height=($8),
-            instructor_id=($9)
+            member_id=($9)
             WHERE id = $10
         `
 
@@ -77,7 +77,7 @@ module.exports = {
             data.blood,
             data.weight,
             data.height,
-            data.instructor,
+            data.member,
             data.id,
         ]
 
@@ -92,9 +92,43 @@ module.exports = {
             if(err) throw `Database Error! ${err}`
         })
     },
-    instructorsSelectOptions(callback) {
-        db.query(`SELECT name, id FROM instructors`, function(err, results) {
+    membersSelectOptions(callback) {
+        db.query(`SELECT name, id FROM members`, function(err, results) {
             if(err) throw `Database error!`
+
+            callback(results.rows)
+        })
+    },
+    paginate(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM members
+            ) AS total`
+
+        if(filter) {
+            filterQuery = `
+            WHERE members.name ILIKE '%${filter}%'
+            OR members.email ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM members
+                ${filterQuery}
+            ) AS total`
+        }
+
+        query = `
+        SELECT members.*, ${totalQuery}
+        FROM members
+        ${filterQuery}
+        LIMIT $1 OFFSET $2 
+        `
+
+        db.query(query, [limit, offset], function(err, results) {
+            if(err) throw `Database Error! ${err}`
 
             callback(results.rows)
         })
