@@ -1,0 +1,35 @@
+{% extends "../layout.njk" %}
+
+{% block head %}
+    <title>Admin - Receitas</title>
+{% endblock %}
+
+{% block content %}
+    <section id="section-admin">
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Gerenciar Receitas</h1>
+            <a href="/admin/recipes/create" id="admin-create-button">Criar receita</a>
+        </div>
+        <div class="receipts" id="receipts-admin">
+            {% for item in items %}
+                <article class="receipt" id="receipt-admin"> 
+                    <div class="receipt__image-container" id="receipt__admin-container">
+
+                        <img src="{{item.image}}" alt="Imagem de {{item.title}}"  id="receipt-img"  >
+                    
+                    </div>
+                    <div class="receipt__content" id="receipt__content-admin">
+
+                        <p class="receipt__content-receipt">{{item.title}}</p>
+                        <p class="receipt__content-chef">por {{item.author}}</p>
+                        <a href="/admin/recipes/{{item.id}}" class="receipt__content-see">Visualizar</a>
+
+                    </div>
+                    {% if item.recipeIndex %}
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}
