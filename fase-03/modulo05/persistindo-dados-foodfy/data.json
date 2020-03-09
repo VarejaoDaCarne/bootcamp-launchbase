@@ -138,6 +138,23 @@
         "Açúcar de confeiteiro e corte em quadrados."
       ],
       "information": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry."
+    },
+    {
+      "id": 7,
+      "title": "CHURROS",
+      "author": "TudoGostoso",
+      "image": "data:image/jpeg;base64,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",
+      "ingredients": [
+        "1 e 1/2 xícara (chá) de leite",
+        "2 xícaras (chá) de farinha de trigo",
+        "açúcar a gosto"
+      ],
+      "preparation": [
+        "Em uma panela, adicione o leite, a água, a manteiga e o sal",
+        "Quando o leite ferver, adicione a farinha de trigo e mexa rápido até a massa soltar do fundo da panela.",
+        "Coloque a massa em um saco de confeiteiro com o bico pitanga, depois faça tirinhas com a massa e frite."
+      ],
+      "information": "O saco de confeiteiro deve ser bem resistente, pois a massa não é muito mole."
     }
   ]
 }

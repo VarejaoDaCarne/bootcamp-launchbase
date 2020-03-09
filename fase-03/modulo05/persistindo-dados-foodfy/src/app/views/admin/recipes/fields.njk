@@ -1,26 +1,20 @@
-<div class="input-wrapper" id="title">
-    <div><h2>Nome da receita</h2></div>
-    <div>
-        <input 
-            type="text" 
-            name="title" 
-            placeholder="Coloque o nome da receita."
-            value="{{item.title}}"
-        >
-    </div>
-</div>
-
-<div class="input-wrapper" >
-    <div><h2>Nome do autor</h2></div>
-    <div>
-        <input 
-            type="text" 
-            name="author" 
-            placeholder="Coloque o nome do autor da receita."
-            value="{{item.author}}"
-        >
-    </div>
-</div>
+  <div class="input-wrapper">
+            <div>Chef</div>
+            <div>
+                <select name="chef">
+                {% for chef in chefOptions %}
+                    <option
+                        placeholder="Selecione um chef" 
+                        value="{{chef.id}}"
+                        {% if item.chef_id  == "chef.id" %}
+                            selected
+                        {% endif %}
+                        >{{chef.name}}
+                    </option>
+                {% endfor %}
+                </select>
+            </div>
+        </div>
 
 <div class="input-wrapper" >
     <div><h2>Imagem da receita</h2></div>
@@ -30,6 +24,18 @@
             name="image" 
             placeholder="http://"
             value="{{item.image}}"
+        >
+    </div>
+</div>
+
+<div class="input-wrapper" id="title">
+    <div><h2>Nome da receita</h2></div>
+    <div>
+        <input 
+            type="text" 
+            name="title" 
+            placeholder="Coloque o nome da receita."
+            value="{{item.title}}"
         >
     </div>
 </div>

@@ -401,7 +401,8 @@ button[type="submit"],
 }
 
 .input-wrapper input,
-textarea {
+textarea,
+select {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     padding: 15px 10px;
