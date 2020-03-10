@@ -3,29 +3,9 @@ const Chef = require('../models/chef')
 
 module.exports = {
     index(req, res) {
-        // let { filter, page, limit } = req.query
-
-        // page = page || 1
-        // limit = limit || 2
-        // let offset = limit * (page -1)
-
-        // const params = {
-        //     filter,
-        //     page,
-        //     limit,
-        //     offset,
-        //     callback(chefs) {
-        //         const pagination = {
-        //             total: Math.ceil(chefs[0].total / limit),
-        //             page
-        //         }
-
-                return res.render("admin/chefs/index" /*{ chefs, pagination, filter }*/)
-        //     }
-        // // }
-
-        // Chef.paginate(params)
-
+        Chef.all(function(chefs) {
+            return res.render("admin/chefs/index", { chefs })
+        })
     },
     create(req, res) {
         return res.render("admin/chefs/create")
@@ -40,15 +20,12 @@ module.exports = {
         }
         
         Chef.create(req.body, function(chef) {
-            return res.redirect(`admin/chefs/${chef.id}`)
+            return res.redirect(`/admin/chefs/${chef.id}`)
         })
     },
     show(req, res) {
         Chef.find(req.params.id, function(chef) {
             if(!chef) return res.send("Chef not found!")
-
-            chef.created_at = date(chef.created_at).format
-
             return res.render("admin/chefs/show", { chef })
         })
     },
@@ -69,12 +46,12 @@ module.exports = {
         }
         
         Chef.update(req.body, function() {
-            return res.redirect(`admin/chefs/${req.body.id}`)
+            return res.redirect(`/admin/chefs/${req.body.id}`)
         })
     },
     delete(req, res) {
         Chef.delete(req.body.id, function() {
-            return res.redirect(`admin/chefs`)
+            return res.redirect(`/admin/chefs`)
         })
     },
 }

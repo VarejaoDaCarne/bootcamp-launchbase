@@ -103,6 +103,9 @@ header {
     height: 100px;
     width: 100%;
     border-radius: 15px;
+}
+
+.receipt-img {
     cursor: pointer;
 }
 
@@ -303,7 +306,7 @@ footer {
 }
 
 .links-admin a:last-child {
-margin-left: 30px;
+    margin-left: 30px;
 }
 
 .links-admin a.active,
@@ -338,13 +341,8 @@ margin-left: 30px;
     box-sizing: border-box;
 }
 
-#receipt-img img {
-    height: 100%;
-    width: 100%;
-}
-
 .receipt__content-chef{
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 #receipt__content-admin {
@@ -450,6 +448,7 @@ select {
 
 .upper-wrapper h1 {
     font-size: 24px;
+    margin-top: 6px;
 }
 
 #admin-edit-button {
@@ -470,4 +469,38 @@ select {
 
 .upper-wrapper #edit-button-margin   {
     margin-left: 10%;
+}
+
+    /* === CHEFS INDEX === */
+
+.chefs__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.chef__container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin-bottom: 30px;
+}
+
+.chef-image__container img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.chef-text__container {
+    margin: 10px;
+}
+
+.chef-text__container p:first-child{
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.chef-text__container p:nth-child(2){
+    font-size: 14px;
+    line-height: 24px;
+    color: #666666;
 }

@@ -1,42 +1,42 @@
 {% extends "../layout.njk" %}
 
 {% block head %}
-    <title>Mostrar - {{item.name}}</title>
+    <title>Chef - {{chef.name}}</title>
 {% endblock %}
 
 {% block content %}
     <main class="receipt-page" id="admin-show">
         <div class="upper-wrapper" id="upper-wrapper-button">
-            <h1>Chef: {{item.title}}</h1>
-            <a href="/admin/chefs/{{item.id}}/edit" id="admin-edit-button">Editar chef</a>
+            <h1>Chef: {{chef.name}}</h1>
+            <a href="/admin/chefs/{{chef.id}}/edit" id="admin-edit-button">Editar chef</a>
         </div>
         <div class="banner-container">
             <div class="receipt__image" id="admin-image">
 
-                <img src="{{item.avatar_url}}" alt="Imagem de {{item.name}}">
+                <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}">
 
             </div>
             <div class="banner-content" >
 
-                <h1>{{item.name}}</h1>
-                <p>{{item.total_recipes}}</p> 
+                <h1>{{chef.name}}</h1>
+                <p>{{chefs.total_recipes}}</p> 
 
             </div>
         </div>
         <article class="receipt" id="receipt-admin"> 
             <div class="receipt__image-container" id="receipt__admin-container">
 
-                <img src="{{item.avatar_url}}" alt="Imagem de {{item.name}}"  id="receipt-img"  >
+                <img src="{{chef.receipt.image}}" alt="Imagem de {{chef.receipt.title}}"  id="receipt-img"  >
             
             </div>
             <div class="receipt__content" id="receipt__content-admin">
 
-                <p class="receipt__content-receipt">{{item.title}}</p>
-                <p class="receipt__content-chef">por {{item.name}}</p>
-                <a href="/admin/chefs/{{item.id}}" class="receipt__content-see">Visualizar</a>
+                <p class="receipt__content-receipt">{{chef.name}}</p>
+                <p class="receipt__content-chef">por {{chef.total_recipes}}</p>
+                <a href="/admin/chefs/{{chef.total_recipes}}" class="receipt__content-see">Visualizar</a>
 
             </div>
-            {% if item.recipeIndex %}
+            {% if chef.recipeIndex %}
             {% endif %}
         </article>
     </main>

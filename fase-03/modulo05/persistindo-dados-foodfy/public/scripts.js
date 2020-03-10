@@ -1,4 +1,4 @@
-const receipts = document.querySelectorAll(".receipt")
+const receipts = document.querySelectorAll(".receipt-img")
 const buttons = document.querySelectorAll(".show-hide")
 const currentPage = location.pathname
 const menuItems = document.querySelectorAll("header .links-admin a")

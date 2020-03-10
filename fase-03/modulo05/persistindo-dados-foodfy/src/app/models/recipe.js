@@ -4,9 +4,10 @@ const {date} = require('../../lib/utils')
 module.exports = {
     all(callback) {
         db.query(`
-        SELECT * 
+        SELECT receipts.*, chefs.name AS chef_name 
         FROM receipts
-        ORDER BY name ASC`, function(err, results) {
+        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
+        `, function(err, results) {
             if(err) throw `Database Error! ${err}`
 
            callback(results.rows)
@@ -15,24 +16,24 @@ module.exports = {
     create(data, callback) {
         const query = `
             INSERT INTO receipts (
-                chef_id
+                chef_id,
                 image,
                 title,
-                ingredients[],
-                preparation[],
+                ingredients,
+                preparation,
                 information,
                 created_at
             ) VALUES ($1, $2, $3, $4, $5, $6, $7)
             RETURNING id
         `
         const values = [
-            data.chef_id,
+            data.chef,
             data.image,
             data.title,
             data.ingredients,
             data.preparation,
             data.information,
-            date(data.created_at).iso
+            date(Date.now()).iso
         ]
 
         db.query(query, values, function(err, results) {
@@ -56,23 +57,21 @@ module.exports = {
         const query = `
             UPDATE receipts SET
                 chef_id=($1),
-                image=($2)
+                image=($2),
                 title=($3),
-                ingredients[]=($4),
+                ingredients=($4),
                 preparation=($5),
-                information=($6),
-                created_at=($7)
-            WHERE id = $8
+                information=($6)
+            WHERE id = $7
         `
 
         const values = [
-            data.chef_id,
+            data.chef,
             data.image,
             data.title,
             data.ingredients,
             data.preparation,
             data.information,
-            date(data.created_at).iso,
             data.id
         ]
 

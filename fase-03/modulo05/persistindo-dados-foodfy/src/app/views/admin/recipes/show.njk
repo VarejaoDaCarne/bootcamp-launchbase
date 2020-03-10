@@ -1,25 +1,25 @@
 {% extends "../layout.njk" %}
 
 {% block head %}
-    <title>Mostrar - {{item.title}}</title>
+    <title>Mostrar - {{recipe.title}}</title>
 {% endblock %}
 
 {% block content %}
     <main class="receipt-page" id="admin-show">
         <div class="upper-wrapper" id="upper-wrapper-button">
-            <h1>Receita: {{item.title}}</h1>
-            <a href="/admin/recipes/{{item.id}}/edit" id="admin-edit-button">Editar receita</a>
+            <h1>Receita: {{recipe.title}}</h1>
+            <a href="/admin/recipes/{{recipe.id}}/edit" id="admin-edit-button">Editar receita</a>
         </div>
         <div class="banner-container">
             <div class="receipt__image" id="admin-image">
 
-                <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
 
             </div>
             <div class="banner-content" >
 
-                <h1>{{item.title}}</h1>
-                <p>por {{item.author}}</p> 
+                <h1>{{recipe.title}}</h1>
+                <p>por {{recipe.chef_name}}</p> 
 
             </div>
         </div>
@@ -34,7 +34,7 @@
 
                     </div>
                     <ul>
-                        {% for ingredient in item.ingredients %}
+                        {% for ingredient in recipe.ingredients %}
 
                             <li>{{ingredient}}</li>
 
@@ -51,7 +51,7 @@
 
                     </div>
                     <ul >
-                        {%for preparation in item.preparation%}
+                        {% for preparation in recipe.preparation %}
 
                             <li>{{preparation}}</li>
 
@@ -68,7 +68,7 @@
 
                     </div>
 
-                    <ul>{{item.information}}</ul>
+                    <ul>{{recipe.information}}</ul>
 
                 </div> 
             </div>
