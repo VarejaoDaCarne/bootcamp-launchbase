@@ -44,7 +44,6 @@ module.exports = {
             })
         })
     },
-    
     put(req, res) {
         const keys = Object.keys(req.body)
 
@@ -58,7 +57,6 @@ module.exports = {
             return res.redirect(`/admin/recipes/${req.body.id}`)
         })
     },
-    
     delete(req, res) {
         Recipe.delete(req.body.id, function() {
             return res.redirect(`/admin/recipes`)

@@ -81,7 +81,7 @@ module.exports = {
             callback()
         })
     },
-    delete(id, callback) {
+    delete(id) {
         db.query(`DELETE FROM receipts WHERE id = $1`, [id], function(err) {
             if(err) throw `Database Error! ${err}`
         })

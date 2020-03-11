@@ -83,6 +83,13 @@ module.exports = {
             if(err) throw `Database Error! ${err}`
         })
     },
+    chefRecipes(callback) {
+        db.query(`SELECT * FROM receipts`, function(err, results) {
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+    },
     // paginate(params) {
     //     const { filter, limit, offset, callback } = params
 

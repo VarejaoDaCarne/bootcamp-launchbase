@@ -2,7 +2,7 @@
 
 {% block head %}
 
-    <title>Edição - {{item.name}}</title>
+    <title>Edição - {{chef.name}}</title>
 
 {% endblock %}
 
@@ -10,12 +10,11 @@
     <section class="create-wrapper">
         <div class="upper-wrapper">
             <h1>Editando chef</h1>
-        
             <form method="POST" action="/admin/chefs?_method=DELETE" id="form-delete">
-                <input type="hidden" name="id" value={{item.id}}>
+                <input type="hidden" name="id" value={{chef.id}}>
+   
                 <button type="submit">Deletar</button>
             </form>
-            
             <div>
                 <form method="POST" action="/admin/chefs?_method=PUT" id="edit-button-margin">
 
@@ -28,7 +27,7 @@
                     <input 
                         type="hidden" 
                         name="id" 
-                        value={{item.id}}
+                        value={{chef.id}}
                     >
         
                 </form>   

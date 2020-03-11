@@ -8,6 +8,7 @@
     <section id="section-admin">
         <div class="upper-wrapper" id="upper-wrapper-button">
             <h1>Gerenciar Receitas</h1>
+            
             <a href="/admin/recipes/create" id="admin-create-button">Criar receita</a>
         </div>
         <div class="receipts" id="receipts-admin">
@@ -30,12 +31,6 @@
                 </article>
             {% endfor %}
         </div>
-
-        <div class="pagination" 
-            data-page={{pagination.page}}
-            data-total={{pagination.total}}
-            data-filter={{filter}}
-        ></div>
         
     </section>
 
