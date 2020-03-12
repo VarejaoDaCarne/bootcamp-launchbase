@@ -1,29 +1,28 @@
-const data = require('../../../data.json')
+const Foodfy = require("../models/foodfy")
 
-exports.index = function(req, res) {
-    return res.render("foodfy/index", { items: data.recipes })
-}
-
-exports.about = function(req, res) {
-    return res.render("foodfy/about")
-}
-
-exports.recipes = function(req, res) {
-    return res.render("foodfy/recipes", { items: data.recipes })
-}
-
-exports.show = function(req, res) {
-    const { id } = req.params
-
-    const foundRecipe = data.recipes.find(function(recipe) {
-        return id == recipe.id -1
-    })
-
-    if(!foundRecipe) return res.send("Recipe not found")
-
-    const recipe = {
-        ...foundRecipe,
+module.exports = {
+    index(req, res) {
+        Foodfy.allRecipes(function(recipes) {
+            return res.render("foodfy/index", { recipes })
+        })
+    },
+    about(req, res) {
+        return res.render("foodfy/about")
+    },
+    recipes(req, res) {
+        Foodfy.allRecipes(function(recipes) {
+            return res.render("foodfy/recipes", { recipes })
+        })
+    },
+    show(req, res) {
+        Foodfy.findRecipe(req.params.id, function(recipe) {
+            if(!recipe) return res.send("Recipe not found")
+            return res.render("foodfy/show", { recipe })
+        })
+    },
+    chefs(req, res) {
+        Foodfy.allChefs(function(chefs) {
+            return res.render("foodfy/chefs", { chefs })
+        })
     }
-    return res.render("foodfy/show", { item: recipe })
 }
-

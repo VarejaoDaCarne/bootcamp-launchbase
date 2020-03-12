@@ -6,8 +6,7 @@ module.exports = {
         db.query(`
         SELECT receipts.*, chefs.name AS chef_name 
         FROM receipts
-        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
-        `, function(err, results) {
+        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)`, function(err, results) {
             if(err) throw `Database Error! ${err}`
 
            callback(results.rows)

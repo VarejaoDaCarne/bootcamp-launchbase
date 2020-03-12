@@ -1,13 +1,6 @@
-const receipts = document.querySelectorAll(".receipt-img")
 const buttons = document.querySelectorAll(".show-hide")
 const currentPage = location.pathname
 const menuItems = document.querySelectorAll("header .links-admin a")
-
-for(let i = 0; i < receipts.length; i++) {
-    receipts[i].addEventListener("click", function() {
-        window.location.href = `/recipes/${i}`
-    })
-}
 
 for(let button of buttons) {
     const subtitles = button.querySelectorAll("h2")

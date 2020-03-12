@@ -13,16 +13,27 @@
 
     </head>
     <body class="body-home">
-        <header>
+        <header class="header-foodfy">
 
             <div class="links">
 
                 <a href="/index" id="logo"><img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/layouts/assets/logo.png" alt="Foodfy logo"></a>
                 <a href="/about">Sobre</a>
                 <a href="/recipes">Receitas</a>
-
+                <a href="/chefs">Chefs</a>
+            
             </div>
-
+            {% block filter%}
+                <form action="/foodfy" method="GET" class="filter-foodfy">
+                    <input 
+                        type="text" 
+                        name="filter"
+                        placeholder="Buscar uma receita"
+                        value={{filter}}
+                    >
+                    <button type="submit">Filtrar</button>
+                </form>
+            {% endblock%}
         </header>
         {% block content %}
         {% endblock %}
@@ -31,6 +42,6 @@
             <p>Todos direitos reservados, receitas Foodfy.</p>
 
         </footer>
-        <script src="/scripts.js"></script>
+        <script src="../../scripts.js"></script>
     </body>
 </html>

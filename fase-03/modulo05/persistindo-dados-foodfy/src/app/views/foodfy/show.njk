@@ -1,21 +1,24 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>{{item.title}} - Foodfy</title>
+    <title>Foodfy - {{recipe.title}} </title>
 {% endblock %}
+
+{% block filter%}
+{%endblock%}
 
 {% block content %}
     <main class="receipt-page">
         <div class="banner-container">
-            <div class="receipt__image">
+            <div class="receipt__image" id="banner__container-image">
 
-                <img src="{{item.image}}" alt="Imagem de {{item.title}}">
+                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
 
             </div>
             <div class="banner-content" >
 
-                <h1>{{item.title}}</h1>
-                <p>por {{item.author}}</p> 
+                <h1>{{recipe.title}}</h1>
+                <p>por {{recipe.chef_name}}</p> 
 
             </div>
         </div>
@@ -30,7 +33,7 @@
 
                     </div>
                     <ul>
-                        {% for ingredient in item.ingredients %}
+                        {% for ingredient in recipe.ingredients %}
 
                             <li>{{ingredient}}</li>
 
@@ -47,7 +50,7 @@
 
                     </div>
                     <ul >
-                        {%for preparation in item.preparation%}
+                        {%for preparation in recipe.preparation%}
 
                             <li>{{preparation}}</li>
 
@@ -64,7 +67,7 @@
 
                     </div>
 
-                    <ul>{{item.information}}</ul>
+                    <ul>{{recipe.information}}</ul>
 
                 </div> 
             </div>

@@ -1,0 +1,36 @@
+{% extends "../layout.njk" %}
+
+{% block head %}
+    <title>Admin - Chefs</title>
+{% endblock %}
+
+{% block filter%}
+{%endblock%}
+
+{% block content %}
+    <section id="section-admin">
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Gerenciar Chefs</h1>
+        </div>
+        <div class="chefs__container">
+            {% for chef in chefs %}
+                <article class="chef__container"> 
+                    <div class="chef-image__container">
+
+                      <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}">
+                    
+                    </div>
+                    <div class="chef-text__container">
+
+                        <p>{{chef.name}}</p>
+                        <p>{{chef.total_recipes}} receitas</p>
+
+                    </div>
+                    {% if chefs.recipeIndex %}
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

@@ -5,19 +5,20 @@
 {% endblock %}
 
 {% block content %}
+
     <section>
         <div class="receipts">
-            {% for item in items %}
+            {% for recipe in recipes %}
                 <article class="receipt" > 
                     <div class="receipt__image-container">
 
-                        <img src="{{item.image}}" alt="Imagem de {{item.title}}"  class="receipt-img"  >
+                    <a href="/recipes/{{recipe.id}}" ><img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img"  ></a>
                     
                     </div>
                     <div class="receipt__content">
 
-                        <p class="receipt__content-receipt">{{item.title}}</p>
-                        <p class="receipt__content-chef">{{item.author}}</p>
+                        <p class="receipt__content-receipt">{{recipe.title}}</p>
+                        <p class="receipt__content-chef">por {{recipe.chef_name}}</p>
 
                     </div>
                     {% if recipes.recipeIndex %}

@@ -6,7 +6,6 @@
 
 {% block content %}
     <main class="home">
-        
         <div class="home-content">
         <div class="title-subtitle">
             <h1>As melhores receitas</h1>
@@ -23,17 +22,17 @@
             <h1>Mais acessadas</h1>
         </div>
         <div class="receipts">
-            {% for item in items %}
+            {% for recipe in recipes %}
                 <article class="receipt"> 
                     <div class="receipt__image-container">
 
-                        <img src="{{item.image}}" alt="Imagem de {{item.title}}"  class="receipt-img"  >
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img"  >
                     
                     </div>
                     <div class="receipt__content">
 
-                        <p class="receipt__content-receipt">{{item.title}}</p>
-                        <p class="receipt__content-chef">por {{item.author}}</p>
+                        <p class="receipt__content-receipt">{{recipe.title}}</p>
+                        <p class="receipt__content-chef">por {{recipe.chef_name}}</p>
 
                     </div>
                 </article>

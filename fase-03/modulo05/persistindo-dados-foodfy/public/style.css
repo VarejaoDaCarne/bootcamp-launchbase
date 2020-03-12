@@ -25,12 +25,19 @@ html {
 }
 
 header {
-    margin: 20px auto;
+    margin: 20px 0;
 }
 
+.header-foodfy{
+    max-width: 940px;
+    margin: 20 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.links {
+ 
+}
 .links a {
-    position: relative;
-    left: -283px;
     font-size: 16px;
     text-decoration: none;
     margin-right: 20px;
@@ -38,12 +45,16 @@ header {
 }
 
 #logo {
-    margin-right: 130px;
+    margin-right: 160px;
 }
 
 .links a:hover{
     font-weight: bold;
     transition: 300ms;
+}
+
+.filter-foodfy {
+    justify-self: end;
 }
 
 .home {
@@ -160,14 +171,20 @@ footer {
     max-width: 940px;
     margin: 0 auto;
 }
+
 .receipt__image {
     width: 100%;
     height: 357px;
 }
+
 .receipt__image img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+}
+
+#banner__container-image {
+    width: 940px;
 }
 
 .banner-content{
