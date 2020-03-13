@@ -31,30 +31,40 @@ header {
 .header-foodfy{
     max-width: 940px;
     margin: 20 auto;
+    align-items: baseline;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; 
+   
 }
 .links {
- 
+    padding-right:  60px;
 }
+
 .links a {
     font-size: 16px;
     text-decoration: none;
     margin-right: 20px;
-    color: inherit;
+    color: #646464;
 }
 
 #logo {
-    margin-right: 160px;
+    margin-right: 100px;
 }
 
 .links a:hover{
-    font-weight: bold;
+    color: black;
     transition: 300ms;
 }
 
 .filter-foodfy {
     justify-self: end;
+}
+
+.filter-foodfy input {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-right: 10px;
 }
 
 .home {
@@ -98,13 +108,13 @@ header {
 
 .wrapper {
     max-width: 940px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
     font-size: 24px;
 }
 
 .receipts {
     max-width: 940px;
-    margin: 50px auto;
+    margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
@@ -170,6 +180,15 @@ footer {
 .receipt-page {
     max-width: 940px;
     margin: 0 auto;
+}
+
+#foodfy-recipes-title {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+#foodfy-recipes-title {
+    font-size: 20px;
 }
 
 .receipt__image {
@@ -534,4 +553,11 @@ select {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+
+    /* === FOODFY CHEFS === */
+
+#foodfy-chefs {
+    max-width: 940px;
+    margin: 0 auto;
 }

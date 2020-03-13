@@ -91,39 +91,5 @@ module.exports = {
 
             callback(results.rows)
         })
-    },
-    // paginate(params) {
-    //     const { filter, limit, offset, callback } = params
-
-    //     let query = "",
-    //         filterQuery = "",
-    //         totalQuery = `(
-    //             SELECT count(*) FROM receipts
-    //         ) AS total`
-
-    //     if(filter) {
-    //         filterQuery = `
-    //         WHERE receipts.name ILIKE '%${filter}%'
-    //         OR receipts.email ILIKE '%${filter}%'
-    //         `
-
-    //         totalQuery = `(
-    //             SELECT count(*) FROM receipts
-    //             ${filterQuery}
-    //         ) AS total`
-    //     }
-
-    //     query = `
-    //     SELECT receipts.*, ${totalQuery}
-    //     FROM receipts
-    //     ${filterQuery}
-    //     LIMIT $1 OFFSET $2 
-    //     `
-
-    //     db.query(query, [limit, offset], function(err, results) {
-    //         if(err) throw `Database Error! ${err}`
-
-    //         callback(results.rows)
-    //     })
-    // }
+    }
 }

@@ -3,8 +3,19 @@
 {% block head %}
     <title>Home - Foodfy</title>
 {% endblock %}
-
+{% block filter %}
+    <form action="/index" method="GET" class="filter-foodfy">
+        <input 
+            type="text" 
+            name="filter"
+            placeholder="Buscar uma receita"
+            value={{filter}}
+        >
+        <button type="submit">Buscar</button>
+    </form>
+{% endblock %}
 {% block content %}
+  
     <main class="home">
         <div class="home-content">
         <div class="title-subtitle">
@@ -17,7 +28,6 @@
         </div>
     </main>
     <section>
-
         <div class="wrapper">
             <h1>Mais acessadas</h1>
         </div>
@@ -26,7 +36,7 @@
                 <article class="receipt"> 
                     <div class="receipt__image-container">
 
-                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img"  >
+                          <a href="/recipes/{{recipe.id}}" ><img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img" ></a>
                     
                     </div>
                     <div class="receipt__content">
@@ -39,5 +49,10 @@
             {% endfor %}
         </div>
     </section>
-
+  
+    <div class="pagination" 
+        data-page={{pagination.page}}
+        data-total={{pagination.total}}
+        data-filter={{filter}}
+    ></div>
 {% endblock %}

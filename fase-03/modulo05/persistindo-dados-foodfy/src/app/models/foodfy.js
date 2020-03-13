@@ -54,4 +54,38 @@ module.exports = {
             callback(results.rows)
         })
     },
+    filter(params) {
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `(
+                SELECT count(*) FROM receipts
+            ) AS total`
+
+        if(filter) {
+            filterQuery = `
+            WHERE receipts.title ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM receipts
+                ${filterQuery}
+            ) AS total`
+        }
+
+        query = `
+        SELECT receipts.*, ${totalQuery}, chefs.name AS chef_name 
+        FROM receipts
+        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
+        ${filterQuery}
+        LIMIT $1 OFFSET $2 
+        `
+
+        db.query(query, [limit, offset], function(err, results) {
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+    }
 }

@@ -1,4 +1,4 @@
-{% extends "../layout.njk" %}
+{% extends "layout.njk" %}
 
 {% block head %}
     <title>Admin - Chefs</title>
@@ -8,10 +8,7 @@
 {%endblock%}
 
 {% block content %}
-    <section id="section-admin">
-        <div class="upper-wrapper" id="upper-wrapper-button">
-            <h1>Gerenciar Chefs</h1>
-        </div>
+    <section id="foodfy-chefs">
         <div class="chefs__container">
             {% for chef in chefs %}
                 <article class="chef__container"> 

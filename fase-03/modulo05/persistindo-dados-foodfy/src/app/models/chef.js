@@ -89,40 +89,5 @@ module.exports = {
 
             callback(results.rows)
         })
-    },
-    // paginate(params) {
-    //     const { filter, limit, offset, callback } = params
-
-    //     let query = "",
-    //         filterQuery = "",
-    //         totalQuery = `(
-    //             SELECT count(*) FROM chefs
-    //         ) AS total`
-
-    //     if(filter) {
-    //         filterQuery = `
-    //         WHERE chefs.name ILIKE '%${filter}%'
-    //         OR chefs.services ILIKE '%${filter}%'
-    //         `
-
-    //         totalQuery = `(
-    //             SELECT count(*) FROM chefs
-    //             ${filterQuery}
-    //         ) AS total`
-    //     }
-
-    //     query = `
-    //     SELECT chefs.*, ${totalQuery}, count(receipts) as total_recipes 
-    //     FROM chefs
-    //     LEFT JOIN receipts ON (chefs.id = receipts.chef_id)
-    //     ${filterQuery}
-    //     GROUP BY chefs.id LIMIT $1 OFFSET $2 
-    //     `
-
-    //     db.query(query, [limit, offset], function(err, results) {
-    //         if(err) throw `Database Error! ${err}`
-
-    //         callback(results.rows)
-    //     })
-    // }
+    }
 }
