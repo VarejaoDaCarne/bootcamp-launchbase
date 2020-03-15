@@ -26,6 +26,7 @@
 - [Interagindo com o BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-2)
 - [Relacionamentos e filtros no BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-3)
 - [Paginação de resultados no BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-4)
+- [Persistindo dados no Foodfy](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/persistindo-dados-foodfy)
 
 ---
 
