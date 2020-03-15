@@ -3,10 +3,10 @@
 </h1>
 
 <h3 align="center">
-  Desafio: Administração do Foodfy
+  Desafio 5: Persistindo dados no Foodfy 
 </h3>
 
-<blockquote align="center">“Quem sabe concentrar-se numa coisa e insistir nela como único objetivo, obtém a capacidade de fazer qualquer coisa.”</blockquote>
+<blockquote align="center">“Todo programador é um autor.”</blockquote>
 
 <p align="center">
 
