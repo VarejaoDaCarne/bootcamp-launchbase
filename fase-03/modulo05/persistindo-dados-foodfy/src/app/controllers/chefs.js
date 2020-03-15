@@ -35,6 +35,8 @@ module.exports = {
     edit(req, res) {
         Chef.find(req.params.id, function(chef) {
             if(!chef) return res.send("Chef not found!")
+
+            return res.render("admin/chefs/edit", { chef })
         })
     },
     put(req, res) {
@@ -51,7 +53,7 @@ module.exports = {
         })
     },
     delete(req, res) {
-        Chef.delete(req.body.id, function(id) {
+        Chef.delete(req.body.id, function() {
             return res.redirect(`/admin/chefs`)
         })
     }

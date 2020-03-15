@@ -19,8 +19,11 @@
 {% block content %}
     <section>          
        <div id="foodfy-recipes-title">
+  
         {% if filter !== "" %}
             <h1>Buscando por: {{filter}}</h1>
+            {%else%}
+            <h1>Receitas</h1>
         {% endif %}
         </div>
         <div class="receipts">

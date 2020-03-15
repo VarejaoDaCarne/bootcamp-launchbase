@@ -518,6 +518,7 @@ select {
     display: grid;
     grid-template-columns: 100px 1fr;
     margin-bottom: 30px;
+    margin-top: 20px
 }
 
 .chef-image__container img {

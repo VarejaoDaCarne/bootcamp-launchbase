@@ -84,7 +84,8 @@ module.exports = {
         })
     },
     chefRecipes(callback) {
-        db.query(`SELECT * FROM receipts`, function(err, results) {
+        db.query(`
+        SELECT * FROM receipts`, function(err, results) {
             if(err) throw `Database Error! ${err}`
 
             callback(results.rows)
