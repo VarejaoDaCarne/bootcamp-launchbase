@@ -19,125 +19,85 @@
 <p align="center">
   <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;
 </p>
-
 ## :rocket: Sobre o desafio
 
-Nesse desafio você irá criar uma área administrativa para o Foodfy, aplicação que desenvolvemos nos desafios anteriores.
+Nesse desafio você irá criar um banco de dados para o Foodfy.
 
-Você utilizará o mesmo projeto do Foodfy desenvolvido no desafio anterior e somente adicionar essa área administrativa, que será responsável por cadastrar, editar e deletar os dados que estão no seu arquivo: `data.js`
+A partir desse desafio, os dados que antes você vinha salvando em um arquivo JSON agora serão armazenados em um banco de dados PostgreSQL.
 
-### Rotas do administrador
+Você irá criar novas páginas de cadastro, listagem e edição de chefs, pois uma receita será atribuida a um chef.
 
-Usando os conhecimentos adquiridos até aqui, você deve criar rotas para uma área administrativa, onde o usuário poderá cadastrar novas receitas, apresentá-las, além de atualizar e deletar também.
+Você irá criar um busca de receitas, onde você poderá filtrar receitas pelo seu nome.
 
-Use a seguinte ideia para criar suas rotas.
+Por fim, você irá adicionar a funcionalidade de paginação na listagem de receitas.
 
-```js
-routes.get("/admin/recipes", recipes.index); // Mostrar a lista de receitas
-routes.get("/admin/recipes/create", recipes.create); // Mostrar formulário de nova receita
-routes.get("/admin/recipes/:id", recipes.show); // Exibir detalhes de uma receita
-routes.get("/admin/recipes/:id/edit", recipes.edit); // Mostrar formulário de edição de receita
+### :file_cabinet: Banco de dados
 
-routes.post("/admin/recipes", recipes.post); // Cadastrar nova receita
-routes.put("/admin/recipes", recipes.put); // Editar uma receita
-routes.delete("/admin/recipes", recipes.delete); // Deletar uma receita
-```
+Usando os conhecimentos adquiridos até aqui, você irá criar um banco de dados pelo Postgres, utilize o nome `foodfy`.
 
-Dica: Você pode criar pasta(s) para organizar os arquivos do seu projeto.
+Você irá criar uma tabela de receitas, chame-a de `receipts` e uma tabela de cozinheiros, nomei-a como `chefs`.
 
-### Detalhes da Receita
+A tabela `receipts` deverá conter os seguintes campos:
 
-Para facilitar a busca de uma receita cadastrada, você pode usar a mesma forma de busca pelo index do `array` de `recipes` que foi apresentada no desafio anterior e desconsiderar o uso de um `id` único para cada receita, como apresentado nas aulas deste módulo.
+- `id integer primary unique` (o postbird cria esse campo por padrão)
+- `chef_id integer` (esse campo armazenará o ID do chef que criou essa receita)
+- `image text`
+- `title text`
+- `ingredients text[]`
+- `preparation text[]`
+- `information text`
+- `created_at datetime` (armazena a data de criação da receita no banco de dados)
 
-Mais pra frente entenderemos o uso dos ID's de forma mais profunda :wink:
+_Obs.: Você consegue armazenar vetores (`arrays`) no Postgres utilizando o `[]` no fim do campo._
 
-### Layout do painel de administração
+A tabela `chefs` deverá conter os seguinte campos:
+
+- `id integer primary unique` (o postbird cria esse campo por padrão)
+- `name text`
+- `avatar_url text`
+- `created_at datetime` (armazena a data de criação do chef no banco de dados)
+
+### :fork_and_knife: [Admin] Cadastro de chefs
 
 <div align="center">
-   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-desafio-04.png" />
+   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-cadastro-chefs.png" />
 </div>
 
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-04/archive/master.zip
+Você irá colocar novas páginas administrativas que serão capazes de fazer as operação de cadastro, listagem, atualização e remoção de chefs.
 
-Acesse o arquivo `layouts/specs/index.html` para ver todas especificações do layout da página.
+**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
 
-### Dados do projeto
+Acesse o arquivo `layouts/admin/index.html` para ver todas especificações do layout do site.
 
-No desafio passado você criou um arquivo de dados chamado `data.js` para servir de dados da sua aplicação.
+> Importante: Quando um chef for removido, se o mesmo possuir pelo menos uma receita, retorne um erro informando que chefs que possuem receitas não podem ser deletados.
 
-Utilize agora, um arquivo que levará o nome `data.json` seguindo o que você aprendeu nesse módulo, porém, mantenha a estrutura de dados que você tinha no seu arquivo: `data.js`.
+### :detective: [Site] Busca de receitas
 
-Exemplo:
-
-```json
-{
-  "recipes": []
-}
-```
-
-Nesse `array` de `recipes` irão as receitas cadastradas pelo seu sistema.
-
-A fim de testar as funcionalidades da sua área administrativa, cadastre, pela área administrativa, os dados que você tinha anteriormente no seu `data.js`
-
-### Adicionar Campo Dinâmico
-
-Os campos de "Ingredientes" e "Modo de preparo", serão campos dinâmicos, onde você irá adicionar quantos campos forem necessários, usando JavaScript para isso.
-
-#### GIF Exemplo
-
-<p align="center">
-  <img alt="Gif Campo Dinâmico" src="https://i.imgur.com/EOYWaJW.gif"/>
-</p>
-
-#### Código de exemplo
-
-```html
-<div id="ingredients">
-  <div class="ingredient">
-    <input type="text" name="ingredients[]" value="" placeholder="Ingredient" />
-  </div>
+<div align="center">
+   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-busca.png" />
 </div>
-<button type="button" class="add-ingredient">Add Ingredient</button>
-```
 
-Veja que o nome do nosso input contém `[]` no fim, isso significa que ele será um vetor, ou seja, quando o usuário enviar o formulário teremos algo assim:
+Para facilitar a busca de uma receita cadastrada, a pessoa que acessar o site poderá filtrar por nome da receita.
 
-```js
-{
-  "ingredients": [
-    "Batata",
-    "Queijo",
-    "Bacon"
-  ]
-}
-```
+Você criará também uma página de resultado da busca que listará as receitas de acordo com a busca do usuário.
 
-#### Exemplo de JavaScript
+**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
 
-```js
-function addIngredient() {
-  const ingredients = document.querySelector("#ingredients");
-  const fieldContainer = document.querySelectorAll(".ingredient");
+Acesse o arquivo `layouts/site/index.html` para ver todas especificações do layout do site.
 
-  // Realiza um clone do último ingrediente adicionado
-  const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+### :woman_cook: [Site] Listagem de chefs
 
-  // Não adiciona um novo input se o último tem um valor vazio
-  if (newField.children[0].value == "") return false;
+<div align="center">
+   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-chefs.png" />
+</div>
 
-  // Deixa o valor do input vazio
-  newField.children[0].value = "";
-  ingredients.appendChild(newField);
-}
+Fazer uma página com nome "Chefs" no site onde irá mostrar os chefs do Foodfy.
 
-document
-  .querySelector(".add-ingredient")
-  .addEventListener("click", addIngredient);
-```
+Fazer uma contagem de todas a receitas daquele chef, e apresentar nessa página.
 
-### Apresentação no site
+**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
 
-Altere as rotas desenvolvidas no desafio anterior para exibir as receitas do novo arquivo `data.json` para o nosso site do Foodfy, no fim do desafio você deve ter então tanto a área administrativa do projeto quando o website consumindo os mesmos dados :smile:
+Acesse o arquivo `layouts/site/index.html` para ver todas especificações do layout do site.
 
 ---
 
