@@ -53,8 +53,17 @@ module.exports = {
         })
     },
     delete(req, res) {
-        Chef.delete(req.body.id, function() {
-            return res.redirect(`/admin/chefs`)
+        const { id } = req.body
+
+        Chef.chefHasRecipes(id, function(chef) {
+            if(chef.count == 0) {
+                Chef.delete(req.body.id, function() {
+                    return res.redirect(`/admin/chefs/index`)
+                })
+            } else {
+                console.log(chef.count)
+                return res.send("Chefs with recipe(s) cannot be excluded")
+            }
         })
     }
 }

@@ -403,7 +403,7 @@ footer {
 
 .upper-wrapper {
     display: grid;
-    grid-template-columns: 1fr 139px 139px;
+    grid-template-columns: 1fr 139px;
 }
 
 button[type="submit"],
@@ -411,7 +411,7 @@ button[type="submit"],
 #admin-create-button {
     background-color: var(--primary-color);
     border-radius: 6px;
-    padding: 13px;
+    padding: 13px 15px;
     cursor: pointer;
     font-size: 15px;
     color: #FFFFFF;
@@ -420,10 +420,12 @@ button[type="submit"],
     box-sizing: border-box;
 }
 
+#form-delete {
+    justify-self: end;
+}
+
 #form-delete button[type="submit"] {
     background-color: #DC4747;
-    margin-left: 60px;
-
 }
 .input-wrapper {
     margin-top: 20px ;
@@ -462,15 +464,9 @@ select {
     margin: 0 auto;
 }
 
-#admin-edit-button {
-    position: relative;
-    left: 100%;
-}
-
 #admin-image {
     height: 357px;
 }
-
 
 #admin-image img{
     width: 100%;
@@ -496,17 +492,19 @@ select {
 
     /* === ADMIN EDIT === */
 
-#edit-center {
-    position: absolute;
-    right: 8%;
+.edit-wrapper {
     max-width: 1200px;
-    width: 100%;
-}    
-
-.upper-wrapper #edit-button-margin   {
-    margin-left: 10%;
+    margin: 0 auto;
 }
 
+.edit-upper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 139px 139px;
+}
+
+#form-edit{
+    justify-self: end;
+}
     /* === CHEFS INDEX === */
 
 .chefs__container {
@@ -521,9 +519,9 @@ select {
     margin-top: 20px
 }
 
-.chef-image__container img {
-    width: 90px;
-    height: 90px;
+.chef-image__container img  {
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
 }
 
@@ -545,8 +543,8 @@ select {
     /* === CHEF SHOW === */
 
 .chef-show-image {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     margin: 0 auto;
 }
 

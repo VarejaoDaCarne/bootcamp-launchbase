@@ -75,7 +75,7 @@ module.exports = {
         }
 
         query = `
-        SELECT receipts.*, ${totalQuery}, chefs.name AS chef_name 
+        SELECT receipts.*, ${totalQuery}, chefs.name AS chef_name
         FROM receipts
         LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
         ${filterQuery}

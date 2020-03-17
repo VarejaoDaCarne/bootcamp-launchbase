@@ -8,31 +8,27 @@
 
 {% block content%}
     <section class="create-wrapper">
-        <div class="upper-wrapper">
+        <div class="edit-upper-wrapper">
             <h1>Editando receita</h1>
         
             <form method="POST" action="/admin/recipes?_method=DELETE" id="form-delete">
                 <input type="hidden" name="id" value={{recipe.id}}>
+
                 <button type="submit">Deletar</button>
             </form>
             
-            <div>
-                <form method="POST" action="/admin/recipes?_method=PUT" id="edit-button-margin">
+            <form method="POST" action="/admin/recipes?_method=PUT" id="form-edit">
+                <button type="submit">Salvar receita</button>
+        </div>
 
-                    <button type="submit">Salvar receita</button>
-                    
-                    <div id="edit-center">
-                        {% include 'admin/recipes/fields.njk' %}
-                    </div>
+                {% include 'admin/recipes/fields.njk' %}
 
-                    <input 
-                        type="hidden" 
-                        name="id" 
-                        value={{recipe.id}}
-                    >
-        
-                </form>   
-            </div>
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value={{recipe.id}}
+                >
+            </form>   
         </div>
     </section>
 
