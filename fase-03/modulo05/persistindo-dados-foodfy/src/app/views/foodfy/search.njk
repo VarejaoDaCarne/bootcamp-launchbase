@@ -1,8 +1,9 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>Home - Foodfy</title>
+    <title>Buscando por: {{filter}} - Foodfy</title>
 {% endblock %}
+
 {% block filter %}
     <form action="/search" method="GET" class="filter-foodfy">
         <input 
@@ -11,32 +12,22 @@
             placeholder="Buscar uma receita"
             value={{filter}}
         >
-        <button type="submit">Buscar</button>
+        <button type="submit" class="button">Buscar</button>
     </form>
 {% endblock %}
+
 {% block content %}
-  
-    <main class="home">
-        <div class="home-content">
-        <div class="title-subtitle">
-            <h1>As melhores receitas</h1>
-            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p>
+    <section>          
+       <div id="foodfy-recipes-title">
+           <h1>Buscando por: "{{filter}}"</h1>
         </div>
-
-        <img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/layouts/assets/chef.png" alt="Foodfy chef">
-
-        </div>
-    </main>
-    <section>
-        <div class="wrapper">
-            <h1>Mais acessadas</h1>
-        </div>
+        
         <div class="receipts">
             {% for recipe in recipes %}
-                <article class="receipt"> 
+                <article class="receipt" > 
                     <div class="receipt__image-container">
 
-                          <a href="/recipes/{{recipe.id}}" ><img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img" ></a>
+                    <a href="/recipes/{{recipe.id}}" ><img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img"  ></a>
                     
                     </div>
                     <div class="receipt__content">
@@ -45,8 +36,16 @@
                         <p class="receipt__content-chef">por {{recipe.chef_name}}</p>
 
                     </div>
+                    {% if recipes.recipeIndex %}
+                    {% endif %}
                 </article>
             {% endfor %}
         </div>
+
+        <div class="pagination" 
+            data-page=15
+            data-total=20
+            data-filter={{filter}}  
+        ></div>
     </section>
 {% endblock %}

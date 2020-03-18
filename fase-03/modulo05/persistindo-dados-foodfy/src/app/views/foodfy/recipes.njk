@@ -5,27 +5,23 @@
 {% endblock %}
 
 {% block filter %}
-    <form action="/recipes" method="GET" class="filter-foodfy">
+    <form action="/search" method="GET" class="filter-foodfy">
         <input 
             type="text" 
             name="filter"
             placeholder="Buscar uma receita"
             value={{filter}}
         >
-        <button type="submit">Buscar</button>
+        <button type="submit" class="button">Buscar</button>
     </form>
 {% endblock %}
 
 {% block content %}
     <section>          
        <div id="foodfy-recipes-title">
-  
-        {% if filter !== "" %}
-            <h1>Buscando por: {{filter}}</h1>
-            {%else%}
-            <h1>Receitas</h1>
-        {% endif %}
+           <h1>Receitas</h1>
         </div>
+
         <div class="receipts">
             {% for recipe in recipes %}
                 <article class="receipt" > 
@@ -46,10 +42,4 @@
             {% endfor %}
         </div>
     </section>
-    
-    <div class="pagination" 
-        data-page={{pagination.page}}
-        data-total={{pagination.total}}
-        data-filter={{filter}}
-    ></div>
 {% endblock %}

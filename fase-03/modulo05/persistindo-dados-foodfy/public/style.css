@@ -560,3 +560,17 @@ select {
     max-width: 940px;
     margin: 0 auto;
 }
+
+    /* === PAGINATION === */
+
+.pagination a,
+.pagination span {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.7);
+    border-bottom: 1px solid var(--primary-color);
+}
