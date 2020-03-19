@@ -31,29 +31,27 @@ header {
 .header-foodfy{
     max-width: 940px;
     margin: 20 auto;
-    align-items: baseline;
     display: grid;
     grid-template-columns: 1fr 1fr; 
    
 }
 .links {
-    padding-right:  60px;
+    margin-right:  60px;
 }
 
 .links a {
     font-size: 16px;
     text-decoration: none;
     margin-right: 20px;
-    color: #646464;
+    color: #111111;
 }
 
 #logo {
     margin-right: 100px;
 }
 
-.links a:hover{
-    color: black;
-    transition: 300ms;
+.links a.active {
+    font-weight: bold;
 }
 
 .filter-foodfy {
@@ -165,7 +163,7 @@ footer {
 .about h2 {
     font-size: 24px;
     line-height: 34px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .about p {
@@ -510,18 +508,19 @@ select {
 .chefs__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 }
 
 .chef__container {
     display: grid;
     grid-template-columns: 100px 1fr;
-    margin-bottom: 30px;
-    margin-top: 20px
+    margin-bottom: 20px;
+    margin-top: 25px;
 }
 
 .chef-image__container img  {
-    width: 100%;
-    height: 100%;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
 }
 
@@ -543,14 +542,14 @@ select {
     /* === CHEF SHOW === */
 
 .chef-show-image {
-    height: 300px;
-    width: 300px;
+    height: 275px;
+    width: 275px;
     margin: 0 auto;
 }
 
 .chef-show-image img {
-    width: 100%;
-    height: 100%;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
 }
 
@@ -562,6 +561,13 @@ select {
 }
 
     /* === PAGINATION === */
+
+.pagination {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
 
 .pagination a,
 .pagination span {

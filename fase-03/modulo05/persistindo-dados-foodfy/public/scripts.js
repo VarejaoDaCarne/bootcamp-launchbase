@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll(".show-hide")
 const currentPage = location.pathname
-const menuItems = document.querySelectorAll("header .links-admin a")
+const menuItems = document.querySelectorAll("header a")
 
 for(let button of buttons) {
     const subtitles = button.querySelectorAll("h2")
@@ -30,10 +30,11 @@ function addIngredient() {
     newField.children[0].value = "";
     ingredients.appendChild(newField);
   }
-  
-document
-.querySelector(".add-ingredient")
-.addEventListener("click", addIngredient) ;
+
+const ingredientAdd = document.querySelector(".add-ingredient")
+if(ingredientAdd) {
+    ingredientAdd.addEventListener("click", addIngredient) 
+}
 
 function addPrepare() {
     const prepare = document.querySelector("#prepare");
@@ -46,10 +47,11 @@ function addPrepare() {
     newField.children[0].value = "";
     prepare.appendChild(newField);
   }
-  
-document
-.querySelector(".add-prepare")
-.addEventListener("click", addPrepare)
+
+const prepareAdd = document.querySelector(".add-prepare")
+if(prepareAdd) {
+    prepareAdd.addEventListener("click", addPrepare)
+}
 
 for(item of menuItems) {
     if(currentPage.includes(item.getAttribute("href"))) {
