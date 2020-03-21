@@ -1,7 +1,6 @@
 const Category = require('../models/Category')
 const Product = require('../models/Product')
 
-
 module.exports = {
     create(req, res) {
         Category.all()

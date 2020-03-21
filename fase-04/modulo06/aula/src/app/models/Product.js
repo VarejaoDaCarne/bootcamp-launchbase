@@ -15,6 +15,9 @@ module.exports = {
             ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
             RETURNING id
         `
+
+        data.price = data.price.replace(/\D/g,"")
+        
         const values = [
             data.category_id,
             1,
@@ -23,7 +26,7 @@ module.exports = {
             data.old_price,
             data.price,
             data.quantity,
-            data.status,
+            data.status
         ]
 
         return db.query(query, values)
