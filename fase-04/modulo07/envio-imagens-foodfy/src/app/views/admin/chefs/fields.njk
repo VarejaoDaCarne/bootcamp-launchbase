@@ -1,0 +1,26 @@
+<div class="input-wrapper" id="title">
+    <div><h2>Nome</h2></div>
+    <div>
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Coloque seu nome."
+            value="{{chef.name}}"
+        >
+    </div>
+</div>
+
+<div class="input-wrapper">
+    <div><h2>Avatar</h2></div>
+    <div>
+        <div id="photos-upload" class="photos-chef">
+            <input 
+                id="photos-input"
+                type="url" 
+                name="photos" 
+                onchange="PhotosUpload.handleFileInput(event)"
+            >
+            <p>Enviar Avatar</p>
+        </div>
+    </div>
+</div>

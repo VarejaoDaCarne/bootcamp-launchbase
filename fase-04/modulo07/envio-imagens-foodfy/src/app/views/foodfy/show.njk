@@ -1,0 +1,76 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Foodfy - {{recipe.title}} </title>
+{% endblock %}
+
+{% block filter%}
+{%endblock%}
+
+{% block content %}
+    <main class="receipt-page">
+        <div class="banner-container">
+            <div class="receipt__image" id="banner__container-image">
+
+                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+
+            </div>
+            <div class="banner-content" >
+
+                <h1>{{recipe.title}}</h1>
+                <p>por {{recipe.chef_name}}</p> 
+
+            </div>
+        </div>
+        <div class="receipt__all-container">
+            <div class="ingredient-container">
+                <div class="show-hide remove">
+
+                    <div class="text-wrapper">
+
+                        <h1>Ingredientes</h1>
+                        <h2 >MOSTRAR</h2>
+
+                    </div>
+                    <ul>
+                        {% for ingredient in recipe.ingredients %}
+
+                            <li>{{ingredient}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div> 
+            </div>
+            <div class="preparation-container">
+                <div class="show-hide remove">
+                    <div class="text-wrapper">
+
+                        <h1>Modo de preparo</h1>
+                        <h2>MOSTRAR</h2>
+
+                    </div>
+                    <ul >
+                        {%for preparation in recipe.preparation%}
+
+                            <li>{{preparation}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div> 
+            </div>
+            <div class="further-information">
+                <div class="show-hide remove">
+                    <div class="text-wrapper">
+
+                        <h1>Informações adicionais</h1>
+                        <h2>MOSTRAR</h2>
+
+                    </div>
+
+                    <ul>{{recipe.information}}</ul>
+
+                </div> 
+            </div>
+        </div>
+    </main>
+{% endblock %}

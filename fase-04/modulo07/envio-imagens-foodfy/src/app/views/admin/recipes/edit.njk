@@ -1,0 +1,37 @@
+{% extends '../layout.njk' %}
+
+{% block head %}
+
+    <title>Edição - {{recipe.title}}</title>
+
+{% endblock %}
+
+{% block content%}
+    <section class="create-wrapper">
+        <div class="edit-upper-wrapper">
+            <h1>Editando receita</h1>
+        
+            <form method="POST" action="/admin/recipes?_method=DELETE" id="form-delete">
+                <input type="hidden" name="id" value={{recipe.id}}>
+
+                <button type="submit">Deletar</button>
+            </form>
+            
+            <form method="POST" action="/admin/recipes?_method=PUT" id="form-edit" enctype="multipart/form-data">
+                <button type="submit">Salvar receita</button>
+        </div>
+
+                {% include 'admin/recipes/fields.njk' %}
+
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value={{recipe.id}}
+                >
+            </form>   
+        </div>
+    </section>
+
+    {% include 'confirm.njk' %}
+
+{% endblock %}

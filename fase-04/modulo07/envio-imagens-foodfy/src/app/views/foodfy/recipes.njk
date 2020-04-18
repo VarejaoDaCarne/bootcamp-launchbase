@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Receitas - Foodfy</title>
+{% endblock %}
+
+{% block filter %}
+    <form action="/search" method="GET" class="filter-foodfy">
+        <input 
+            type="text" 
+            name="filter"
+            placeholder="Buscar uma receita"
+            value={{filter}}
+        >
+        <button type="submit" class="button">Buscar</button>
+    </form>
+{% endblock %}
+
+{% block content %}
+    <section>          
+       <div id="foodfy-recipes-title">
+           <h1>Receitas</h1>
+        </div>
+
+        <div class="receipts">
+            {% for recipe in recipes %}
+                <article class="receipt" > 
+                    <div class="receipt__image-container">
+
+                    <a href="/recipes/{{recipe.id}}" ><img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img"  ></a>
+                    
+                    </div>
+                    <div class="receipt__content">
+
+                        <p class="receipt__content-receipt">{{recipe.title}}</p>
+                        <p class="receipt__content-chef">por {{recipe.chef_name}}</p>
+
+                    </div>
+                    {% if recipes.recipeIndex %}
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
