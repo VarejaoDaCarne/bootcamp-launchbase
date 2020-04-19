@@ -9,6 +9,11 @@
 :root {
     --color-rocket: #7159c1;
 }
+
+html, body {
+    min-height: 100vh;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -33,8 +38,14 @@ body {
     text-decoration: none;
 }
 
-#links-footer {
-    margin-top: auto;
+#links-footer    {
+    background: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#copyright p {
+    margin-top: 10px;
 }
 
 .links a:hover {
@@ -79,9 +90,18 @@ body {
     text-align: center;
 }
 
-.list img {
-    width: 100%;
-    height: 100%;
+.list li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    margin-top: 70px;
+    text-align: center;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 20px 0 0;
+
 }
 
 .titulo-curso h1 {

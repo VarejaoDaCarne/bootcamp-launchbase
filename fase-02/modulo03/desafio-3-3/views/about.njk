@@ -11,7 +11,7 @@
 <div class="list">
     <ul>
     {% for technology in about.technologies %}
-        <li><img src="{{technology.url}}" alt="Imagem de {{technology.name}}">{{technology.name}}</li>
+        <li><a href="{{technology.url}}">{{technology.name}}</a>
     {% endfor %}
     </ul>
 </div>

@@ -18,9 +18,9 @@ server.get("/", function(req, res) {
         company: "Rocketseat",
         description: "As melhores tecnologias em programação, direto ao ponto e do jeito certo.",
         technologies: [
-            { name: "Javascript", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" },
-            { name: "Node.js", url: "https://d2eip9sf3oo6c2.cloudfront.net/tags/images/000/000/256/full/nodejslogo.png" },
-            { name: "React", url: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" },
+            { name: "Javascript", url: "https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript" },
+            { name: "Node.js", url: "https://nodejs.org/en/" },
+            { name: "React", url: "https://pt-br.reactjs.org/" },
         ]
     }
     return res.render("about", { about })
