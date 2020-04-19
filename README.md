@@ -16,7 +16,7 @@
   
 </p>
 
-## :rocket: Desafios
+## :rocket: Fases
 
 - [Fase 02](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02)
 - [Fase 03](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03)
