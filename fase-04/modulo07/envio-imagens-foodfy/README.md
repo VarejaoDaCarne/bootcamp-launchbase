@@ -56,12 +56,6 @@ Adicionar imagens às receitas.
 - Coloque um limite de 5 imagens
 - A receita deve ter pelo menos uma imagem
 
-**Criação de uma receita**
-![Imagem da Página de Criação de Receitas](../layouts/preview/desafio-07-receita-criação.png)
-
-**Edição de uma receitas**
-![Imagem Página de Edição de Receitas](../layouts/preview/desafio-07-receita-edição.png)
-
 ### Chefs
 
 Adicionar a imagem de avatar para o chef
@@ -73,18 +67,11 @@ Você vai precisar criar um relacionamento entre `chefs` e `files`
 
 Dica: Use `ALTER TABLE` para fazer as alterações da tabela de chefs.
 
-**Criação de um chef**
-![Imagem da Página de Criação de Chef](../layouts/preview/desafio-07-chef-criação.png)
-
-**Edição de um chef**
-![Imagem Página de Edição de Chef](../layouts/preview/desafio-07-chef-edição.png)
-
 ### Apresentação
 
 Mostrar as novas imagens de receitas e chefs que estarão cadastradas no banco de dados.
 
-Na página de detalhe de uma receita, criar uma funcionalidade de troca de imagens conforme imagem abaixo.
-![Imagem da Página de Detalhes de uma Receita](../layouts/preview/desafio-07-receita-detalhe.png)
+Na página de detalhe de uma receita, criar uma funcionalidade de troca de imagens.
 
 **Não haverá alterações** visuais para os chefs.
 
