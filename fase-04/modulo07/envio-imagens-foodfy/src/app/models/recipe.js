@@ -1,5 +1,5 @@
 const db = require('../../config/db')
-const {date} = require('../../lib/utils')
+const fs = require('fs')
 
 module.exports = {
     all() {
@@ -58,7 +58,19 @@ module.exports = {
 
         return db.query(query, values)
     },
-    delete(id) {
+    async delete(id) {
+        const result = await db.query(`SELECT file_id FROM recipe_files`)
+        const files = result.rows
+
+        await db.query(`
+            DELETE FROM recipe_files WHERE recipe_id = $1
+        `,[id])
+        
+        // await db.query(`
+        // DELETE FROM files WHERE id = $1
+        // `[files])
+
+
         return db.query(`DELETE FROM recipes WHERE id = $1`, [id])
     },
    chefsSelectOptions() {

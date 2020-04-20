@@ -104,9 +104,9 @@ module.exports = {
                return res.send('Please, fill all fields')
            }
         }
+      
+        let filesId = []
 
-        let filesId = []      
-            
         if(req.files.length != 0) {
             const newFilesPromise = req.files.map(file => 
                 File.create({...file}))
@@ -130,21 +130,10 @@ module.exports = {
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1)
 
-            const removedFilesPromise = removedFiles.map(id => File.delete(id))
-
+            const removedFilesPromise = removedFiles.map(id => File.delete(id))            
+        
             await Promise.all(removedFilesPromise)
-                .then(function(findId) {
-                    for (let index in findId) {
-
-                        let getId = findId[index].rows[0];
-                        filesId.push(getId.id)
-                    }            
-            })
-        }
-
-        for (let fileId of filesId) {
-            await RecipeFiles.delete({recipe_id: recipeId, file_id: fileId})                  
-        }
+        }            
 
         await Recipe.update(req.body)
 
