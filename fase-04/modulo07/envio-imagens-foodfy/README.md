@@ -3,10 +3,10 @@
 </h1>
 
 <h3 align="center">
-  Desafio 5: Persistindo dados no Foodfy 
+  Desafio 7: Envio de imagens Foodfy 
 </h3>
 
-<blockquote align="center">“Todo programador é um autor.”</blockquote>
+<blockquote align="center">“Quanto mais você estuda, mais aprende e se aproxima de realizar seu sonhos!”</blockquote>
 
 <p align="center">
 
@@ -22,84 +22,62 @@
 
 ## :rocket: Sobre o desafio
 
-Nesse desafio você irá criar um banco de dados para o Foodfy.
+Você irá criar um sistema de envio de imagem, conforme as especificações abaixo.
 
-A partir desse desafio, os dados que antes você vinha salvando em um arquivo JSON agora serão armazenados em um banco de dados PostgreSQL.
+Veja também as especificações do layout, abrindo o arquivo que está em [layouts/index.html](../layouts/index.html) no seu navegador Google Chrome. 
 
-Você irá criar novas páginas de cadastro, listagem e edição de chefs, pois uma receita será atribuida a um chef.
+**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-07/archive/master.zip
 
-Você irá criar um busca de receitas, onde você poderá filtrar receitas pelo seu nome.
+### Tabelas
 
-Por fim, você irá adicionar a funcionalidade de paginação na listagem de receitas.
+Crie uma tabela de nome `files` com os campos
 
-### :file_cabinet: Banco de dados
+- `id SERIAL PRIMARY KEY`
+- `name TEXT`
+- `path TEXT NOT NULL`
 
-Usando os conhecimentos adquiridos até aqui, você irá criar um banco de dados pelo Postgres, utilize o nome `foodfy`.
+Essa tabela acima irá receber todas as imagens do sistema.
 
-Você irá criar uma tabela de receitas, chame-a de `receipts` e uma tabela de cozinheiros, nomei-a como `chefs`.
+Crie uma tabela de nome `recipe_files` com os campos
 
-A tabela `receipts` deverá conter os seguintes campos:
+- `id SERIAL PRIMARY KEY`
+- `recipe_id INTEGER REFERENCES recipes(id)`
+- `file_id INTEGER REFERENCES files(id)`
 
-- `id integer primary unique` (o postbird cria esse campo por padrão)
-- `chef_id integer` (esse campo armazenará o ID do chef que criou essa receita)
-- `image text`
-- `title text`
-- `ingredients text[]`
-- `preparation text[]`
-- `information text`
-- `created_at datetime` (armazena a data de criação da receita no banco de dados)
+Você vai precisar buscar as imagens de uma receita, criando um 
+relacionamento entre as tabelas `recipe_files` com a tabela `files`
 
-_Obs.: Você consegue armazenar vetores (`arrays`) no Postgres utilizando o `[]` no fim do campo._
+### Receitas
 
-A tabela `chefs` deverá conter os seguinte campos:
+Adicionar imagens às receitas.
 
-- `id integer primary unique` (o postbird cria esse campo por padrão)
-- `name text`
-- `avatar_url text`
-- `created_at datetime` (armazena a data de criação do chef no banco de dados)
+- No banco de dados, remova o campo `image`, pois não será mais necessário.
+- Crie um campo de upload de imagens
+- Coloque um limite de 5 imagens
+- A receita deve ter pelo menos uma imagem
 
-### :fork_and_knife: [Admin] Cadastro de chefs
+### Chefs
 
-<div align="center">
-   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-cadastro-chefs.png" />
-</div>
+Adicionar a imagem de avatar para o chef
 
-Você irá colocar novas páginas administrativas que serão capazes de fazer as operação de cadastro, listagem, atualização e remoção de chefs.
+- Remova o campo `avatar_url` da tabela de chefs
+- Adicione o campo `file_id INTEGER REFERENCES files(id)`
 
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
+Você vai precisar criar um relacionamento entre `chefs` e `files`
 
-Acesse o arquivo `layouts/admin/index.html` para ver todas especificações do layout do site.
+Dica: Use `ALTER TABLE` para fazer as alterações da tabela de chefs.
 
-> Importante: Quando um chef for removido, se o mesmo possuir pelo menos uma receita, retorne um erro informando que chefs que possuem receitas não podem ser deletados.
+### Apresentação
 
-### :detective: [Site] Busca de receitas
+Mostrar as novas imagens de receitas e chefs que estarão cadastradas no banco de dados.
 
-<div align="center">
-   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-busca.png" />
-</div>
+Na página de detalhe de uma receita, criar uma funcionalidade de troca de imagens.
 
-Para facilitar a busca de uma receita cadastrada, a pessoa que acessar o site poderá filtrar por nome da receita.
+**Não haverá alterações** visuais para os chefs.
 
-Você criará também uma página de resultado da busca que listará as receitas de acordo com a busca do usuário.
+### Novos conceitos
 
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
-
-Acesse o arquivo `layouts/site/index.html` para ver todas especificações do layout do site.
-
-### :woman_cook: [Site] Listagem de chefs
-
-<div align="center">
-   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-chefs.png" />
-</div>
-
-Fazer uma página com nome "Chefs" no site onde irá mostrar os chefs do Foodfy.
-
-Fazer uma contagem de todas a receitas daquele chef, e apresentar nessa página.
-
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
-
-Acesse o arquivo `layouts/site/index.html` para ver todas especificações do layout do site.
-
+Aplique os conceitos de `async/await` e de `try/catch` que você aprendeu nas aulas.
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
