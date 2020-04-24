@@ -15,8 +15,16 @@
                 <article class="chef__container"> 
                     <div class="chef-image__container">
 
-                        <img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}" >
-                    
+                        <img    
+                            {% for image in files %}
+                                {% if image.id === chef.file_id %}
+                                    src="{{image.src}}" 
+                                    alt="{{image.name}}"
+                                    {% elseif image.src == "" %}
+                                    src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
+                                {% endif %}
+                            {% endfor %} 
+                        >
                     </div>
                     <div class="chef-text__container">
 

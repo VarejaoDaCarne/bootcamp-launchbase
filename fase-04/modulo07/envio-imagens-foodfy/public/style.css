@@ -438,7 +438,7 @@ button[type="submit"],
 
 .input-wrapper input,
 textarea,
-select {
+select, span {
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     padding: 15px 10px;
@@ -526,6 +526,7 @@ select {
     width: 90px;
     height: 90px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .chef-text__container {
@@ -555,6 +556,7 @@ select {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
     /* === FOODFY CHEFS === */
@@ -593,7 +595,7 @@ select {
 
 .input-wrapper #photos-upload {
     position: relative;
-    display: block;
+    display: flex;
     overflow: hidden;
     width: 152px;
     margin-right: 10px;
@@ -613,7 +615,7 @@ select {
     justify-content: center;
 }
 
-.input-wrapper #photos-wrapper #photos-input  {
+.input-wrapper #photos-input  {
     position: absolute;
     top: 0;
     left: 0;
@@ -624,24 +626,6 @@ select {
     opacity: 0;
     cursor: pointer;
 
-}
-
-    /* === PHOTOS UPLOAD CHEF === */
-
-form .input-wrapper #photos-upload p{
-    width: 130px;
-}
-
-form .input-wrapper .photos-chef p {
-    border-radius: 4px;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    color: white;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    font-size: 15px;
-    letter-spacing: 0.3;
 }
 
     /* === PHOTOS PREVIEW === */
@@ -681,6 +665,30 @@ form .input-wrapper .photos-chef p {
 
 #photos-preview .photo:hover i {
     opacity: 1;
+}
+
+    /* === PHOTO CHEF === */
+
+.input-wrapper #photos-upload p {
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.3;
+}
+
+#photo-chef-name span {
+margin-bottom: 30px;
+}
+
+
+.photo-chef-preview img{
+    border-radius: 5%;
+    margin-bottom: 15px;
 }
 
     /* === RECIPE GALLERY === */

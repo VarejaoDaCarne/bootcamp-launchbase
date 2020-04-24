@@ -7,13 +7,6 @@ module.exports = {
         let results = await Recipe.all()         
         const recipes = results.rows
 
-        let recipesId = []
-
-        for(let i = 0; i < recipes.length; i++) {
-            let getId = recipes[i].id
-            recipesId.push(getId)
-        }
-
         results = await File.all()
         const files = results.rows.map(file => ({
             ...file,
@@ -106,7 +99,7 @@ module.exports = {
         }
       
         let filesId = []
-
+        console.log(req.files)
         if(req.files.length != 0) {
             const newFilesPromise = req.files.map(file => 
                 File.create({...file}))

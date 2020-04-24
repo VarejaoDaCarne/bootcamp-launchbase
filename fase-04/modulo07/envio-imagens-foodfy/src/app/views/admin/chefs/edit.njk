@@ -11,13 +11,13 @@
         <div class="edit-upper-wrapper">
             <h1>Editando chef</h1>
 
-            <form method="POST" action="/admin/chefs?_method=DELETE" id="form-delete" enctype="multipart/form-data">
+            <form method="POST" action="/admin/chefs?_method=DELETE" id="form-delete">
                 <input type="hidden" name="id" value={{chef.id}}>
 
                 <button type="submit">Deletar</button>
             </form>
 
-            <form method="POST" action="/admin/chefs?_method=PUT" id="form-edit">
+            <form method="POST" action="/admin/chefs?_method=PUT" id="form-edit" enctype="multipart/form-data">
                 <button type="submit">Salvar chef</button>
         </div>
 

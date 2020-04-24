@@ -59,11 +59,39 @@ module.exports = {
         return db.query(query, values)
     },
     async delete(id) {
+        let result = await db.query(`SELECT * FROM recipe_files WHERE recipe_id = $1`, [id])
+        const files = result.rows
+
+        // let filesId = []
+
+        // for(let i in files) {
+        //     let getId = files[i].file_id
+        //     filesId.push(getId)
+        // }
+        // let results = ""
+        // let file = []
+        // for(let fileId in filesId) {
+            results = await db.query(`SELECT path FROM files WHERE id = $1`, [fileId])
+
+            file.push(results.rows)
+            
+        // }
+        // console.log(file)
+        fs.unlinkSync(results.path)
+     
+
+
         await db.query(`
             DELETE FROM recipe_files WHERE recipe_id = $1
         `,[id])
 
-        return db.query(`DELETE FROM recipes WHERE id = $1`, [id])
+        for(let fileId in filesId) {
+            await db.query(`
+            DELETE FROM files WHERE id = $1
+        `, [fileId])
+        }
+
+    return db.query(`DELETE FROM recipes WHERE id = $1`, [id])
     },
    chefsSelectOptions() {
         return db.query(`SELECT name, id FROM chefs`)

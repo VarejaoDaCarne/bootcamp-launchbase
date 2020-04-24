@@ -121,6 +121,6 @@ module.exports = {
     async delete(req, res) {
         await Product.delete(req.body.id)
         
-        return res.redirect('/products/create')
+        return res.redirect('products/create')
     }
 }
