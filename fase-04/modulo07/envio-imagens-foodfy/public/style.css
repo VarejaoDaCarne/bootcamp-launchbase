@@ -418,6 +418,7 @@ button[type="submit"],
     text-align: center;
     font-weight: bold;
     box-sizing: border-box;
+    margin-left: 10px;
 }
 
 #form-delete {
@@ -464,11 +465,11 @@ select, span {
     margin: 0 auto;
 }
 
-#admin-image {
+.banner__container-image {
     height: 357px;
 }
 
-#admin-image img{
+.banner__container-image img{
     width: 100%;
     height: 100%;
     border-radius: 15px;

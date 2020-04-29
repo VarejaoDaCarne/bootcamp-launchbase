@@ -1,36 +1,82 @@
 const Foodfy = require("../models/foodfy")
+const File = require('../models/files')
+const RecipeFiles = require('../models/recipeFiles')
 
 module.exports = {
-    index(req, res) {
-        Foodfy.allRecipes(function(recipes) {
-            res.render("foodfy/index", { recipes })
-        })
+    async index(req, res) {
+        let results = await Foodfy.allRecipes()
+        const recipes = results.rows
+
+        results = await File.all()
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        results = await RecipeFiles.all()
+        const ids = results.rows
+
+        res.render("foodfy/index", { recipes, files, ids })
     },
     about(req, res) {
         return res.render("foodfy/about")
     },
-    recipes(req, res) {
-        Foodfy.allRecipes(function(recipes) {
-            res.render("foodfy/recipes", { recipes })
-        })
+    async recipes(req, res) {
+        let results = await Foodfy.allRecipes()
+        const recipes = results.rows
+
+        results = await File.all()
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        results = await RecipeFiles.all()
+        const ids = results.rows
+
+        res.render("foodfy/recipes", { recipes, files, ids })
     },
-    show(req, res) {
-        Foodfy.findRecipe(req.params.id, function(recipe) {
-            if(!recipe) return res.send("Recipe not found")
-            return res.render("foodfy/show", { recipe })
-        })
+    async show(req, res) {
+        let results = await Foodfy.findRecipe(req.params.id)
+        const recipe = results.rows[0]
+
+        if(!recipe) return res.send("Recipe not found")
+             
+        results = await Foodfy.recipeFiles(recipe.id)
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("foodfy/show", { recipe, files })
     },
-    chefs(req, res) {
-        Foodfy.allChefs(function(chefs) {
-            return res.render("foodfy/chefs", { chefs })
-        })
+    async chefs(req, res) {
+        let results = await Foodfy.allChefs()
+        const chefs = results.rows
+
+        results = await File.all()
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        return res.render("foodfy/chefs", { chefs, files })
     },
-    search(req, res) {
+    async search(req, res) {
         let { filter, page, limit } = req.query
 
         page = page || 1
         limit = limit || 9
         let offset = limit * (page -1)
+
+        results = await File.all()
+        const files = results.rows.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
+        }))
+
+        results = await RecipeFiles.all()
+        const ids = results.rows
 
         const params = {
             filter,
@@ -43,9 +89,10 @@ module.exports = {
                     page
                 }
 
-                return res.render("foodfy/search", { recipes, pagination, filter })
+                return res.render("foodfy/search", { recipes, pagination, filter, files, ids })
             }
         }
+
         Foodfy.paginate(params)
     }
 }

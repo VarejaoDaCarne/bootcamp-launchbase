@@ -51,6 +51,7 @@ module.exports = {
                 }            
             })
 
+        
         for (let fileId of filesId) {
             await RecipeFiles.create({recipe_id: recipeId, file_id: fileId})                  
         }
@@ -62,13 +63,13 @@ module.exports = {
         const recipe = results.rows[0]
 
         if(!recipe) return res.send("Recipe not found")
-
+        
         results = await Recipe.files(recipe.id)
         const files = results.rows.map(file => ({
             ...file,
             src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
         }))
-
+  
         return res.render("admin/recipes/show", { recipe, files })
     },
     async edit(req, res) {
@@ -93,16 +94,16 @@ module.exports = {
         const keys = Object.keys(req.body)
 
         for(key of keys) {
-           if(req.body[key] == "" && key != "removed_files" &&  key != "photos")  {
+           if(req.body[key] == "" && key != "removed_files" && key !="photos")  {
                return res.send('Please, fill all fields')
            }
         }
       
         let filesId = []
-        console.log(req.files)
+
         if(req.files.length != 0) {
-            const newFilesPromise = req.files.map(file => 
-                File.create({...file}))
+            const newFilesPromise = req.files.map(async file => 
+                await File.create({...file}))
 
                 await Promise.all(newFilesPromise)
                     .then(function(findId) {
@@ -114,8 +115,10 @@ module.exports = {
                     })
         }
 
-        for (let fileId of filesId) {
-            await RecipeFiles.create({recipe_id: req.body.id, file_id: fileId})                  
+        if(filesId.length != 0){
+            for (let fileId of filesId) {
+                await RecipeFiles.update({recipe_id: req.body.id, file_id: fileId})                  
+            }
         }
 
         if(req.body.removed_files) {
@@ -123,10 +126,10 @@ module.exports = {
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1)
 
-            const removedFilesPromise = removedFiles.map(id => File.delete(id))            
-        
+            const removedFilesPromise = removedFiles.map(async id => await File.recipeDelete(id))            
+
             await Promise.all(removedFilesPromise)
-        }            
+        }      
 
         await Recipe.update(req.body)
 

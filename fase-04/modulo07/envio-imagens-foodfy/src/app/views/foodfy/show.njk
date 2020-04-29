@@ -9,12 +9,47 @@
 
 {% block content %}
     <main class="receipt-page">
-        <div class="banner-container">
-            <div class="receipt__image" id="banner__container-image">
+        <div class="gallery">
+            <div class="highlight">
+                <div class="banner-container">
+                    <div class="receipt__image" class="banner__container-image">
+                        {% if not files[0] %}
+                            <img src="http://placehold.it/900x900?text=PRODUTO SEM FOTO" />
+                        {% else %}
+                            <img 
+                                src="{{files[0].src}}" 
+                                alt="{{files[0].name}}"
+                                onclick="Lightbox.open()"
+                            >
+                        {% endif %}
+                    </div>
 
-                <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
-
+                    <div class="lightbox-target">
+                        <img src="{{files[0].src}}" alt="{{files[0].name}}">
+                        <a 
+                            href="#" 
+                            class="lightbox-close"
+                            onclick="Lightbox.close()"
+                        >
+                            <i class="material-icons">close</i>
+                        </a>
+                    </div>
+                </div>
             </div>
+    
+            <div class="gallery-preview">
+                {% for image in files %}
+                    <img    
+                        src="{{image.src}}" 
+                        alt="{{image.name}}"
+                        {% if loop.index0 == 0 %}
+                            class="active"
+                        {% endif %}
+                        onclick="ImageGallery.setImage(event)" alt="Imagem de {{recipe.title}}"
+                    >
+                {% endfor %}
+            </div>
+            
             <div class="banner-content" >
 
                 <h1>{{recipe.title}}</h1>

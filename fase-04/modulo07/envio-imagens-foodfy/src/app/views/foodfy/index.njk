@@ -36,7 +36,22 @@
                 <article class="receipt"> 
                     <div class="receipt__image-container">
 
-                          <a href="/recipes/{{recipe.id}}" ><img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  class="receipt-img" ></a>
+                          <a href="/recipes/{{recipe.id}}" >
+                          <img  
+                              {% for id in ids %}
+                                {% if recipe.id === id.recipe_id %}
+                                    {% for image in files%}
+                                        {% if image.id === id.file_id %}
+                                            src="{{image.src}}" 
+                                            alt="{{image.name}}"
+                                            {% elseif image.src == "" %}
+                                            src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            class="receipt-img" 
+                        ></a>
                     
                     </div>
                     <div class="receipt__content">

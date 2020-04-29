@@ -101,7 +101,7 @@ module.exports = {
             const removedFiles = req.body.removed_files.split(',')
             const lastIndex = removedFiles.length - 1
             removedFiles.splice(lastIndex, 1)
-
+            
             const removedFilesPromise = removedFiles.map(id => File.delete(id))
 
             await Promise.all(removedFilesPromise)

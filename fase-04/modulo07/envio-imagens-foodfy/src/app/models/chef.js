@@ -1,5 +1,4 @@
 const db = require('../../config/db')
-const fs = require('fs')
 
 module.exports = {
     all() {
@@ -11,19 +10,23 @@ module.exports = {
         ORDER BY total_recipes DESC`)
     },
     create({name, file_id}) {
-        const query = `
-            INSERT INTO chefs (
+        try{
+            const query = `
+                INSERT INTO chefs (
+                    name,
+                    file_id
+                ) VALUES ($1, $2)
+                RETURNING id
+            `
+            const values = [
                 name,
                 file_id
-            ) VALUES ($1, $2)
-            RETURNING id
-        `
-        const values = [
-            name,
-            file_id
-        ]
+            ]
 
-        return db.query(query, values)
+            return db.query(query, values)
+        }catch(err) {
+            console.error(err)
+        }
     },
     find(id) {
         return db.query(`
@@ -33,36 +36,38 @@ module.exports = {
     },
 
     update(data) {
-        const query = `
-            UPDATE chefs SET
-            name=($1),
-            file_id=($2)
-            WHERE id = $3
-        `
+        try{
+            const query = `
+                UPDATE chefs SET
+                    name=($1),
+                    file_id=($2)
+                WHERE id = $3
+            `
 
-        const values = [
-            data.name,
-            data.file_id,
-            data.id
-        ]
+            const values = [
+                data.name,
+                data.file_id,
+                data.id
+            ]
 
-        return db.query(query, values)
+            return db.query(query, values)
+        }catch(err) {
+            console.error(err)
+        }
     },
-    async delete(id) {
-        let result = await db.query(`SELECT file_id FROM chefs WHERE id = $1`, [id])
-        const fileId = result.rows[0].file_id
-
-        result = await db.query(`SELECT * FROM files WHERE id = $1`, [fileId])
-        const file = result.rows[0]
-        console.log(file)
-        fs.unlinkSync(file.path)
-
-        await db.query(`DELETE FROM chefs WHERE id = $1`, [id])
-
-        return db.query(`
-            DELETE FROM files WHERE id = $1
-        `, [fileId])
-
+     async delete(id) {
+        try{
+            let result = await db.query(`SELECT file_id FROM chefs WHERE id = $1`, [id])
+            const fileId = result.rows[0].file_id
+     
+            await db.query(`DELETE FROM chefs WHERE id = $1`, [id])
+    
+            return db.query(`
+                DELETE FROM files WHERE id = $1
+            `, [fileId])
+        }catch(err) {
+             console.error(err)
+        }
     },
     recipesChef(id) {
         return db.query(`
