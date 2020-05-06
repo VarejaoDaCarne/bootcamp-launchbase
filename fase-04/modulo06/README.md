@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-sobre-o-desafio">Desafios</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 
