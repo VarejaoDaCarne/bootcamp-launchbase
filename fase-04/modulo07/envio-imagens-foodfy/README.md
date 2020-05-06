@@ -24,10 +24,6 @@
 
 Você irá criar um sistema de envio de imagem, conforme as especificações abaixo.
 
-Veja também as especificações do layout, abrindo o arquivo que está em [layouts/index.html](../layouts/index.html) no seu navegador Google Chrome. 
-
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-07/archive/master.zip
-
 ### Tabelas
 
 Crie uma tabela de nome `files` com os campos
@@ -78,6 +74,7 @@ Na página de detalhe de uma receita, criar uma funcionalidade de troca de image
 ### Novos conceitos
 
 Aplique os conceitos de `async/await` e de `try/catch` que você aprendeu nas aulas.
+
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
