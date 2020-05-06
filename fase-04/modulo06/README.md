@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Desafio 7: Envio de imagens Foodfy
+    Desafio 6-1: Mini desafios
 </h3>
 
 <blockquote align="center">“Sua única limitação é você mesmo!”</blockquote>
