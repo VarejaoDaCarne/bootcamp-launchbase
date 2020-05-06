@@ -20,6 +20,7 @@
 
 - [Fase 02](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02)
 - [Fase 03](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03)
+- [Fase 04](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-04)
 
 ---
 
