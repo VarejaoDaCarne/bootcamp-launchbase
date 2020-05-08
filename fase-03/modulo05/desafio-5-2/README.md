@@ -53,10 +53,6 @@ Crie um método `delete` no model. Nesse método, construa uma query utilizando 
 
 Refatore o controller de estudantes utilizando as mesmas ideias aplicadas no controller de professores.
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
