@@ -61,10 +61,6 @@ Após preparar o banco de dados, é preciso refatorar a sua aplicação para uti
 
 Por fim, instale a biblioteca `pg` e crie o arquivo de configuração do seu banco de dados (em uma pasta **config**) utilizando o `Pool`. Não esqueça de passar os dados necessários (**user, password, host, port e database**) na hora de instanciar (**new**) o Pool.
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
