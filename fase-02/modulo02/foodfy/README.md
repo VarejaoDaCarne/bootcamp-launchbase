@@ -28,11 +28,6 @@ Nesse desafio você vai construir um site completo para uma empresa de receitas 
   <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/mockup.png" />
 </div>
 
-### Materiais
-
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-02/archive/master.zip
-**Apresentação do desafio:** https://vimeo.com/372742889/63b926d7e0
-
 ### Abrindo specs do layout
 
 Acesse o arquivo `layouts/specs/index.html` para ver todas especificações do layout da aplicação.
