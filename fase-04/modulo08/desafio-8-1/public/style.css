@@ -1,0 +1,796 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --primary-color: #6558C3;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+.body-home {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+
+header {
+    margin: 20px 0;
+}
+
+.header-foodfy{
+    max-width: 940px;
+    margin: 20 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+   
+}
+.links {
+    margin-right:  60px;
+}
+
+.links a {
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 20px;
+    color: #111111;
+}
+
+#logo {
+    margin-right: 100px;
+}
+
+.links a.active {
+    font-weight: bold;
+}
+
+.filter-foodfy {
+    justify-self: end;
+}
+
+.filter-foodfy input {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.home {
+    max-width: 940px;
+    margin: 0 auto;
+    background: #FBDFDB;
+    border-radius: 30px;
+    height: 366px;
+    width: 940px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.home-content {
+    padding: 0 50px;
+}
+
+.title-subtitle {
+    max-width: 330px;
+    position: absolute;
+    top: 30%
+}
+
+.title-subtitle h1 { 
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+}
+
+.title-subtitle p {
+    font-size: 18px;
+    line-height: 28px;
+    opacity: 0.7;
+}
+
+.home img {
+    position: absolute;
+    top: 18%;
+    right: 100px;
+}
+
+.wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+.receipts {
+    max-width: 940px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.receipt__image-container img{
+    height: 100px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.receipt-img {
+    cursor: pointer;
+}
+
+.receipt__content {
+    margin: 20px 0;
+}
+
+.receipt__content-receipt  {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.receipt__content-chef{
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+}
+
+footer {
+    background: #EEEEEE;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    margin-top: auto;
+}
+
+    /* === SOBRE === */
+
+.about {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 24px;
+    line-height: 34px;
+    margin: 20px 0;
+}
+
+.about p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+    /* === RECIPE PAGE === */
+
+.receipt-page {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+#foodfy-recipes-title {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+#foodfy-recipes-title {
+    font-size: 20px;
+}
+
+.receipt__image {
+    width: 100%;
+    height: 357px;
+}
+
+.receipt__image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+#banner__container-image {
+    width: 940px;
+}
+
+.banner-content{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.banner-content h1 {
+    font-size: 36px;
+    line-height: 46px;
+}
+
+.banner-content p {
+    font-size: 20px;
+    line-height: 30px;
+    color: #777777;
+}
+
+.ingredient-container h1 {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+.ingredient-container ul {
+    margin-left: 20px;
+}
+
+.ingredient-container li {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+.preparation-container{
+    margin: 40px 0;
+}
+
+.preparation-container h1 {
+    font-size: 24px;
+}
+
+.preparation-container li {
+    font-size: 18px;
+    line-height: 28px;
+    color: #444444;
+    margin-left: 20px;
+}
+
+.further-information {
+    margin-bottom: 40px;
+}
+
+.further-information h1 {
+    font-size: 24px;
+    line-height: 34px;
+
+}
+
+.further-information ul {
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
+
+    /* === SHOW/HIDE === */
+
+.show-hide{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.text-wrapper {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.text-wrapper h1 {
+    margin-right: 20px;
+}
+
+.text-wrapper h2 {
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: bold;
+    color: #999999;
+    cursor: pointer;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.show-hide.toggle ul {
+    opacity: 1;
+    visibility: initial;
+    height: 100%;
+
+ }   
+
+ .show-hide.active ul {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+ }  
+
+    /* === ADMIN === */
+
+.body-admin {
+    background: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+}
+    
+.header-admin{
+    margin-top: 0;
+    background-color: #111111;
+    width: 100%;
+    height: 80px;
+}
+
+.links-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+}
+
+.links-admin a img {
+    margin-right: 50px;
+}
+
+.links-admin a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #999999;
+    align-self: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.links-admin a:last-child {
+    margin-left: 30px;
+}
+
+.links-admin a.active,
+.links-admin a:hover {
+    color: #FFFFFF;
+}
+
+#admin-create-button {
+    text-decoration: none;
+}
+
+#section-admin {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#receipts-admin {
+    max-width: 1200px;
+    margin: 30px auto;
+    grid-template-columns: 1fr 1fr;
+}
+
+#receipt-admin { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#receipt__admin-container  {
+    margin-bottom: 30px;
+    border-radius: 8.5px;
+    cursor: initial;
+    box-sizing: border-box;
+}
+
+.receipt__content-chef{
+    margin-bottom: 30px;
+}
+
+#receipt__content-admin {
+    margin: 0;
+    margin-left: 20px;
+}
+
+.receipt__content-see {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+    /* === ADMIN CREATE === */
+
+.create-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.upper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 139px;
+}
+
+button[type="submit"],
+#admin-edit-button,
+#admin-create-button {
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    padding: 13px 15px;
+    cursor: pointer;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+
+#form-delete {
+    justify-self: end;
+}
+
+#form-delete button[type="submit"] {
+    background-color: #DC4747;
+}
+.input-wrapper {
+    margin-top: 20px ;
+}
+
+.input-wrapper h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.input-wrapper input,
+textarea,
+select, span {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    padding: 15px 10px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.add-ingredient, .add-prepare  {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    background-color: #FFFFFF;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+/* === ADMIN SHOW === */
+    
+#admin-show {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner__container-image {
+    height: 357px;
+}
+
+.banner__container-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+
+.upper-wrapper {    
+    margin-bottom: 20px;
+}
+
+.upper-wrapper h1 {
+    font-size: 24px;
+    margin-top: 6px;
+}
+
+#admin-edit-button {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+    /* === ADMIN EDIT === */
+
+.edit-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.edit-upper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 139px 139px;
+}
+
+#form-edit{
+    justify-self: end;
+}
+    /* === CHEFS INDEX === */
+
+.chefs__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.chef__container {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+.chef-image__container img  {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chef-text__container {
+    margin: 10px;
+}
+
+.chef-text__container p:first-child{
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.chef-text__container p:nth-child(2){
+    font-size: 14px;
+    line-height: 24px;
+    color: #666666;
+}
+
+    /* === CHEF SHOW === */
+
+.chef-show-image {
+    height: 275px;
+    width: 275px;
+    margin: 0 auto;
+}
+
+.chef-show-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+    /* === FOODFY CHEFS === */
+
+#foodfy-chefs {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+    /* === PAGINATION === */
+
+.pagination {
+    max-width: 940px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a,
+.pagination span {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.7);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+    /* === PHOTOS UPLOAD === */
+
+#photos-wrapper {
+    display: flex;
+}
+
+.input-wrapper #photos-upload {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 152px;
+    margin-right: 10px;
+}
+
+.input-wrapper #photos-upload i{
+    border-radius: 3.5px;
+    box-shadow: 0 2px 2px -6px #333;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    color: #999999;
+    font-size: 300%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-wrapper #photos-input  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+    /* === PHOTOS PREVIEW === */
+
+.input-wrapper #photos-preview {
+    display: grid;
+    grid-template-columns: repeat(5, 150px);
+    gap: 10px;
+}
+
+.input-wrapper #photos-preview img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+#photos-preview .photo {
+    position: relative;
+}
+
+#photos-preview .photo i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    color: red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 300%;
+    cursor: pointer;
+    transition: opacity 200ms;
+    opacity: 0;
+}
+
+#photos-preview .photo:hover i {
+    opacity: 1;
+}
+
+    /* === PHOTO CHEF === */
+
+.input-wrapper #photos-upload p {
+    border-radius: 4px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 0.3;
+}
+
+#photo-chef-name span {
+margin-bottom: 30px;
+}
+
+
+.photo-chef-preview img{
+    border-radius: 5%;
+    margin-bottom: 15px;
+}
+
+    /* === RECIPE GALLERY === */
+
+ .gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.highlight > img {
+    width: 100%;
+    height: 280px;
+
+}
+
+ .gallery-preview {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: end;
+}
+
+.gallery-preview img {
+    height: 50px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: 200ms;
+    border-radius: 3.5px;
+}
+
+.gallery-preview img:nth-child(1) {
+    grid-column-start: 5;
+    grid-row-start: -1;
+}
+
+.gallery-preview img:nth-child(2) {
+    grid-column-start: 4;
+    grid-row-start: -1;
+}
+
+.gallery-preview img:nth-child(3) {
+    grid-column-start: 3;
+    grid-row-start: -1;
+}
+
+.gallery-preview img:nth-child(4) {
+    grid-column-start: 2;
+    grid-row-start: -1;
+}
+
+.gallery-preview img:nth-child(5) {
+    grid-column-start: 1;
+}
+
+.gallery-preview img:hover,
+.gallery-preview img.active {
+    opacity: 1;
+}
+
+.highlight .lightbox-target {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    overflow: hidden;
+    z-index: 100;
+    top: -100%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.highlight .lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .3);
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.highlight a.lightbox-close {
+    width: 50px;
+    height: 50px;
+    background: white;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 400ms;
+    text-decoration: none;
+    color: #999999;
+}

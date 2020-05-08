@@ -1,0 +1,41 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Admin - Chefs</title>
+{% endblock %}
+
+{% block filter%}
+{%endblock%}
+
+{% block content %}
+    <section id="foodfy-chefs">
+        <div class="chefs__container">
+            {% for chef in chefs %}
+                <article class="chef__container"> 
+                    <div class="chef-image__container">
+                        <img 
+                            {% for image in files %}
+                                {% if image.id == chef.file_id %}
+                                    src="{{image.src}}" 
+                                    alt="Imagem de {{image.id}}"
+                                    {% elseif image.src == "" %}
+                                    src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
+                                {% endif %}
+                            {% endfor %}   
+                        >
+                    </div>
+
+                    <div class="chef-text__container">
+
+                        <p>{{chef.name}}</p>
+                        <p>{{chef.total_recipes}} receitas</p>
+
+                    </div>
+                    {% if chefs.recipeIndex %}
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

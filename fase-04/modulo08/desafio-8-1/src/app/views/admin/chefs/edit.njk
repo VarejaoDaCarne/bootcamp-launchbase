@@ -1,0 +1,37 @@
+{% extends '../layout.njk' %}
+
+{% block head %}
+
+    <title>Edição - {{chef.name}}</title>
+
+{% endblock %}
+
+{% block content%}
+    <section class="edit-wrapper">
+        <div class="edit-upper-wrapper">
+            <h1>Editando chef</h1>
+
+            <form method="POST" action="/admin/chefs?_method=DELETE" id="form-delete">
+                <input type="hidden" name="id" value={{chef.id}}>
+
+                <button type="submit">Deletar</button>
+            </form>
+
+            <form method="POST" action="/admin/chefs?_method=PUT" id="form-edit" enctype="multipart/form-data">
+                <button type="submit">Salvar chef</button>
+        </div>
+
+                {% include 'admin/chefs/fields.njk' %}
+        
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value={{chef.id}}
+                >
+            </form>   
+
+    </section>
+
+    {% include 'confirm.njk' %}
+
+{% endblock %}

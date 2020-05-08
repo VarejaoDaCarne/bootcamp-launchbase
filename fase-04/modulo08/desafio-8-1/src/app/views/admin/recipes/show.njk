@@ -1,0 +1,112 @@
+{% extends "../layout.njk" %}
+
+{% block head %}
+    <title>Mostrar - {{recipe.title}}</title>
+{% endblock %}
+
+{% block content %}
+    <main class="receipt-page" id="admin-show">
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Receita: {{recipe.title}}</h1>
+            <a href="/admin/recipes/{{recipe.id}}/edit" id="admin-edit-button">Editar receita</a>
+        </div>
+        <div class="gallery">
+            <div class="highlight">
+                <div class="banner-container">
+                    <div class="receipt__image" class="banner__container-image">
+                        {% if not files[0] %}
+                            <img src="http://placehold.it/900x900?text=PRODUTO SEM FOTO" />
+                        {% else %}
+                        
+                            <img 
+                                src="{{files[0].src}}" 
+                                alt="{{files[0].name}}"
+                                onclick="Lightbox.open()"
+                            >
+                        {% endif %}
+                    </div>
+
+                    <div class="lightbox-target">
+                        <img src="{{files[0].src}}" alt="{{files[0].name}}">
+                        <a 
+                            href="#" 
+                            class="lightbox-close"
+                            onclick="Lightbox.close()"
+                        >
+                            <i class="material-icons">close</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-preview">
+                {% for image in files %}
+                    <img 
+                        src="{{image.src}}" 
+                        alt="{{image.name}}"
+                        {% if loop.index0 == 0 %}
+                            class="active"
+                        {% endif %}
+                        onclick="ImageGallery.setImage(event)"
+                    >
+                {% endfor %}
+            </div>
+            
+            <div class="banner-content" >
+                <h1>{{recipe.title}}</h1>
+                <p>por {{recipe.chef_name}}</p> 
+            </div>
+        </div>
+        
+        <div class="receipt__all-container">
+            <div class="ingredient-container">
+                <div class="show-hide toggle">
+
+                    <div class="text-wrapper">
+
+                        <h1>Ingredientes</h1>
+                        <h2 >ESCONDER</h2>
+
+                    </div>
+                    <ul>
+                        {% for ingredient in recipe.ingredients %}
+
+                            <li>{{ingredient}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div> 
+            </div>
+            <div class="preparation-container">
+                <div class="show-hide toggle">
+                    <div class="text-wrapper">
+
+                        <h1>Modo de preparo</h1>
+                        <h2>ESCONDER</h2>
+
+                    </div>
+                    <ul >
+                        {% for preparation in recipe.preparation %}
+
+                            <li>{{preparation}}</li>
+
+                        {% endfor %}
+                    </ul>
+                </div> 
+            </div>
+            <div class="further-information">
+                <div class="show-hide toggle">
+                    <div class="text-wrapper">
+
+                        <h1>Informações adicionais</h1>
+                        <h2>ESCONDER</h2>
+
+                    </div>
+
+                    <ul>{{recipe.information}}</ul>
+
+                </div> 
+            </div>
+        </div>
+    </main>
+{% endblock %}
