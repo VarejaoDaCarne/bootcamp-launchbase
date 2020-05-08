@@ -22,7 +22,7 @@
 
 ## :rocket: Desafios
 
-- [Mini-desafios](desafios/06-1-mini-desafios.md)
+- [Mini-desafios](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-04/modulo06/desafio-6-1)
 
 ---
 
