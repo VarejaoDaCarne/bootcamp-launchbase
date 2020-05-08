@@ -24,10 +24,6 @@
 
 Nesse desafio você deve atualizar os arquivos com informações de cursos e descrição de forma dinâmica.
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
