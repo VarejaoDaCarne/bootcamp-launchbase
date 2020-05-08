@@ -44,10 +44,6 @@ server.use(function(req, res) {
 });
 ```
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
