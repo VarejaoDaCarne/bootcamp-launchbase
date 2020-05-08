@@ -75,10 +75,6 @@ Crie um arquivo `confirm.njk` e importe ele no seu arquivo `edit.njk`. Esse arqu
 
 Faça os ajustes de professores para estudantes na página de listagem dos dados de um estudante. Remova a coluna de `Acompanhamento` e adicione as de `Email` e `Ano escolar`.
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
