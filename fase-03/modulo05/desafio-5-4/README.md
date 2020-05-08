@@ -51,10 +51,6 @@ Para finalizar, basta:
 - Preservar o filter quando a página for alterada;
 - Implementar no front dos estudantes a paginação (siga a mesma ideia aplicada nos professores).
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
