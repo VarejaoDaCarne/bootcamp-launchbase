@@ -22,7 +22,7 @@
 
 ## :rocket: Sobre o desafio
 
-Criar um arquivo html que contenha um [favicon](favicon.ico) e um header com 3 links: Comunidade, Email e Telefone.
+Criar um arquivo html que contenha um favicon e um header com 3 links: Comunidade, Email e Telefone.
 
 ### Favicon
 
