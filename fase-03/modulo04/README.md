@@ -24,7 +24,7 @@
 
 - [Header](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-1)
 - [Card do Professor](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-2)
-- [Apresentação, edição e formatação dos dados de um professor]https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-3)
+- [Apresentação, edição e formatação dos dados de um professor](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-3)
 - [HTTP: PUT e DELETE](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-4)
 - [Listagem de professores](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-5)
 - [Estruturando estudantes](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-6)
