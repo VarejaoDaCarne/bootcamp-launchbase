@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-  Desafios Módulo 5: Persistindo dados da aplicação 
+    Desafios Módulo 4 - Controle de Academia 
 </h3>
 
 <blockquote align="center">“Faça seu melhor, mas sempre com prazo de entrega!”</blockquote>
@@ -22,10 +22,13 @@
 
 ## :rocket: Desafios
 
-- [Refatorando aplicação e configurando o BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-1)
-- [Interagindo com o BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-2)
-- [Relacionamentos e filtros no BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-3)
-- [Paginação de resultados no BD](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo05/desafio-5-4)
+- [Header](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-1)
+- [Card do Professor](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-2)
+- [Apresentação, edição e formatação dos dados de um professor](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-3)
+- [HTTP: PUT e DELETE](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-4)
+- [Listagem de professores](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-5)
+- [Estruturando estudantes](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/desafio-4-6)
+- [Administração do Foodfy](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03/modulo04/admin-foodfy)
 
 ---
 

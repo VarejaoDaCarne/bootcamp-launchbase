@@ -57,10 +57,6 @@ Mais pra frente entenderemos o uso dos ID's de forma mais profunda :wink:
    <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/mockup-desafio-04.png" />
 </div>
 
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-04/archive/master.zip
-
-Acesse o arquivo `layouts/specs/index.html` para ver todas especificações do layout da página.
-
 ### Dados do projeto
 
 No desafio passado você criou um arquivo de dados chamado `data.js` para servir de dados da sua aplicação.

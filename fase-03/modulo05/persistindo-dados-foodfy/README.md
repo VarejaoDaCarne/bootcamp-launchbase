@@ -66,10 +66,6 @@ A tabela `chefs` deverá conter os seguinte campos:
 
 Você irá colocar novas páginas administrativas que serão capazes de fazer as operação de cadastro, listagem, atualização e remoção de chefs.
 
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
-
-Acesse o arquivo `layouts/admin/index.html` para ver todas especificações do layout do site.
-
 > Importante: Quando um chef for removido, se o mesmo possuir pelo menos uma receita, retorne um erro informando que chefs que possuem receitas não podem ser deletados.
 
 ### :detective: [Site] Busca de receitas
@@ -82,10 +78,6 @@ Para facilitar a busca de uma receita cadastrada, a pessoa que acessar o site po
 
 Você criará também uma página de resultado da busca que listará as receitas de acordo com a busca do usuário.
 
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
-
-Acesse o arquivo `layouts/site/index.html` para ver todas especificações do layout do site.
-
 ### :woman_cook: [Site] Listagem de chefs
 
 <div align="center">
@@ -95,10 +87,6 @@ Acesse o arquivo `layouts/site/index.html` para ver todas especificações do la
 Fazer uma página com nome "Chefs" no site onde irá mostrar os chefs do Foodfy.
 
 Fazer uma contagem de todas a receitas daquele chef, e apresentar nessa página.
-
-**Download dos arquivos:** https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/archive/master.zip
-
-Acesse o arquivo `layouts/site/index.html` para ver todas especificações do layout do site.
 
 ---
 

@@ -42,10 +42,6 @@ server.get("/courses/:id", function(req, res) {
 - Card do curso
 - Link que redireciona para a página do curso
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)

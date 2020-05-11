@@ -3,10 +3,10 @@
 </h1>
 
 <h3 align="center">
-  Desafio 3-2: Arquivos nunjucks e dados dinâmicos
+  Desafios Módulo 7: Upload de Imagens
 </h3>
 
-<blockquote align="center">“Nunca é tarde demais para ser aquilo que sempre desejou ser.”</blockquote>
+<blockquote align="center">“Faça seu melhor, mas sempre com prazo de entrega!”</blockquote>
 
 <p align="center">
 
@@ -17,12 +17,12 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-desafios">Desafios</a>
 </p>
 
-## :rocket: Sobre o desafio
+## :rocket: Desafios
 
-Nesse desafio você deve atualizar os arquivos com informações de cursos e descrição de forma dinâmica.
+- [Foodfy: envio de imagens](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-04/modulo07/envio-imagens-foodfy)
 
 ---
 

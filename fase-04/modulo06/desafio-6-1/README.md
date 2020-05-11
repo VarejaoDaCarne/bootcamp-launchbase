@@ -85,10 +85,6 @@ Implementar duas máscaras de input:
 - Número percentual com no mínimo duas casas após a vírgula e no máximo 4 (Utilize o `NumberFormat` da biblioteca [Intl](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat));
 - CPF (xxx.xxx.xxx-xx).
 
-### Estilização
-
-Você tem liberdade para escolher a estilização que preferir para esse desafio.
-
 ---
 
 Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
