@@ -1,0 +1,45 @@
+@keyframes hidemessage {
+    to {
+        top: -50px;
+        opacity: 0;
+    }
+}
+
+@keyframes inputborder {
+    from {
+        border: 1px #DDDDDD solid;
+    }
+    to {
+        border: 1px #FF3131 solid;
+    }
+}
+
+.messages {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    padding: 75px;
+    position: absolute;
+    width: 350px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: white;
+    top: 20px;
+    right: 20px;
+    opacity: 1;
+    animation: hidemessage 400ms 5s ease-out forwards;
+}
+
+.messages.error {
+    background-color: #DC4747;
+}
+
+.messages.success {
+    background-color: #01B12A;
+}
+
+section.login.container form .fields .input-wrapper .input input {
+    animation: inputborder  5s;
+}

@@ -102,7 +102,10 @@ body {
 .card {
     cursor: pointer;
     display: grid;
+    background-color: #15111fb9;
+    border-radius: 20px;
 }
+
 .card__image-container img {
     width: 100%;
     height: 269px;

@@ -1,0 +1,39 @@
+<div class="input-wrapper" id="title">
+    <div><h2>Nome</h2></div>
+    <div>
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Coloque seu nome."
+            value="{{chef.name}}"
+        >
+    </div>
+</div>
+
+<div class="input-wrapper">
+    <div><h2>Avatar</h2></div>
+    <div>
+        <div id="photos-preview" class="photo-chef-preview">
+            {% if file %}
+                <div class="photo" id="{{file[0].id}}">
+                    <img src="{{file[0].src}}" alt="{{file[0].name}}">
+                    <i class="material-icons"
+                        onclick="PhotosUpload.removeOldPhoto(event)"
+                    >close</i>
+                </div>
+                    <input type="hidden" name="removed_files">
+            {% endif %}
+        </div>
+
+        <div id="photos-upload">
+            <input 
+                id="photos-input"
+                type="file" 
+                name="photos" 
+                accept="image/*"
+                onchange="PhotosUpload.handleFileInputChefs(event)"
+            >
+            <p>Enviar Avatar</p>
+        </div>
+    </div>
+</div>

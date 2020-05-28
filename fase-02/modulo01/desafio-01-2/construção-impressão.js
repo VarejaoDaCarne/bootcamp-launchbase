@@ -1,11 +1,11 @@
 const empresa = {
-    nome: 'Rocketseat',
-    cor: 'Roxo',
-    foco: 'Programação',
+    nome: 'Linkedin',
+    cor: 'Azul',
+    foco: 'Social',
     endereco: {
-        rua: 'Rua Guilherme Gembala',
-        numero: '260'
+        rua: 'Rua Guilherme Brasil',
+        numero: '345'
     },
 }
 
-console.log(`A empresa ${empresa.nome} está localizada em ${empresa.endereço.rua}, ${empresa.endereço.número}`)
+console.log(`A empresa ${empresa.nome} está localizada em ${empresa.endereco.rua}, ${empresa.endereco.numero}`)

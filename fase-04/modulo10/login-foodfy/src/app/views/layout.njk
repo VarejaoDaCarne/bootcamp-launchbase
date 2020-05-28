@@ -1,0 +1,23 @@
+<!DOCTYPE njk>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+       {% block head %}
+            <title>Foodfy</title>
+        {% endblock %}
+
+        {% include "parts/styles.njk" %}
+    </head>
+    <body class="body-home">
+        {% include "parts/messages.njk" %}
+
+        {% include "parts/header.njk" %}
+        
+        {% block content %}
+        {% endblock %}
+        
+        {% include "parts/footer.njk" %}
+    </body>
+</html>

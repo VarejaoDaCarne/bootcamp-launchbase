@@ -14,11 +14,11 @@ for(let button of buttons) {
             if(button.classList.contains("remove")) {
                 button.classList.add("active")
                 button.classList.remove("remove")
-                subtitle.innerHTML = "ESCONDER"
+                subtitle.innerHTML = "MOSTRAR"
             }else if(button.classList.contains("active")) {
                 button.classList.add("remove")
                 button.classList.remove("active")
-               subtitle.innerHTML = "MOSTRAR"
+               subtitle.innerHTML = "ESCONDER"
             }
         })
     }

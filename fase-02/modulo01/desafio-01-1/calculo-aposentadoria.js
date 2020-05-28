@@ -1,7 +1,7 @@
 const nome = 'Silvana';
 const sexo = 'F';
-const idade = 48;
-const contribuicao = 23;
+const idade = 60;
+const contribuicao = 35;
 
 const contribuicaoMinimaHomem = 35
 const contribuicaoMinimaMulher = 30

@@ -247,12 +247,12 @@ footer {
 }
 
 .show-hide.remove ul {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: initial;
  }   
 
  .show-hide.active ul {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
  }  
 

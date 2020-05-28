@@ -1,0 +1,37 @@
+{% extends "../layout.njk" %}
+
+{% block head %}
+    <title>Usuários - Admin Foodfy</title>
+{% endblock %}
+
+{% block content %}
+    <section id="section-admin">
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Usuários</h1>
+            <a href="/admin/users/register" id="admin-create-button">Novo</a>
+        </div>
+        <div class="chefs__container" id="users-grid">
+            {% for user in users %}
+                <article class="chef__container" > 
+                    <div class="chef-text__container">
+
+                        <h3>{{user.name}}</h3>
+                        <p>{{user.email}}</p>
+
+                        <div class="edit-remove-users">
+                            <a href="/admin/users/{{user.id}}" class="receipt__content-see">Editar</a>
+
+                            <form method="POST" action="/admin/users?_method=DELETE" id="form-delete">
+                                <input type="hidden" name="id" value={{user.id}}>
+
+                                <button type="submit" id ="delete-users-list">Remover</button>
+                            </form>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+    
+    {% include 'confirm.njk' %}
+{% endblock %}

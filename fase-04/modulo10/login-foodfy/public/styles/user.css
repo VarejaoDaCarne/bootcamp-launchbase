@@ -1,0 +1,104 @@
+#user-register-upper #upper-wrapper-button{
+    grid-template-columns: 1fr 139px 139px;
+}
+
+#user-register-upper #upper-wrapper-button a:last-child {
+    background-color:  #8A8A8A;
+}
+
+#user-register-upper #upper-wrapper-button a:last-child:hover{
+    background-color:  #DC4747;
+    transition: 300ms;
+}
+
+#user-register-upper {
+    display: flex;
+    flex-direction: column;
+}
+
+#user-register-upper #cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
+
+#user-register-upper .input-wrapper:last-child input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 16px;
+    width: 16px
+}
+
+#user-register-upper .input-wrapper:last-child input[type="checkbox"] + label:before {
+    border: 1px solid #DDDDDD;
+    content: "\00a0";
+    display: inline-block;
+    height: 16px;
+    margin: 0 .50em 0 0;
+    padding:0;
+    vertical-align: top;
+    width: 16px;
+    border-radius:4px;
+}
+
+#user-register-upper .input-wrapper:last-child input[type="checkbox"]:checked + label:before {
+    color: black;
+    content: "\2713";
+    text-align: center;
+}
+
+section #users-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+section #users-grid .chef__container {
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 40px 0;
+}
+
+section #users-grid .chef__container .chef-text__container {
+    margin: 0;
+}
+
+section #users-grid .chef__container .chef-text__container h3 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+section #users-grid .chef__container .chef-text__container p {
+    margin-bottom: 10px;
+}
+
+section #users-grid .chef__container .chef-text__container .edit-remove-users{
+    display: flex;
+}
+
+section #users-grid .chef__container .chef-text__container form #delete-users-list {
+    margin-left: 10px;
+    padding: 0;
+    background: none;
+    color: #F55A5A;
+    font-size: 14px;
+    border: none;
+}
+
+section #button-upper-user {
+    grid-template-columns: 1fr 150px 150px;
+    gap: 20px;
+}
+
+section #button-upper-user #form-delete {
+    justify-self: initial;
+}
+
+section #button-upper-user #form-delete #user-delete-button {
+    width: 100%;
+    margin: 0;
+}
+
+section #button-upper-user  #user-edit-button  {
+    width: 100%;
+    margin: 0;
+}

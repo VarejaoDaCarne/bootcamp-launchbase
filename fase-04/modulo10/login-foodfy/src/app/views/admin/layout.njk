@@ -1,0 +1,31 @@
+<!DOCTYPE njk>
+
+<html>    
+    <head>
+        <meta charset="UTF-8">
+
+        {% block head %}
+        {% endblock %}
+        
+        {% include "../parts/styles.njk" %}
+    </head>
+    <body class="body-admin">
+        {% include "../parts/messages.njk" %}
+
+        <header class="header-admin">
+            <div class="links-admin">
+
+                <a href="/" ><img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-04/master/layouts/logo.png" alt="Foodfy logo"></a>
+                <a href="/admin/recipes">Receitas</a>
+                <a href="/admin/chefs">Chefs</a>
+                <a href="/admin/users">Usuários</a>
+                
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        {% include "../parts/footer.njk" %}
+    </body>
+</html>
