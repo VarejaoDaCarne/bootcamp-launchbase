@@ -79,6 +79,8 @@ module.exports = {
     delete(id, callback) {
         db.query(`DELETE FROM students WHERE id = $1`, [id], function(err) {
             if(err) throw `Database Error! ${err}`
+            
+            callback()
         })
     }
 }

@@ -57,8 +57,9 @@ module.exports = {
             birth_date=($2),
             education_level=($3),
             class_type=($4),
-            subjects_taught=($5)
-            WHERE id = $6
+            subjects_taught=($5),
+            avatar_url=($6)
+            WHERE id = $7
         `
 
         const values = [
@@ -80,6 +81,8 @@ module.exports = {
     delete(id, callback) {
         db.query(`DELETE FROM teachers WHERE id = $1`, [id], function(err) {
             if(err) throw `Database Error! ${err}`
+
+            callback()
         })
     }
 }
