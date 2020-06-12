@@ -3,10 +3,10 @@
 </h1>
 
 <h3 align="center">
-  Desafio 8: Apresentação e Organização das Receitas Foodfy 
+  Desafio 10: Sistema de Login Foodfy
 </h3>
 
-<blockquote align="center">“Você nunca sai perdendo quando ganha conhecimento!”</blockquote>
+<blockquote align="center">“A recompensa do estudo é a compreensão.”</blockquote>
 
 <p align="center">
 
