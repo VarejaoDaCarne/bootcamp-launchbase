@@ -98,6 +98,8 @@ module.exports = {
     delete(id, callback) {
         db.query(`DELETE FROM teachers WHERE id = $1`, [id], function(err) {
             if(err) throw `Database Error! ${err}`
+
+            callback()
         })
     },
     paginate(params) {
