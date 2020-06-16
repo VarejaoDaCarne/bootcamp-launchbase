@@ -1,6 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date, graduation } = require('../utils')
+let { age, date, graduation } = require('../utils')
 
 exports.index = function(req, res) {
 
@@ -22,6 +22,8 @@ exports.post = function(req, res) {
 
     birth = Date.parse(req.body.birth)
     const created_at = Date.now()
+
+    graduation = req.body.graduation
 
     let id = 1
     const lastTeacher = data.teachers[data.teachers.length - 1]
