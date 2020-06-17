@@ -3,9 +3,9 @@ const db = require('../../config/db')
 module.exports = {
     allRecipes(callback) {
         db.query(`
-        SELECT receipts.*, chefs.name AS chef_name 
-        FROM receipts
-        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)`, function(err, results) {
+        SELECT recipes.*, chefs.name AS chef_name 
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`, function(err, results) {
             if(err) throw `Database Error! ${err}`
 
            callback(results.rows)
@@ -13,9 +13,9 @@ module.exports = {
     },
     allChefs(callback) {
         db.query(`
-        SELECT chefs.*, count(receipts) AS total_recipes 
+        SELECT chefs.*, count(recipes) AS total_recipes 
         FROM chefs 
-        LEFT JOIN receipts on (chefs.id = receipts.chef_id)
+        LEFT JOIN recipes on (chefs.id = recipes.chef_id)
         GROUP BY chefs.id
         ORDER BY total_recipes DESC`, function(err, results) {
             if(err) throw `Database Error! ${err}`
@@ -25,10 +25,20 @@ module.exports = {
     },
     findRecipe(id, callback) {
         db.query(`
-        SELECT receipts.*, chefs.name AS chef_name 
-        FROM receipts
-        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
-        WHERE receipts.id = $1`, [id], function(err, results) {
+        SELECT recipes.*, chefs.name AS chef_name 
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        WHERE recipes.id = $1`, [id], function(err, results) {
+            if(err) throw `Database Error ${err}`
+
+            callback(results.rows[0])
+        })
+    },
+    findChef(id, callback) {
+        db.query(`
+        SELECT * 
+        FROM chefs
+        WHERE id = $1`, [id], function(err, results) {
             if(err) throw `Database Error ${err}`
 
             callback(results.rows[0])
@@ -40,24 +50,24 @@ module.exports = {
         let query = "",
             filterQuery = "",
             totalQuery = `(
-                SELECT count(*) FROM receipts
+                SELECT count(*) FROM recipes
             ) AS total`
 
         if(filter) {
             filterQuery = `
-            WHERE receipts.title ILIKE '%${filter}%'
+            WHERE recipes.title ILIKE '%${filter}%'
             `
 
             totalQuery = `(
-                SELECT count(*) FROM receipts
+                SELECT count(*) FROM recipes
                 ${filterQuery}
             ) AS total`
         }
 
         query = `
-        SELECT receipts.*, ${totalQuery}, chefs.name AS chef_name
-        FROM receipts
-        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
+        SELECT recipes.*, ${totalQuery}, chefs.name AS chef_name
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
         ${filterQuery}
         LIMIT $1 OFFSET $2 
         `

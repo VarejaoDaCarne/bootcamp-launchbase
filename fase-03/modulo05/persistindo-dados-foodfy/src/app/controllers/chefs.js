@@ -56,9 +56,9 @@ module.exports = {
         const { id } = req.body
 
         Chef.chefHasRecipes(id, function(chef) {
-            if(chef.count == 0) {
+            if(chef.count == 0 || undefined) {
                 Chef.delete(req.body.id, function() {
-                    return res.redirect(`/admin/chefs/index`)
+                    return res.redirect(`/admin/chefs`)
                 })
             } else {
                 console.log(chef.count)

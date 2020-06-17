@@ -4,9 +4,9 @@ const db = require('../../config/db')
 module.exports = {
     all(callback) {
         db.query(`
-        SELECT chefs.*, count(receipts) AS total_recipes 
+        SELECT chefs.*, count(recipes) AS total_recipes 
         FROM chefs 
-        LEFT JOIN receipts on (chefs.id = receipts.chef_id)
+        LEFT JOIN recipes on (chefs.id = recipes.chef_id)
         GROUP BY chefs.id
         ORDER BY total_recipes DESC`, function(err, results) {
             if(err) throw `Database Error! ${err}`
@@ -45,7 +45,6 @@ module.exports = {
             callback(results.rows[0])
         })
     },
-
     update(data, callback) {
         const query = `
             UPDATE chefs SET
@@ -66,14 +65,16 @@ module.exports = {
             callback()
         })
     },
-    delete(id) {
+    delete(id, callback) {
         db.query(`DELETE FROM chefs WHERE id = $1`, [id], function(err) {
             if(err) throw `Database Error! ${err}`
+
+            callback()
         })
     },
     chefRecipes(callback) {
         db.query(`
-        SELECT * FROM receipts`, function(err, results) {
+        SELECT * FROM recipes`, function(err, results) {
             if(err) throw `Database Error! ${err}`
 
             callback(results.rows)
@@ -81,9 +82,9 @@ module.exports = {
     },
     chefHasRecipes(id, callback) {
         db.query(`
-        SELECT chefs.*, count(receipts)
+        SELECT chefs.*, count(recipes)
         FROM chefs
-        LEFT JOIN receipts ON (receipts.chef_id = chefs.id)
+        LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
         WHERE chefs.id = ${id}
         GROUP BY chefs.id`, function(err, results) {
             if(err) throw `Database Error! ${err}`

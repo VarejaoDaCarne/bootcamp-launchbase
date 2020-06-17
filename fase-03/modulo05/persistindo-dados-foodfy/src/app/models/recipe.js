@@ -4,9 +4,9 @@ const {date} = require('../../lib/utils')
 module.exports = {
     all(callback) {
         db.query(`
-        SELECT receipts.*, chefs.name AS chef_name 
-        FROM receipts
-        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)`, function(err, results) {
+        SELECT recipes.*, chefs.name AS chef_name 
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`, function(err, results) {
             if(err) throw `Database Error! ${err}`
 
            callback(results.rows)
@@ -14,7 +14,7 @@ module.exports = {
     },
     create(data, callback) {
         const query = `
-            INSERT INTO receipts (
+            INSERT INTO recipes (
                 chef_id,
                 image,
                 title,
@@ -43,10 +43,10 @@ module.exports = {
     },
     find(id, callback) {
         db.query(`
-        SELECT receipts.*, chefs.name AS chef_name 
-        FROM receipts
-        LEFT JOIN chefs ON (receipts.chef_id = chefs.id)
-        WHERE receipts.id = $1`, [id], function(err, results) {
+        SELECT recipes.*, chefs.name AS chef_name 
+        FROM recipes
+        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+        WHERE recipes.id = $1`, [id], function(err, results) {
             if(err) throw `Database Error ${err}`
 
             callback(results.rows[0])
@@ -54,7 +54,7 @@ module.exports = {
     },
     update(data, callback) {
         const query = `
-            UPDATE receipts SET
+            UPDATE recipes SET
                 chef_id=($1),
                 image=($2),
                 title=($3),
@@ -77,12 +77,14 @@ module.exports = {
         db.query(query, values, function(err, results) {
             if(err)  throw `Database Error! ${err}`
 
-            callback()
+            callback(results.rows)
         })
     },
-    delete(id) {
-        db.query(`DELETE FROM receipts WHERE id = $1`, [id], function(err) {
+    delete(id, callback) {
+        db.query(`DELETE FROM recipes WHERE id = $1`, [id], function(err) {
             if(err) throw `Database Error! ${err}`
+
+            callback()
         })
     },
    chefsSelectOptions(callback) {

@@ -12,6 +12,7 @@ routes.get("/index", foodfy.index);
 routes.get("/about", foodfy.about); 
 routes.get("/recipes", foodfy.recipes); 
 routes.get("/recipes/:id", foodfy.show); 
+routes.get("/chefs/:id", foodfy.chefShow); 
 routes.get("/chefs", foodfy.chefs)
 routes.get("/search", foodfy.search)
 

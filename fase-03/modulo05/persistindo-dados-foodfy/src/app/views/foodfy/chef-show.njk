@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Chef - {{chef.name}}</title>
+{% endblock %}
+
+{% block content %}
+    <main class="receipt-page" id="admin-show">
+        <div class="upper-wrapper" id="upper-wrapper-button">
+            <h1>Chef: {{chef.name}}</h1>
+        </div>
+        <div class="banner-container" id="">
+            <div class="chef-show-image"><img src="{{chef.avatar_url}}" alt="Imagem de {{chef.name}}"></div>
+
+            <div class="banner-content">
+                <h1>{{chef.name}}</h1>
+                <p>{{chefs.total_recipes}}</p> 
+            </div>
+        </div>
+        <div class="upper-wrapper">
+            <h1>Receitas</h1>
+        </div>
+        <div class="receipts" id="receipts-admin">
+            {% for recipe in recipes %}
+                {% if chef.id == recipe.chef_id %}
+                <article class="receipt" id="receipt-admin"> 
+                    <div class="receipt__image-container" id="receipt__admin-container">
+
+                        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}"  id="receipt-img"  >
+                    
+                    </div>
+                    <div class="receipt__content" id="receipt__content-admin">
+
+                        <p class="receipt__content-receipt">{{recipe.title}}</p>
+                        <p class="receipt__content-chef">por {{chef.name}}</p>
+                        <a href="/recipes/{{recipes.id}}" class="receipt__content-see">Visualizar</a>
+
+                    </div>
+            
+                </article>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </main>
+{% endblock %}

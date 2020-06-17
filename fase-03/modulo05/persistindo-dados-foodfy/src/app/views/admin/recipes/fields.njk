@@ -6,8 +6,8 @@
             <option
                 placeholder="Selecione um chef" 
                 value="{{chef.id}}"
-                {% if recipe.chef_id  == "chef.id" %}
-                    selected
+                {% if recipe.chef_id == chef.id %}
+                    selected="{{chef.name}}"
                 {% endif %}
                 >{{chef.name}}
             </option>
@@ -78,16 +78,14 @@
                     >
                 </div>
             {% endfor %}
-            {% else %}
-                <div class="prepare">
-                    <input
-                        type="text" 
-                        name="preparation[]" 
-                        placeholder="Coloque uma instrução por campo."
-                        value="{{recipe.preparation}}"
-                    >
-                </div>
         {% endif %}
+        <div class="prepare">
+            <input
+                type="text" 
+                name="preparation[]" 
+                placeholder="Coloque uma instrução por campo."
+            >
+        </div>
 </div>
 
 <button type="button" class="add-prepare">Adicionar novo passo</button>

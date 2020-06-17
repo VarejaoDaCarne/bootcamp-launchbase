@@ -292,15 +292,15 @@ footer {
     margin-top: 10px;
 }
 
-.show-hide.remove ul {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
+.show-hide.toggle ul {
+    opacity: 1;
+    visibility: visible;
  }   
 
  .show-hide.active ul {
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
  }  
 
     /* === ADMIN === */
@@ -326,9 +326,10 @@ footer {
     position: relative;
 }
 
-.links-admin a img {
-    margin-right: 50px;
+.links-admin a:first-child {
+    margin: 0;
 }
+
 
 .links-admin a {
     font-size: 15px;
@@ -337,10 +338,11 @@ footer {
     align-self: center;
     text-transform: uppercase;
     font-weight: bold;
+    margin-left: 55px;
 }
 
 .links-admin a:last-child {
-    margin-left: 30px;
+    margin-left: 15px;
 }
 
 .links-admin a.active,
@@ -470,6 +472,7 @@ select {
     width: 100%;
     height: 100%;
     border-radius: 15px;
+    object-fit: cover;
 }
 
 .upper-wrapper {    
@@ -498,6 +501,7 @@ select {
 .edit-upper-wrapper {
     display: grid;
     grid-template-columns: 1fr 139px 139px;
+    gap: 20px;
 }
 
 #form-edit{
@@ -519,9 +523,14 @@ select {
 }
 
 .chef-image__container img  {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
+    object-fit: cover;
+}
+
+.chefs__container .chef-image__container {
+    cursor: pointer;
 }
 
 .chef-text__container {
@@ -551,6 +560,7 @@ select {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
     /* === FOODFY CHEFS === */

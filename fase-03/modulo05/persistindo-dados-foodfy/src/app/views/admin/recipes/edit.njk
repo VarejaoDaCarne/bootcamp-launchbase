@@ -16,20 +16,20 @@
 
                 <button type="submit">Deletar</button>
             </form>
-            
-            <form method="POST" action="/admin/recipes?_method=PUT" id="form-edit">
-                <button type="submit">Salvar receita</button>
+
+            <button type="submit" form="form-edit">Salvar receita</button>
         </div>
 
-                {% include 'admin/recipes/fields.njk' %}
+        <form method="POST" action="/admin/recipes?_method=PUT" id="form-edit">
 
-                <input 
-                    type="hidden" 
-                    name="id" 
-                    value={{recipe.id}}
-                >
-            </form>   
-        </div>
+            {% include 'admin/recipes/fields.njk' %}
+
+            <input 
+                type="hidden" 
+                name="id" 
+                value={{recipe.id}}
+            >
+        </form>   
     </section>
 
     {% include 'confirm.njk' %}
