@@ -3,10 +3,10 @@ function double(x) {
 }
 
 function doublePromise(x) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve) {
       setTimeout(function() {
           resolve({ x, double: double(x)})
-      }, Math.round(Math.random() * 100))
+      }, Math.round(Math.random() * 10000))
   })
 }
 
