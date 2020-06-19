@@ -3,13 +3,13 @@
 <html>
 
 <head>
-    <title>Máscaras</title>
+    <title>Máscaras de Input</title>
 </head>
 
 <body>
     <div>
-        Porcentagem: <input type="text" name="percent" onkeydown="Mask.apply(this, 'formatPercent')">
         CPF: <input type="text" name="cpf" onkeydown="Mask.apply(this, 'formatCPF')">
+        Porcentagem: <input type="text" name="percent" onkeydown="Mask.apply(this, 'formatPercent')">
     </div>
 
     <script>
@@ -21,22 +21,18 @@
         },
         formatPercent(value) {
             let divide = 10000
-            const arr = value.split(',')
 
-            if(arr[1]){
-                const decimals = arr[1].split('%')[0].length
-
-                if (decimals > 2)
-                    divide = Math.pow(10, decimals + 2)
-            }
-            
             value = value.replace(/\D/g, '')
 
-            return new Intl.NumberFormat('pt-BR', {
+            const option = {
                 style: 'percent',
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 4
-            }).format(value/divide)
+            }
+            
+            const formatter = Intl.NumberFormat('pt-BR', option)
+            
+            return percentFormat = formatter.format(value/divide)  
         },
         formatCPF(value) {
             value = value.replace(/\D/g,"")
