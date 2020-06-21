@@ -1,6 +1,6 @@
 <div class="input-wrapper" id="title">
     <div><h2>Nome</h2></div>
-    <div>
+    <div {% if error %}class="error"{% endif %}>
         <input 
             type="text" 
             name="name" 
@@ -25,7 +25,7 @@
             {% endif %}
         </div>
 
-        <div id="photos-upload">
+        <div id="photos-upload" {% if error %}class="error"{% endif %}>
             <input 
                 id="photos-input"
                 type="file" 

@@ -1,14 +1,11 @@
 @keyframes hidemessage {
     to {
-        top: -50px;
         opacity: 0;
+        visibility: hidden;
     }
 }
 
 @keyframes inputborder {
-    from {
-        border: 1px #DDDDDD solid;
-    }
     to {
         border: 1px #FF3131 solid;
     }
@@ -29,6 +26,7 @@
     top: 20px;
     right: 20px;
     opacity: 1;
+    visibility: visible;
     animation: hidemessage 400ms 5s ease-out forwards;
 }
 
@@ -40,6 +38,9 @@
     background-color: #01B12A;
 }
 
-section.login.container form .fields .input-wrapper .input input {
-    animation: inputborder  5s;
+.input-wrapper .error input,
+.input-wrapper .error textarea,
+.input-wrapper .error select,
+.input-wrapper .error i {
+    animation: inputborder  5s ease-out;
 }

@@ -4,18 +4,6 @@
     <title>Receitas - Foodfy</title>
 {% endblock %}
 
-{% block filter %}
-    <form action="/search" method="GET" class="filter-foodfy">
-        <input 
-            type="text" 
-            name="filter"
-            placeholder="Buscar uma receita"
-            value={{filter}}
-        >
-        <button type="submit" class="button">Buscar</button>
-    </form>
-{% endblock %}
-
 {% block content %}
     <section>          
        <div id="foodfy-recipes-title">

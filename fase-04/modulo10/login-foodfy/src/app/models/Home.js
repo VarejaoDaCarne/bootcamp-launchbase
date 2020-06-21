@@ -39,17 +39,16 @@ module.exports = {
             SELECT count(*) FROM recipes
             ${filterQuery}
         ) AS total`
-    
+
         query = `
-        SELECT recipes.*, ${totalQuery}, chefs.name AS chef_name
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        ${filterQuery}
-        ORDER BY updated_at DESC 
-        LIMIT $1 OFFSET $2
-
+            SELECT recipes.*, ${totalQuery}, chefs.name AS chef_name
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            ${filterQuery}
+            ORDER BY updated_at DESC 
+            LIMIT $1 OFFSET $2
         `
-
+        
         return db.query(query, [limit, offset])
     },
     recipeFiles(id) {

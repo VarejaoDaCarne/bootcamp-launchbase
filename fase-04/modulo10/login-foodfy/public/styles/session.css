@@ -15,7 +15,7 @@ section.container.form  h3 {
     font-size: 24px;
 }
 
-form .input-wrapper > div:nth-child(1) {
+form .body-home .input-wrapper > div:nth-child(1) {
     font-weight: bold;
     font-size: 16px;
 }
@@ -74,4 +74,9 @@ section.login.container .footer ul li a {
 section.login.container .footer ul li a:hover {
     color: black;
     font-weight: bold;
+}
+
+.body-home .header-session {
+   max-width: 1200px;
+   margin: 30px auto 0;
 }

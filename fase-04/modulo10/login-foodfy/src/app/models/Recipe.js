@@ -17,8 +17,9 @@ module.exports = {
                     title,
                     ingredients,
                     preparation,
-                    information
-                ) VALUES ($1, $2, $3, $4, $5)
+                    information,
+                    user_id
+                ) VALUES ($1, $2, $3, $4, $5, $6)
                 RETURNING id
             `
             const values = [
@@ -26,7 +27,8 @@ module.exports = {
                 data.title,
                 data.ingredients,
                 data.preparation,
-                data.information
+                data.information,
+                data.user_id
             ]
 
             return db.query(query, values)   

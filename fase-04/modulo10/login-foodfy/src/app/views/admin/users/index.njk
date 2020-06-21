@@ -19,8 +19,12 @@
                         <p>{{user.email}}</p>
 
                         <div class="edit-remove-users">
-                            <a href="/admin/users/{{user.id}}" class="receipt__content-see">Editar</a>
-
+                            {% if not user.is_admin and user.id == userId %}
+                                <a href="/admin/profile/{{user.id}}" class="receipt__content-see">Editar</a>
+                            {% else %}
+                                <a href="/admin/users/{{user.id}}" class="receipt__content-see">Editar</a>
+                            {% endif %}
+                            
                             <form method="POST" action="/admin/users?_method=DELETE" id="form-delete">
                                 <input type="hidden" name="id" value={{user.id}}>
 

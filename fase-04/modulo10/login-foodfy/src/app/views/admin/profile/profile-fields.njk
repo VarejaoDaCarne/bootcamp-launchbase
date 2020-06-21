@@ -1,7 +1,7 @@
 <div id="cards">
     <div class="input-wrapper" id="title">
         <div><h2>Nome</h2></div>
-        <div {% if error %}class="error"{% endif %}>
+        <div>
             <input 
                 type="text" 
                 name="name" 
@@ -14,7 +14,7 @@
 
     <div class="input-wrapper">
         <div><h2>Email</h2></div>
-        <div class="input" {% if error %}class="error"{% endif %}>
+        <div class="input">
             <input 
                 type="email" 
                 name="email" 
@@ -26,14 +26,14 @@
     </div>
 
     <div class="input-wrapper">
-        <div class="input" {% if error %}class="error"{% endif %}>
+        <div id="password"><h2>Senha</h2></div>
+        <div>
             <input 
-                type="checkbox" 
-                name="is_admin"
-                {% if user.is_admin == true %}
-                    checked
-                {% endif %}
-            ><label for="is_admin">Administrador</label>
+                type="password" 
+                name="password" 
+                placeholder="Digite sua senha"
+            >
         </div>
     </div>
 </div>
+

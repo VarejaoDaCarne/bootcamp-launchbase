@@ -7,8 +7,10 @@ const chefs = require('./chefs')
 const recipes = require('./recipes')
 const users = require('./users')
 
-routes.use('/admin', chefs)
-routes.use('/admin',  recipes)
+const { onlyUsers } = require('../app/middlewares/session')
+
+routes.use('/admin', onlyUsers, chefs)
+routes.use('/admin', onlyUsers, recipes)
 routes.use('/', users)
 
 routes.get("/", HomeController.index); 

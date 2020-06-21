@@ -1,6 +1,6 @@
 <div class="input-wrapper">
     <div><h2>Chef</h2></div>
-    <div>
+    <div {% if error %}class="error"{% endif %}>
         <select name="chef">
         {% for chef in chefOptions %}
             <option
@@ -19,7 +19,7 @@
 <div class="input-wrapper">
     <div><h2>Imagem da receita</h2></div>
     <div id="photos-wrapper">
-        <div id="photos-upload">
+        <div id="photos-upload" {% if error %}class="error"{% endif %}>
                  <input 
                     id="photos-input"
                     type="file" 
@@ -47,9 +47,9 @@
     </div>
 </div>
 
-<div class="input-wrapper" id="title">
-    <div><h2>Nome da receita</h2></div>
-    <div>
+<div class="input-wrapper">
+    <div id="title"><h2>Nome da receita</h2></div>
+    <div {% if error %}class="error"{% endif %}>
         <input 
             type="text" 
             name="title" 
@@ -63,7 +63,7 @@
     <div><h2>Ingredientes</h2></div>
         {% if recipe %}
             {% for ingredient in recipe.ingredients %}
-                <div class="ingredient">
+                <div id="ingredient" {% if error %}class="error"{% endif %}>
                     <input 
                         type="text" 
                         name="ingredients[]" 
@@ -72,7 +72,7 @@
                 </div>
             {% endfor %}
             {% else %}
-                <div class="ingredient">
+                <div id="ingredient" {% if error %}class="error"{% endif %}>
                     <input 
                         type="text" 
                         name="ingredients[]"
@@ -89,7 +89,7 @@
     <div><h2>Modo de preparo</h2></div>
         {% if recipe %}
             {% for preparation in recipe.preparation %} 
-                <div class="prepare">
+                <div id="prepare" {% if error %}class="error"{% endif %}>
                     <input
                         type="text" 
                         name="preparation[]" 
@@ -98,7 +98,7 @@
                 </div>
             {% endfor %}
             {% else %}
-                <div class="prepare">
+                <div id="prepare" {% if error %}class="error"{% endif %}>
                     <input
                         type="text" 
                         name="preparation[]" 
@@ -112,7 +112,7 @@
 
 <div class="input-wrapper">
     <div><h2>Informações adicionais</h2></div>
-    <div>
+    <div {% if error %}class="error"{% endif %}>
     <textarea 
         name="information"
         cols="30"

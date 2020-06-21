@@ -1,12 +1,57 @@
-#user-register-upper #upper-wrapper-button{
-    grid-template-columns: 1fr 139px 139px;
+.body-admin .header-admin .links-admin #logout  {
+    width: 1200px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.body-admin .header-admin .links-admin #logout button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+#user-register-upper #upper-wrapper-button {
+    grid-template-columns: 150px 1fr 139px 139px;
+}
+
+#user-register-upper #button-upper-profile {
+    grid-template-columns: 1fr 139px;
+}
+
+#user-register-upper #button-upper-profile form button {
+    width: 100%;
+    margin: 0;
+}
+
+#user-register-upper #cards .input-wrapper #password h2 {
+    margin-top: 15px;
+}
+
+#user-register-upper #upper-wrapper-button #admin-edit-button {
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+
+#user-register-upper #upper-wrapper-button #admin-edit-button .cancel{
+    grid-column-start: 4;
+    grid-column-end: 4;
+}
+
+#user-register-upper #upper-wrapper-button .fields{
+    margin-top: 20px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
 #user-register-upper #upper-wrapper-button a:last-child {
     background-color:  #8A8A8A;
+    text-decoration: none;
 }
 
-#user-register-upper #upper-wrapper-button a:last-child:hover{
+#user-register-upper #upper-wrapper-button a:last-child:hover {
     background-color:  #DC4747;
     transition: 300ms;
 }

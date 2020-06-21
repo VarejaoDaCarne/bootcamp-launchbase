@@ -4,8 +4,20 @@
         <a href="/about">Sobre</a>
         <a href="/recipes">Receitas</a>   
         <a href="/chefs">Chefs</a>
-    </div>
+        <a href="/login">Login</a>
 
-    {% block filter %}
-    {% endblock %}
+        {% if not chefs %}
+            {% block filter %}
+                    <form action="/search" method="GET" class="filter-foodfy">
+                        <input 
+                            type="text" 
+                            name="filter"
+                            placeholder="Buscar uma receita"
+                            value={{filter}}
+                        >
+                        <button type="submit">Buscar</button>
+                    </form>
+            {% endblock %}
+        {% endif %}
+    </div>
 </header>

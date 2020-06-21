@@ -1,19 +1,9 @@
 {% extends "layout.njk" %}
 
 {% block head %}
-    <title>Foodfy</title>
+    <title>Home - Foodfy</title>
 {% endblock %}
-{% block filter %}
-    <form action="/search" method="GET" class="filter-foodfy">
-        <input 
-            type="text" 
-            name="filter"
-            placeholder="Buscar uma receita"
-            value={{filter}}
-        >
-        <button type="submit">Buscar</button>
-    </form>
-{% endblock %}
+
 {% block content %}
   
     <main class="home">

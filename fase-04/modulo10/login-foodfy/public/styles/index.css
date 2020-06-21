@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    outline: none;
 }
 
 :root {
@@ -29,18 +30,23 @@ html {
 }
 
 header {
-    margin: 20px 0;
+
+    margin: 0 auto;
 }
 
-.header-foodfy{
-    max-width: 940px;
-    margin: 20 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-   
+.body-home .header-foodfy{
+    width: 940px;
+    display: flex;
 }
+
+.body-home .header-foodfy .filter-foodfy {
+    margin-left: 215px;
+}
+
 .links {
-    margin-right:  60px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
 }
 
 .links a {
@@ -50,8 +56,12 @@ header {
     color: #111111;
 }
 
+.links a:hover {
+    font-weight: bold;
+}
+
 #logo {
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 .links a.active {
@@ -183,13 +193,11 @@ footer {
     margin: 0 auto;
 }
 
-#foodfy-recipes-title {
+.body-home #foodfy-recipes-title {
     max-width: 940px;
-    margin: 0 auto;
-}
-
-#foodfy-recipes-title {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 34px;
+    margin: 20px auto;
 }
 
 .receipt__image {
@@ -317,35 +325,36 @@ footer {
 }
     
 .header-admin {
-    margin-top: 0;
     background-color: #111111;
     width: 100%;
     padding: 20px 0;
 }
 
 .links-admin {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
     display: flex;
+    align-items: center;
 }
 
 .links-admin a img {
     margin-right: 50px;
 }
 
-.links-admin a {
+.links-admin a,
+.body-admin .header-admin .links-admin #logout button {
     font-size: 15px;
     text-decoration: none;
     color: #999999;
-    align-self: center;
     text-transform: uppercase;
     font-weight: bold;
     margin-right: 15px;
 }
 
 .links-admin a.active,
-.links-admin a:hover {
+.links-admin a:hover,
+.body-admin .header-admin .links-admin #logout button:hover {
     color: #FFFFFF;
 }
 
@@ -396,20 +405,22 @@ footer {
     /* === ADMIN CREATE === */
 
 .create-wrapper {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
 }
 
 .upper-wrapper {
     display: grid;
     grid-template-columns: 1fr 139px;
-    margin-bottom: 20px;
+    margin: 20px 0;
     width: 1200px;
+    align-items: center;
 }
 
 button[type="submit"],
 #admin-edit-button,
-#admin-create-button {
+#admin-create-button,
+#admin-cancel-button{
     background-color: var(--primary-color);
     border-radius: 6px;
     padding: 13px 15px;
@@ -430,13 +441,17 @@ button[type="submit"],
     background-color: #DC4747;
 }
 
-.input-wrapper {
+section form .input-wrapper {
     margin-top: 20px ;
 }
 
 .input-wrapper h2 {
     font-size: 16px;
     margin-bottom: 10px;
+}
+
+.input-wrapper #title h2 {
+    margin-top: 10px;
 }
 
 .input-wrapper input,
@@ -481,7 +496,6 @@ select, span {
 
 .upper-wrapper h1 {
     font-size: 24px;
-    margin-top: 6px;
 }
 
 #admin-edit-button {
@@ -501,6 +515,7 @@ select, span {
 .edit-upper-wrapper {
     display: grid;
     grid-template-columns: 1fr 139px 139px;
+    margin: 20px 0;
 }
 
 #form-edit{

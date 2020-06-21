@@ -18,7 +18,7 @@ async function post(req, res, next) {
     if(fillAllFields) {
         return res.render("admin/user/register", fillAllFields)
     }
-    
+
     let { email } = req.body
 
     const user = await User.findOne({ 
@@ -48,16 +48,34 @@ async function show(req, res, next) {
 }
 
 async function update(req, res, next) {
-    const fillAllFields = checkAllFields(req.body)
-    if(fillAllFields) {
-        return res.render("admin/users/show", fillAllFields)
-    }
-
     const { id } = req.body
 
     const user = await User.findOne({ where: {id} })
 
+    const fillAllFields = checkAllFields(req.body)
+    if(fillAllFields) {
+        if(!user.is_admin){
+            return res.render("admin/profile/index", fillAllFields)
+        }else {
+            return res.render("admin/users/show", fillAllFields)
+        }
+    }
+
     req.user = user
+
+    next()
+}
+
+async function remove(req, res, next) {
+    const { id } = req.body
+
+    const user = await User.findOne({ where: {id} })
+
+    if(user.is_admin && req.body.id == id)
+        return res.render("admin/users/show", {
+            user: user,
+            error: "Admin cannot exclude its own account"
+        })
 
     next()
 }
@@ -65,5 +83,6 @@ async function update(req, res, next) {
 module.exports = {  
     post,
     show,
-    update
+    update,
+    remove
 }

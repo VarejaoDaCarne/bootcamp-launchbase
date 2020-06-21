@@ -2,6 +2,7 @@ const Home = require("../models/Home")
 const File = require('../models/Files')
 const RecipeFiles = require('../models/RecipeFiles')
 const Recipe = require('../models/Recipe')
+const Chefs = require('../models/Chef')
 
 module.exports = {
     async index(req, res) {
@@ -103,7 +104,6 @@ module.exports = {
                 page
             }
         }
-
         return res.render("home/search", { recipes, pagination, filter })
     }
 }

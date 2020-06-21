@@ -1,0 +1,27 @@
+<!DOCTYPE njk>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+       {% block head %}
+            <title>Foodfy</title>
+        {% endblock %}
+
+        {% include "parts/styles.njk" %}
+    </head>
+    <body class="body-home">
+        {% include "parts/messages.njk" %}
+
+        <header class="header-session">
+            <div>
+                <a href="/"><img src="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/layouts/assets/logo.png" alt="Foodfy logo"></a>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+        
+        {% include "parts/footer.njk" %}
+    </body>
+</html>
