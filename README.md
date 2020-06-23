@@ -25,6 +25,7 @@ O **LaunchBase** é um treinamento no formato de bootcamp online que tem duraç�
 - [Fase 02](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-02)
 - [Fase 03](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-03)
 - [Fase 04](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-04)
+- [Fase 05](https://github.com/grioos/bootcamp-launchbase/tree/master/fase-05)
 
 ---
 
