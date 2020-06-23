@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+{% import 'parts/card.njk' as cards %}
+
+{% block content %}
+
+    {% call cards.render('Meus Anúncios', 'users-ads container') %}
+        <div class="items">
+            {% for product in products %}
+                <div class="item">
+                    <div class="image"
+                        style="background-image: url({{"'"+product.img+"'" if product.img else "'"+'//placehold.it/500x500?text=Produto sem imagem'+"'" }})"
+                    >
+                    </div>
+
+                    <div class="info">
+                        <div class="title">{{product.name}}</div>
+                        <div class="price">{{product.formattedPrice}}</div>
+                        <div class="published">Publicado em {{product.formattdCreatedAt}}</div>
+                    
+                        <div class="actions">
+                            <a href="/products/{{product.id}}/edit">Editar</a>
+                            <a href="/products/{{product.id}}">Ver</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endcall %}
+
+{% endblock %}

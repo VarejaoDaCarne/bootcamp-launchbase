@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+
+{% import 'parts/card.njk' as card %}
+
+{% block content %}
+
+    {% call card.render('Entrar', 'product-create container') %}
+        
+        <form  method="POST" action="/products" enctype="multipart/form-data">
+
+            <div class="fields">
+                {% include 'products/fields.njk' %}
+            </div>
+
+            <button class="button" type="submit" onclick="Validate.allFields(event)">Salvar</button>
+        </form>
+    {% endcall %}
+
+{% endblock %}
