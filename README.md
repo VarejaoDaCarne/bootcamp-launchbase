@@ -28,4 +28,4 @@ O **LaunchBase** é um treinamento no formato de bootcamp online que tem duraç�
 
 ---
 
-Feito com :black_heart: by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
+Feito by [Gabriel Rios](https://www.linkedin.com/in/grioos/)
