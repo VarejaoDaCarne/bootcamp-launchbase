@@ -30,7 +30,7 @@ module.exports = {
             password = await hash(password, 8)
             cpf_cnpj = cpf_cnpj.replace(/\D/g, "")
             cep = cep.replace(/\D/g, "")
-
+            
             const userId = await User.create({
                 name,
                 email,

@@ -5,9 +5,10 @@ const User = require('./src/app/models/User')
 const Product = require('./src/app/models/Product')
 const File = require('./src/app/models/File')
 
-let usersIds = []
-let totalProducts = 10
-let totalUsers = 3
+let usersIds = [], productsIds = []
+const totalUsers = 5
+const totalProducts = 15
+const totalFiles = 50
 
 async function createUsers() {
     const users = []
@@ -30,7 +31,7 @@ async function createUsers() {
 }
 
 async function createProducts() {
-    let products = []
+    let products = [], files = []
 
     while(products.length < totalProducts) {
         products.push({
@@ -48,14 +49,30 @@ async function createProducts() {
     const productsPromise = products.map(product => Product.create(product))
     productsIds = await Promise.all(productsPromise)
 
-    let files = []
-
-    while(files.length < 50) {
+    while(files.length < totalFiles) {
         files.push({
             name: faker.image.image(),
             path: `public/images/placeholder.png`,
             product_id: productsIds[Math.floor(Math.random() * totalProducts)]
         })
+
+        for (let i = 1; i < products.length; i++) {
+            let tot = 0
+            const lim = 5
+            
+            files.forEach(file => {
+                if (file.product_id == i) tot++
+                if (tot > lim) files.splice(files.indexOf(file),1)
+            })
+      
+            if ( tot == 0 ) {
+                files.push({
+                    name: faker.image.image(),
+                    path: `public/images/placeholder.png`,
+                    product_id: i
+              })
+            } 
+        }
 
         const filesPromise = files.map(file => File.create(file))
 

@@ -3,7 +3,7 @@ const User = require('../models/User')
 
 const mailer = require('../../lib/mailer')
 
-const email = (seller, product) => `
+const email = (seller, product, buyer) => `
     <h2>Olá ${seller.name}</h2>
     <p>Você tem um novo pedido de compra do seu produto</p>
     <p>Produto: ${product.name}</p>
@@ -19,6 +19,7 @@ const email = (seller, product) => `
     <p><br/><br/></p>
     <p>Atenciosamente, Equipe Launchstore</p>
 `
+
 module.exports = {
     async post(req, res){
         try {
@@ -26,14 +27,14 @@ module.exports = {
                 id: req.body.id
             }})
 
-            const seller = await User.findOne({where:{id: product.user_id}})
+            const seller = await User.findOne({where: {id: product.user_id}})
 
             const buyer = await User.findOne({where: {id: req.session.userId}})
 
             await mailer.sendMail({
                 to: seller.email,
                 from: 'no-reply@launchstore.com.br',
-                from: 'Novo pedido de compra',
+                subject: 'Novo pedido de compra',
                 html: email(seller, product, buyer)
             })
 

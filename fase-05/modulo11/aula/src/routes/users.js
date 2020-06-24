@@ -3,7 +3,7 @@ const routes = express.Router()
 
 const UserController = require('../app/controllers/UserController')
 const SessionController = require('../app/controllers/SessionController')
-const OrderController = require('../app/controllers/UserController')
+const OrderController = require('../app/controllers/OrderController')
 
 const UserValidator = require('../app/validators/user')
 const SessionValidator = require('../app/validators/session')
