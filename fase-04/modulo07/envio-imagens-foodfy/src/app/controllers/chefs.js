@@ -57,7 +57,8 @@ module.exports = {
 
             if(!chef) return res.send("Chef not found!")
 
-            chef.file_src = `${req.protocol}://${req.headers.host}${chef.file_src.replace("public", "")}`
+            if(chef.file_src)
+                chef.file_src = `${req.protocol}://${req.headers.host}${chef.file_src.replace("public", "")}`
 
             let recipes = (await Chef.recipesChef(chef.id)).rows
             const recipesFile = []
@@ -90,6 +91,9 @@ module.exports = {
 
         if(!chef) return res.send("Chef not found!")
 
+        if(chef.file_src)
+        chef.file_src = `${req.protocol}://${req.headers.host}${chef.file_src.replace("public", "")}`
+        
         return res.render("admin/chefs/edit", { chef })
     },
     async put(req, res) {

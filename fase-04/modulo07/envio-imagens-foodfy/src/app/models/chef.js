@@ -30,7 +30,7 @@ module.exports = {
     },
     find(id) {
         return db.query(`
-        SELECT chefs.* , files.path AS file_src
+        SELECT chefs.* , files.path AS file_src, files.id AS file_id
         FROM chefs
         LEFT JOIN files ON (chefs.file_id = files.id)
         WHERE chefs.id = $1`, [id])

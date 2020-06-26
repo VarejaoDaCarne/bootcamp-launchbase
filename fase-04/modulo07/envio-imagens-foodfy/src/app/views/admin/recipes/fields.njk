@@ -6,7 +6,7 @@
             <option
                 placeholder="Selecione um chef" 
                 value="{{chef.id}}"
-                {% if recipe.chef_id  == "chef.id" %}
+                {% if recipe.chef_id  == chef.id %}
                     selected
                 {% endif %}
                 >{{chef.name}}
