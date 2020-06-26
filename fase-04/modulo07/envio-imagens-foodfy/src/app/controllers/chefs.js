@@ -51,84 +51,91 @@ module.exports = {
         }
     },
     async show(req, res) {
-        let results = await Chef.find(req.params.id)
-        const chef = results.rows[0]    
+        try {
+            let results = await Chef.find(req.params.id)
+            const chef = results.rows[0]   
+
+            if(!chef) return res.send("Chef not found!")
+
+            chef.file_src = `${req.protocol}://${req.headers.host}${chef.file_src.replace("public", "")}`
+
+            let recipes = (await Chef.recipesChef(chef.id)).rows
+            const recipesFile = []
+
+            for(const recipe of recipes) {
+                let files = (await File.recipeFiles(recipe.id)).rows
+
+                files = files.map(file => ({
+                    ...file,
+                    src: `${req.protocol}://${req.headers.host}${file.path.replace('public', '')}`
+                }))
+
+                recipesFile.push({
+                    ...recipe,
+                    file: files
+                })
+            }
+
+            recipes = recipesFile
         
-        results = await Chef.recipesChef(chef.id)
-        const recipes = results.rows
-
-        if(!chef) return res.send("Chef not found!")
-
-        results = await Chef.files(chef.file_id)
-        const file = results.rows.map(file => ({
-            ...file,
-            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-        }))
-
-        let recipeFile = ""
-
-        if(recipes.length != 0) {
-            results = await Recipe.files(recipes[0].id)
-            recipeFile = results.rows.map(file => ({
-                ...file,
-                src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-            }))
+            console.log(recipes)
+            return res.render("admin/chefs/show", { chef, recipes })     
+        } catch (error) {
+            console.error(error)
         }
-
-        return res.render("admin/chefs/show", { chef, recipes, file, recipeFile })       
     },
     async edit(req, res) {
         let results = await Chef.find(req.params.id)
         const chef = results.rows[0]
+
         if(!chef) return res.send("Chef not found!")
 
-        results = await Chef.files(chef.file_id)
-        const file = results.rows.map(file => ({
-            ...file,
-            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-        }))
-
-        return res.render("admin/chefs/edit", { chef, file })
+        return res.render("admin/chefs/edit", { chef })
     },
     async put(req, res) {
-        const keys = Object.keys(req.body)
+        try {
+            const keys = Object.keys(req.body)
 
-        for(key of keys) {
-           if(req.body[key] == ""  && key != "removed_files" &&  key != "photos")  {
-               return res.send('Please, fill all fields')
-           }
-        }
+            for(key of keys) {
+               if(req.body[key] == ""  && key != "removed_files" &&  key != "photos")  {
+                   return res.send('Please, fill all fields')
+               }
+            }
+    
+            let fileId = ""
 
-        let filesId = []
+            if(req.files.length != 0) {
+                const newFilesPromise = req.files.map(async file => 
+                    await File.create({...file}))
 
-        if(req.files.length != 0) {
-            const newFilesPromise = req.files.map(async file => 
-                await File.create({...file}))
+                    await Promise.all(newFilesPromise)
+                        .then(function(findId) {
+                            for (let index in findId) {
+            
+                                let get = findId[index].rows[0];
+                                fileId = get.id
+                            }            
+                        })
+            }
 
-                await Promise.all(newFilesPromise)
-                    .then(function(findId) {
-                        for (let index in findId) {
-        
-                            let getId = findId[index].rows[0];
-                            filesId.push(getId.id)
-                        }            
-                    })
-        }
+            if(fileId)
+                await Chef.update({...req.body, file_id: fileId})
+            else
+                await Chef.update({...req.body})
 
-        if(req.body.removed_files) {
-            const removedFiles = req.body.removed_files.split(',')
-            const lastIndex = removedFiles.length - 1
-            removedFiles.splice(lastIndex, 1)
+            if(req.body.removed_files) {
+                const removedFiles = req.body.removed_files.split(',')
+                const lastIndex = removedFiles.length - 1
+                removedFiles.splice(lastIndex, 1)
 
-            const removedFilesPromise = removedFiles.map(async id => await File.chefDelete(id))            
-        
-            await Promise.all(removedFilesPromise)
-        }
+                const removedFilesPromise = removedFiles.map(async id => await File.chefDelete(id))            
 
-        for (let fileId of filesId) {
-            await Chef.update({...req.body, file_id: fileId})
+                await Promise.all(removedFilesPromise)
+            }
 
             return res.redirect(`/admin/chefs/${req.body.id}`)
+        } catch (error) {
+            console.error(error)
         }
     },
     async delete(req, res) {

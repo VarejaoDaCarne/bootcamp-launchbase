@@ -12,7 +12,7 @@
         </div>
         <div class="banner-container" id="">
         
-            <div class="chef-show-image"><img src="{{file[0].src}}" alt="Imagem de {{chef.name}}"></div>
+            <div class="chef-show-image"><img src="{{chef.file_src}}" alt="Imagem de {{chef.name}}"></div>
 
             <div class="banner-content">
                 <h1>{{chef.name}}</h1>
@@ -27,7 +27,7 @@
                 <article class="receipt" id="receipt-admin"> 
 
                     <div class="receipt__image-container" id="receipt__admin-container">
-                        <img src="{{recipeFile[0].src}}" alt="Imagem de {{recipeFile[0].id}}"  id="receipt-img" >
+                        <img src="{{recipe.file[0].src}}" alt="Imagem de {{recipe.title}}"  id="receipt-img" >
                     </div>
 
                     <div class="receipt__content" id="receipt__content-admin">

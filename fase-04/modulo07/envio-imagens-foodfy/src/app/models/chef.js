@@ -30,9 +30,10 @@ module.exports = {
     },
     find(id) {
         return db.query(`
-        SELECT * 
+        SELECT chefs.* , files.path AS file_src
         FROM chefs
-        WHERE id = $1`, [id])
+        LEFT JOIN files ON (chefs.file_id = files.id)
+        WHERE chefs.id = $1`, [id])
     },
 
     update(data) {
@@ -70,8 +71,12 @@ module.exports = {
         }
     },
     recipesChef(id) {
-        return db.query(`
-        SELECT recipes.* FROM recipes WHERE chef_id = $1`, [id])
+        try {
+            return db.query(`SELECT id, title FROM recipes WHERE recipes.chef_id = $1`, [id])
+        } catch (error) {
+            console.log(error)
+        }
+     
     },
     files(id) {
         return db.query(`
