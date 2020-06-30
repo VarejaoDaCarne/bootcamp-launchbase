@@ -54,13 +54,14 @@ const Base = {
                 VALUES (${values.join(',')})
                 RETURNING id
             `
+
             const results = await db.query(query)
             return results.rows[0].id
         } catch (error) {
             console.error(error)
         }
     },
-    update(id, fields) {
+    async update(id, fields) {
         try {
             let update = []
 

@@ -125,11 +125,11 @@
     <div>
         <select name="teacher">
         {% for teacher in teacherOptions %}
-            <option value="{{teacher.name}}"
-                {% if student.teacher_id  == "teacher.id" %}
+            <option value="{{teacher.id}}"
+                {% if student.teacher_id  == teacher.id %}
                     selected
                 {% endif %}
-                >{{teacher.name}}
+            >{{teacher.name}}
             </option>
         {% endfor %}
         </select>

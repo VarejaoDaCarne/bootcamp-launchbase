@@ -6,19 +6,8 @@ Base.init({ table: 'students' })
 
 module.exports = {
     ...Base,
-    // find(id, callback) {
-    //     db.query(`
-    //     SELECT students.*, teachers.name AS teacher_name 
-    //     FROM students
-    //     LEFT JOIN teachers ON (students.teacher_id = teachers.id)
-    //     WHERE students.id = $1`, [id], function(err, results) {
-    //         if(err) throw `Database Error ${err}`
-
-    //         callback(results.rows[0])
-    //     })
-    // },
-    paginate(params) {
-        const { filter, limit, offset, callback } = params
+    async paginate(params) {
+        const { filter, limit, offset } = params
 
         let query = "",
             filterQuery = "",
@@ -45,10 +34,7 @@ module.exports = {
         LIMIT $1 OFFSET $2 
         `
 
-        db.query(query, [limit, offset], function(err, results) {
-            if(err) throw `Database Error! ${err}`
-
-            callback(results.rows)
-        })
+        const results = await db.query(query, [limit, offset])
+        return results.rows
     }
 }
