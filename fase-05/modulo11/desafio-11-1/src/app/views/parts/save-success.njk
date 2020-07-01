@@ -1,0 +1,27 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="success-lottie"></div>
+        <h2>Seu registro foi salvo com Sucesso!</h2>
+        <p>
+            Clique <a href="/teachers">aqui</a> para voltar ao ínico
+        </p>
+    </div>
+
+    <script src="/lottie.min.js"></script>
+
+    <script>
+        const element = document.querySelector('.success-lottie')
+    
+        lottie.loadAnimation({
+            container: element,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: '/432-done-button' 
+        })
+    </script>
+
+{% endblock %}

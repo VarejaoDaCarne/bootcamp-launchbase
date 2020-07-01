@@ -8,13 +8,10 @@ for(item of menuItems) {
 }
 
 function paginate(selectedPage, totalPages) {
-
-    let 
-    pages = [],
+    let pages = [],
     oldPage
 
     for(let currentPage = 1; currentPage <= totalPages; currentPage++) {
-        
         const firstAndLastPage = currentPage <= 2 || currentPage >=  totalPages -1
         const pagesAfterSelectedPage = currentPage <= selectedPage + 1
         const pagesBeforeSelectedPage = currentPage >= selectedPage - 1
@@ -40,7 +37,6 @@ function paginate(selectedPage, totalPages) {
 const pagination = document.querySelector(".pagination")
 
 function createPagination(pagination) {
-
     const filter = pagination.dataset.filter
     const page = +pagination.dataset.page
     const total = +pagination.dataset.total
@@ -58,13 +54,30 @@ function createPagination(pagination) {
                 elements += `<a href="?page=${page}">${page}</a>`
             }
         }
-    
     }
     
     pagination.innerHTML = elements
-
 }
 
 if(pagination) {
     createPagination(pagination)
+}
+
+const Validate = {
+    allFields(event) {
+        const items = document.querySelectorAll(' .item input ')
+       
+        for(item of items) {
+            if(item.value == '') {
+                const message = document.createElement('div')
+
+                message.classList.add('messages')
+                message.classList.add('error')
+                message.innerHTML = 'Todos os campos são obrigatórios.'
+                document.querySelector('body').append(message)
+
+                event.preventDefault()
+            }
+        }
+    }
 }

@@ -39,14 +39,6 @@ module.exports = {
     },
     async post(req, res) {
         try {
-            const keys = Object.keys(req.body)
-
-            for(key of keys) {
-               if(req.body[key] == "")  {
-                   return res.send('Please, fill all fields')
-               }
-            }
-    
             let { avatar_url, name, birth, email, school_year, week_hours, teacher } = req.body
         
             birth = date(birth).iso
@@ -76,7 +68,7 @@ module.exports = {
             student.school_year = year(student.school_year)
 
             const teacher = await Teacher.find(student.teacher_id)
-            console.log(teacher)
+
             return res.render("students/show", { student, teacher })
         } catch (error) {
             console.error(error)
@@ -99,14 +91,6 @@ module.exports = {
     },
     async put(req, res) {
         try {
-            const keys = Object.keys(req.body)
-
-            for(key of keys) {
-               if(req.body[key] == "")  {
-                   return res.send('Please, fill all fields')
-               }
-            }
-            
             req.body.birth = date(req.body.birth).iso
 
             await Student.update(req.body.id, {

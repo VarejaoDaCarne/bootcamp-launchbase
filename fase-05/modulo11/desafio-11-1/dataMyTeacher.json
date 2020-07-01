@@ -1,0 +1,146 @@
+{
+    "teachers": [
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Tatiana Souza",
+            "birth_date": "1982-03-25",
+            "education_level": "Superior",
+            "class_type": "Presencial",
+            "subjects_taught": "Geografia, História",
+            "id": "1"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1583468991267-3f068b607ae1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Maria Joana Rodriguez de Sá",
+            "birth_date": "1965-01-09",
+            "education_level": "Superior",
+            "class_type": "À distância",
+            "subjects_taught": "Português, Artes",
+            "id": "2"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Roberto Gomes Pinto",
+            "birth_date": "1969-09-30",
+            "education_level": "Mestrado",
+            "class_type": "Presencial",
+            "subjects_taught": "Matemática, Ciência, Química",
+            "id": "3"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1515603403036-f3d35f75ca52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Noberto Santana",
+            "birth_date": "1970-04-17",
+            "education_level": "Superior",
+            "class_type": "Presencial",
+            "subjects_taught": "Inglês",
+            "id": "4"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Natalia Olaria",
+            "birth_date": "1994-08-22",
+            "education_level": "Médio",
+            "class_type": "Presencial",
+            "subjects_taught": "Espanhol",
+            "id": "5"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1561677843-39dee7a319ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Carlos Andrade",
+            "birth_date": "1975-07-05",
+            "education_level": "Superior",
+            "class_type": "À distância",
+            "subjects_taught": "Ciência, Química",
+            "id": "6"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1564130987042-acbca1b51e8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Jorge Pereira Vaz",
+            "birth_date": "1959-02-01",
+            "education_level": "Mestrado",
+            "class_type": "À distância",
+            "subjects_taught": "Geografia, História, Filosofia",
+            "id": "7"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Ana Maria",
+            "birth_date": "1987-11-28",
+            "education_level": "Mestrado",
+            "class_type": "À distância",
+            "subjects_taught": "Português, Matemática",
+            "id": "8"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1551862253-ccddd3b67769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Joana Bruma",
+            "birth_date": "1957-12-25",
+            "education_level": "Superior",
+            "class_type": "Presencial",
+            "subjects_taught": "Filosofia",
+            "id": "9"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/flagged/photo-1559475555-b26777ed3ab4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Pedro Paulo Pereira Gonçalo",
+            "birth_date": "1971-06-03",
+            "education_level": "Superior",
+            "class_type": "Presencial",
+            "subjects_taught": "Francês",
+            "id": "10"
+          }
+    ],
+    "students": [
+        {
+            "avatar_url": "https://images.unsplash.com/photo-1517256673644-36ad11246d21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Paloma Silva",
+            "birth": "2001-12-19",
+            "email": "palominha.silva@gmail.com",
+            "school_year": "3EM",
+            "week_hours": "26",
+            "teacher": "",
+            "id": "1"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1507537509458-b8312d35a233?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Thiago Braz dos Santos",
+            "birth": "2002-11-01",
+            "email": "thiago.braz@outlook.com",
+            "school_year": "2EM",
+            "week_hours": "32",
+            "teacher": "",
+            "id": "2"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1586448983330-d03f696c8271?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+            "name": "Carla de Andrade",
+            "birth": "2005-01-30",
+            "email": "carla_andrade@yahoo.com.br",
+            "school_year": "8EF",
+            "week_hours": "40",
+            "teacher": "",
+            "id": "3"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1545696968-1a5245650b36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Enzo Gabriel",
+            "birth": "2003-04-17",
+            "email": "enzo-gabriel@gmail.com",
+            "school_year": "9EF",
+            "week_hours": "18",
+            "teacher": "",
+            "id": "4"
+          },
+          {
+            "avatar_url": "https://images.unsplash.com/photo-1559911352-816690ce34cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+            "name": "Gabriela Nunes",
+            "birth": "2006-09-09",
+            "email": "gabriela_nunes@outlook.com",
+            "school_year": "6EF",
+            "week_hours": "16",
+            "teacher": "",
+            "id": "5"
+          }
+    ]
+}

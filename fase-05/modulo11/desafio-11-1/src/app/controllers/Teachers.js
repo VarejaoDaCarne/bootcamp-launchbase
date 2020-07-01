@@ -32,16 +32,8 @@ module.exports = {
     },
     async post(req, res) {
         try {
-            const keys = Object.keys(req.body)
-
-            for(key of keys) {
-               if(req.body[key] == "")  {
-                   return res.send('Please, fill all fields')
-               }
-            }
-    
             let { name, birth_date, education_level, class_type, subjects_taught, avatar_url } = req.body
-    
+
             birth_date = date(birth_date).iso
             
             const teacher_id = await Teacher.create({
@@ -69,7 +61,10 @@ module.exports = {
             teacher.education_level = graduation(teacher.education_level)
             teacher.created_at = date(teacher.created_at).format
     
-            return res.render("teachers/show", { teacher })
+            return res.render("teachers/show", { 
+                teacher,
+                success: 'Registro salvo'
+            })
         } catch (error) {
             console.error(error)
         }
@@ -82,23 +77,18 @@ module.exports = {
     
             teacher.birth_date = date(teacher.birth_date).iso
     
-            return res.render("teachers/edit", { teacher })
+            return res.render("teachers/edit", {
+                teacher,
+                success: 'Registro Salvo'
+            })
         } catch (error) {
             console.error(error)
         }
     },
     async put(req, res) {
         try {
-            const keys = Object.keys(req.body)
-
-            for(key of keys) {
-               if(req.body[key] == "")  {
-                   return res.send('Please, fill all fields')
-               }
-            }
-    
             req.body.birth_date = date(req.body.birth_date).iso
-    
+
             await Teacher.update(req.body.id, {
                 name: req.body.name,
                 birth_date: req.body.birth_date,
