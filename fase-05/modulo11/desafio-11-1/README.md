@@ -3,10 +3,10 @@
 </h1>
 
 <h3 align="center">
-  Desafio 5-4: Paginação de resultados no BD
+  Desafio 11: Mini desafios
 </h3>
 
-<blockquote align="center">“Não compare o seu bastidor com o palco do outro!”</blockquote>
+<blockquote align="center">“Nunca é tarde demais para ser aquilo que sempre desejou ser.”</blockquote>
 
 <p align="center">
 
@@ -21,35 +21,23 @@
 </p>
 
 ## :rocket: Sobre o desafio
+Nesse desafio você irá implementar 4 melhorias no desafio desenvolvido durante o [módulo 5](https://github.com/Rocketseat/bootcamp-launchbase-desafios-05/blob/master/desafios/05-4-paginacao-bd.md).
 
-Nessa etapa, você deve implementar a lógica de paginação dos resultados do BD.
+### Model Base
 
-### Backend
+Crie um model base.js para servir como base para os outros models. Busque reaproveitar o máximo possível de código entre os models, mas de uma maneira que ele ainda seja simples e de fácil entendimento.
 
-Adicione no método `index` do controller de professores o tratamento dos campos `page` e `limit` que serão transmitidos via `query params`. Além disso, faça o cálculo do `offset` a ser passado para a query. Por fim, crie um novo método `paginate` no model que deve implementar toda a query já existente (com filter e order) e também adicionar a paginação (utilize `LIMIT` e `OFFSET`).
+### Seeds
 
-### Frontend
+Crie seeds para popular os dados das tabelas `teachers` e `students` com 10 e 5 registros, respectivamente.
 
-Crie um algoritmo que realize a paginação dos resultados da seguinte forma:
+### Validação
 
-- As duas primeiras e últimas páginas sempre devem ser apresentadas (ex: 1, 2, 45 e 46 de um total de 46 pags.);
-- Caso existam mais de 7 páginas, as intermediárias selecionadas devem ser apresentadas juntamente com seu sucessor e antecessor (ex.: 1, 2, ..., 12, 13 (selecionada), 14, ..., 23, 24);
-- Só apresente as reticências se elas representarem um grupo de 2 páginas ou mais (ex.: 1, 2, 3 (sem reticências), 4, 5 (selecionada), 6, ...(pags 7 e 8), 9, 10).
+Crie uma validação, com retorno visual para o usuário, de todos os campos preenchidos. Utilize a mesma ideia apresentada no launchstore (elemento HTML temporário).
 
-Em seguida, implemente na query do método `paginate` no model de professor a lógica da páginação:
+### Animações 
 
-- realizar o `count` de todos os registros de professores (utilize uma `subquery`);
-- aplicar os filtros tanto na `query` de busca dos professores quanto na `subquery` de `count`.
-
-Por fim, utilize o `scripts.js` para renderizar no `html` (não faça no `nunjucks`) a paginação ao final da listagem (não esqueça que as reticências não devem ser links).
-
-### Ajustes finais
-
-Para finalizar, basta:
-
-- Estilizar a paginação;
-- Preservar o filter quando a página for alterada;
-- Implementar no front dos estudantes a paginação (siga a mesma ideia aplicada nos professores).
+Crie duas animações: a primeira no caso de um registro ser salvo (criar/editar) no banco de dados e a segunda caso ocorra a remoção de um registro. Utilize o [lottie](https://github.com/airbnb/lottie-web).
 
 ---
 
