@@ -45,7 +45,7 @@ module.exports = {
                 avatar_url
             })
 
-            return res.redirect(`/teachers/${teacher_id}`)
+            return res.render(`parts/save`, { teacher_id })
         } catch (error) {
             console.error(error)
         }
@@ -61,10 +61,7 @@ module.exports = {
             teacher.education_level = graduation(teacher.education_level)
             teacher.created_at = date(teacher.created_at).format
     
-            return res.render("teachers/show", { 
-                teacher,
-                success: 'Registro salvo'
-            })
+            return res.render("teachers/show", { teacher })
         } catch (error) {
             console.error(error)
         }
@@ -77,10 +74,7 @@ module.exports = {
     
             teacher.birth_date = date(teacher.birth_date).iso
     
-            return res.render("teachers/edit", {
-                teacher,
-                success: 'Registro Salvo'
-            })
+            return res.render("teachers/edit", { teacher })
         } catch (error) {
             console.error(error)
         }
@@ -89,7 +83,7 @@ module.exports = {
         try {
             req.body.birth_date = date(req.body.birth_date).iso
 
-            await Teacher.update(req.body.id, {
+            const teacher_id = await Teacher.update(req.body.id, {
                 name: req.body.name,
                 birth_date: req.body.birth_date,
                 education_level: req.body.education_level,
@@ -98,7 +92,7 @@ module.exports = {
                 avatar_url: req.body.avatar_url
             })
 
-            return res.redirect(`/teachers/${req.body.id}`)
+            return res.render(`parts/save`, { teacher_id })
         } catch (error) {
             console.error(error)
         }
@@ -107,7 +101,7 @@ module.exports = {
         try {
             await Teacher.delete(req.body.id) 
 
-            return res.redirect('/teachers')
+            return res.render(`parts/remove`)
         } catch (error) {
             console.error(error)
         }

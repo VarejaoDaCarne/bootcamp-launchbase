@@ -2,25 +2,25 @@
 
 {% block content %}
 
-    <div class="card">
-        <div class="success-lottie"></div>
-        <h2>Seu registro foi salvo com Sucesso!</h2>
+    <div class="card register">
+        <div class="remove-lottie"></div>
+        <h2>Seu registro foi deletado com Sucesso!</h2>
         <p>
-            Clique <a href="/teachers">aqui</a> para voltar ao ínico
+                Clique <a href="/">aqui</a> para voltar ao ínico.
         </p>
     </div>
 
     <script src="/lottie.min.js"></script>
 
     <script>
-        const element = document.querySelector('.success-lottie')
+        const element = document.querySelector('.remove-lottie')
     
         lottie.loadAnimation({
             container: element,
             renderer: 'svg',
             loop: false,
             autoplay: true,
-            path: '/432-done-button' 
+            path: '/1331-done.json' 
         })
     </script>
 

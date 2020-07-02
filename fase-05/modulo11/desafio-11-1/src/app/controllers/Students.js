@@ -53,7 +53,7 @@ module.exports = {
                 teacher_id: teacher
             })
 
-            return res.redirect(`/students/${student_id}`)
+            return res.render(`parts/save`, { student_id })
         } catch (error) {
             console.error(error)
         }
@@ -93,7 +93,7 @@ module.exports = {
         try {
             req.body.birth = date(req.body.birth).iso
 
-            await Student.update(req.body.id, {
+            const student_id = await Student.update(req.body.id, {
                 avatar_url: req.body.avatar_url,
                 name: req.body.name,
                 birth: req.body.birth, 
@@ -103,7 +103,7 @@ module.exports = {
                 teacher_id: req.body.teacher
             })
     
-            return res.redirect(`/students/${req.body.id}`)
+            return res.render(`parts/save`, { student_id })
         } catch (error) {
             console.error(error)
         }    
@@ -112,7 +112,7 @@ module.exports = {
         try {
             await Student.delete(req.body.id)
 
-            return res.redirect(`/students`)
+            return res.render(`parts/remove`)
         } catch (error) {
             console.error(error)
         }

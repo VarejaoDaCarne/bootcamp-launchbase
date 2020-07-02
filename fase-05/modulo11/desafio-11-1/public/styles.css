@@ -10,6 +10,7 @@
     padding: 0;
     border: none;
     outline: none;
+    text-decoration: none;
 }
 
 body {
@@ -311,7 +312,7 @@ td:last-child {
     /* === MESSAGES === */
 
 @keyframes hidemessage {
-    to{
+    to {
         top: -50px;
         opacity: 0;
     }
@@ -320,7 +321,7 @@ td:last-child {
 .messages {
     display: flex;
     justify-content: center;
-    padding: 16px;
+    padding: 18px;
     position: fixed;
     width: 100%;
     color: white;
@@ -333,6 +334,22 @@ td:last-child {
     background-color: #e74c3c;
 }
 
-.messages.success {
-    background-color: rgb(122, 182, 30);
+    /* === SAVE/REMOVE PARTS === */
+
+.card.register {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 0;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 45px auto;
+}    
+
+.save-lottie,
+.remove-lottie {
+    height: 200px;
+}
+
+.card.register a {
+    color: var(--primary-color);
 }

@@ -1,0 +1,31 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+    <div class="card register">
+        <div class="save-lottie"></div>
+        <h2>Seu registro foi salvo com Sucesso!</h2>
+        <p>
+            {% if student_id %}
+                Clique <a href="/students">aqui</a> para voltar ao ínico.
+            {% else %}
+                Clique <a href="/teachers">aqui</a> para voltar ao ínico.
+            {% endif %}
+        </p>
+    </div>
+
+    <script src="/lottie.min.js"></script>
+
+    <script>
+        const element = document.querySelector('.save-lottie')
+    
+        lottie.loadAnimation({
+            container: element,
+            renderer: 'svg',
+            loop: false,
+            autoplay: true,
+            path: '/432-done-button.json' 
+        })
+    </script>
+
+{% endblock %}
