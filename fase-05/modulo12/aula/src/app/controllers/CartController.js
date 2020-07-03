@@ -4,16 +4,60 @@ const LoadProductService = require('../services/LoadProductService')
 
 module.exports = {
     async index(req, res) {
-    try {
-        const product = await LoadProductService.load('product', { where: { id: 2 }})
+        try {
+            const product = await LoadProductService.load('product', { where: { id: 1 }})
 
+            let { cart } = req.session
+
+            cart = Cart.init(cart).addOne(product)
+
+            return res.render('cart/index', { cart })
+        } catch (error) {
+            console.error(error)
+        }
+    },
+    async addOne(req, res) {
+        try {
+            const { id } = req.params
+
+            const product = await LoadProductService.load('product', { where: { id }})
+    
+            let { cart } = req.session
+    
+            cart = Cart.init(cart).addOne(product)
+    
+            req.session.cart = cart
+    
+            return res.redirect('/cart')
+        } catch (error) {
+            console.error(error)
+        }
+    },
+    removeOne(req, res) {
+        try {
+            let { id } = req.params 
+
+            let { cart } = req.session
+    
+            if(!cart) return res.redirect('/cart')
+    
+            cart = Cart.init(cart).removeOne(id)
+    
+            req.session.cart = cart
+
+            return res.redirect('/cart')
+        } catch (error) {
+            console.error(error)
+        }
+    },
+    delete(req, res) {
+        let { id } = req.params
         let { cart } = req.session
 
-        cart = Cart.init(cart).addOne(product)
+        if(!cart) return
 
-        return res.render('cart/index', { cart })
-    } catch (error) {
-        console.error(error)
-    }
+        req.session.cart = Cart.init(cart).delete(id)
+
+        return res.redirect('/cart') 
     }
 }

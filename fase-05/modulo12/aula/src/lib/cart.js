@@ -46,7 +46,7 @@ const Cart = {
         return this
     },
     removeOne(productId) {
-        const inCart = this.getCartItem(productId)
+        let inCart = this.getCartItem(productId)
 
         if(!inCart) return this
 
@@ -61,6 +61,7 @@ const Cart = {
         if(inCart.quantity < 1) {
             this.items = this.items.filter(item => 
                  item.product.id != inCart.product.id)
+
             return this
         }
 
@@ -68,10 +69,11 @@ const Cart = {
     },
     delete(productId) {
         const inCart =  this.getCartItem(productId)
-        if(!inCart)
+        
+        if(!inCart) return this
 
         if(this.items.length > 0) {
-            this.total.quntity -= inCart.quantity
+            this.total.quantity -= inCart.quantity
             this.total.price -= (inCart.product.price * inCart.quantity)
             this.total.formattedPrice = formatPrice(this.total.price)
         }

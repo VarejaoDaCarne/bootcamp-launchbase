@@ -115,3 +115,18 @@
 .cart .button.order:hover {
     background: rgb(0, 220, 64);
 }
+
+    /* === CARRINHO VAZIO === */
+
+.cart-empty {
+    text-align: center;
+}
+
+.cart-empty p {
+    font-size: 18px;
+}
+
+.cart-empty .button {
+    width: 240px;
+    margin: 0 auto;
+}
