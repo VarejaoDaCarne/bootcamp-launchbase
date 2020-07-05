@@ -118,7 +118,7 @@ CREATE TABLE "orders" (
  ALTER TABLE "orders" ADD FOREIGN KEY ("buyer_id") REFERENCES "users" ("id");
  ALTER TABLE "orders" ADD FOREIGN KEY ("product_id") REFERENCES "products" ("id");
  
- CREATE TRIGGER set_timestamp
+CREATE TRIGGER trigger_set_timestamp
  BEFORE UPDATE ON orders
  FOR EACH ROW
  EXECUTE PROCEDURE trigger_set_timestamp();
