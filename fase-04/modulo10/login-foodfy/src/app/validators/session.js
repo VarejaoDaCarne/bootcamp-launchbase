@@ -1,8 +1,9 @@
-const User = require('../models/User')
 const { compare } = require('bcryptjs')
 
+const User = require('../models/User')
+
 async function login(req, res, next) {
-    const { email, password } = req.body
+    let { email, password } = req.body
 
     try{
         const user = await User.findOne({ where: {email} })
@@ -11,16 +12,13 @@ async function login(req, res, next) {
             user: req.body,
             error: "User not registered"
         })
-    
-        // console.log(password)
-        // const passed = await compare(password, user.password)
-        // console.log(user.password)
-        // console.log(passed)
 
-        // if(!passed) return res.render("session/login", {
-        //     user: req.body,
-        //     error: "Password mismatch."
-        // })
+        const passed = await compare(password, user.password)
+
+        if(!passed) return res.render("session/login", {
+            user: req.body,
+            error: "Password mismatch."
+        })
     
         req.user = user
         
