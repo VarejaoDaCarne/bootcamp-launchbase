@@ -10,7 +10,7 @@ module.exports = {
     },
     login(req, res) {
         req.session.userId = req.user.id
-        console.log(req.user.id)
+
         return res.redirect("/users")
     },
     logout(req, res) {

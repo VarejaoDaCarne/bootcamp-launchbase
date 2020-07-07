@@ -13,7 +13,7 @@ module.exports = {
             const productsPromise = products.map(LoadProductService.format)
 
             products = await Promise.all(productsPromise)
-            console.log(filter)
+
             const search = {
                 term: filter || 'Toda a loja',
                 total: products.length

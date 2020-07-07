@@ -16,17 +16,6 @@ module.exports = {
     },
     async post(req, res) {
         try {
-            const keys = Object.keys(req.body)
-
-            for(key of keys) {
-                if(req.body[key] == "")  {
-                    return res.send('Please, fill all fields')
-                }
-            }
-
-            if(req.files.length == 0)
-                return res.send('Please, send at least one image')
-
             let { category_id, name, description, old_price, price, quantity, status } = req.body
 
             price = price.replace(/\D/g,"")
@@ -41,9 +30,9 @@ module.exports = {
                 quantity,
                 status: status || 1 
             })
-
-            const filesPromise = req.files.map(file => 
-                File.create({ name: file.name, path: file.path, product_id }))
+      
+            const filesPromise = req.files.map(file =>
+                File.create({ name: file.filename, path: file.path.replace(/\\/g, "/" ), product_id }))
             await Promise.all(filesPromise)
             
             return res.redirect(`/products/${product_id}/edit`)
@@ -81,17 +70,9 @@ module.exports = {
     },
     async put(req, res) {
         try {
-            const keys = Object.keys(req.body)
-
-            for(key of keys) {
-               if(req.body[key] == "" && key != "removed_files")  {
-                   return res.send('Please, fill all fields')
-               }
-            }
-    
             if(req.files.length != 0) {
                 const newFilesPromise = req.files.map(file => 
-                    File.create({...file, product_id: req.body.id}))
+                    File.create({name: file.filename, path: file.path.replace(/\\/g, "/" ), product_id: req.body.id}))
     
                     await Promise.all(newFilesPromise)
             }
@@ -105,7 +86,7 @@ module.exports = {
     
                 await Promise.all(removedFilesPromise)
             }
-    
+
             req.body.price = req.body.price.replace(/\D/g, "")
             
             if(req.body.old_price != req.body.price){
