@@ -29,7 +29,7 @@ module.exports = {
             query += ` AND (products.name ilike '%${filter}%'
             OR products.description ilike '%${filter}%')`
 
-        query += ` AND status !=0 `
+        query += ` AND status != 0 `
 
         const results = await db.query(query)
         return results.rows

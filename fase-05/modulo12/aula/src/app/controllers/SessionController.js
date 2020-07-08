@@ -21,9 +21,8 @@ module.exports = {
         return res.render("session/forgot-password")
     },
     async forgot(req, res) {
-        const user = req.user
-
-        try{
+        try {
+            const user = req.user
             const token = crypto.randomBytes(20).toString("hex")
 
             let now = new Date()
@@ -33,7 +32,7 @@ module.exports = {
                 reset_token: token,
                 reset_token_expires: now
             })
-    
+
             await mailer.sendMail({
                 to: user.email,
                 from: 'no-reply@launchstore.com.br',

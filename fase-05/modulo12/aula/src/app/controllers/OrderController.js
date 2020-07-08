@@ -40,7 +40,7 @@ module.exports = {
             const sales = await LoadOrderService.load('orders', { 
                 where: { seller_id: req.session.userId } 
             })
-
+            
             return res.render('orders/sales', { sales })
         } catch (error) {
             console.error(error)

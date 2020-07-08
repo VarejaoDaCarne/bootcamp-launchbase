@@ -15,7 +15,7 @@ async function createUsers() {
         const users = []
         const password = await hash('111', 8)
     
-        while(users.length < 3) {
+        while(users.length < totalUsers) {
             users.push({
                 name: faker.name.firstName(),
                 email: faker.internet.email(),
@@ -25,7 +25,7 @@ async function createUsers() {
                 address: faker.address.streetName()
             })
         }
-        console.log(users)
+      
         const usersPromise = users.map(user => User.create(user))
         
         usersIds = await Promise.all(usersPromise)
@@ -44,13 +44,13 @@ async function createProducts() {
                 user_id: usersIds[Math.floor(Math.random() * totalUsers)],
                 name: faker.name.title(),
                 description: faker.lorem.paragraph(Math.ceil(Math.random() * 10)),
-                old_price: faker.random.number(9999),
+                old_price: faker.random.number(99999),
                 price: faker.random.number(9999),
                 quantity: faker.random.number(99),
                 status: Math.round(Math.random())
             })
         }
-        console.log(products)
+
         const productsPromise = products.map(product => Product.create(product))
         productsIds = await Promise.all(productsPromise)
     
@@ -78,9 +78,8 @@ async function createProducts() {
                   })
                 } 
             }
-            console.log(files)
+
             const filesPromise = files.map(file => File.create(file))
-    
             await Promise.all(filesPromise)
         }
     } catch (error) {
