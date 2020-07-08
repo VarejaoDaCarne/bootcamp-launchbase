@@ -5,16 +5,14 @@ async function login(req, res, next) {
     const { email, password } = req.body
 
     const user = await User.findOne({ where: {email}} )
-    console.log(user)
-    console.log(email)
-    console.log(password)
+
     if(!user) return res.render("session/login", {
         user: req.body,
         error: "User not registered"
     })
 
     const passed = await compare(password, user.password)
-    console.log(passed)
+
     if(!passed) return res.render("session/login", {
         user: req.body,
         error: "Password mismatch."
