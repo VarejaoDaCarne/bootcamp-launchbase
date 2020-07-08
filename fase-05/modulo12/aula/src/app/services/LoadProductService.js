@@ -5,9 +5,7 @@ const { formatPrice, date } = require('../../lib/utils.js')
 async function getImages(productId) {
     let files = await Product.files(productId)
     files = files.map(file => ({
-        id: file.id,
-        name: file.name,
-        path: file.path,
+        ...file,
         src: `${file.path.replace("public","")}`
     }))
 
