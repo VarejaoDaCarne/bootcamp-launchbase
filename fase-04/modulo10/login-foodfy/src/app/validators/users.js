@@ -70,11 +70,11 @@ async function remove(req, res, next) {
     const { id } = req.body
 
     const user = await User.findOne({ where: {id} })
-
-    if(user.is_admin && req.body.id == id)
+ 
+    if(user.is_admin && user.id == req.session.userId)
         return res.render("admin/users/show", {
             user: user,
-            error: "Admin cannot exclude its own account"
+            error: "You cannot delete your own account"
         })
 
     next()

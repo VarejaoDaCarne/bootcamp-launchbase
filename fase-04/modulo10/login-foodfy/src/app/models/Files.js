@@ -48,9 +48,6 @@ module.exports = {
 
             fs.unlinkSync(file.path)
 
-            await db.query(`
-                DELETE FROM chefs WHERE file_id = $1
-            `, [id])
             
             return db.query(`
                 DELETE FROM files WHERE id = $1

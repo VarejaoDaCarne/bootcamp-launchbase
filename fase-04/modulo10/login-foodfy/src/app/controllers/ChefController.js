@@ -1,6 +1,7 @@
 const Chef = require('../models/Chef')
 const File = require('../models/Files')
 const Recipe = require('../models/Recipe')
+const { get } = require('browser-sync')
 
 module.exports = {
     async index(req, res) {
@@ -119,23 +120,23 @@ module.exports = {
                     })
                }
             }
-    
-            let filesId = []
-    
+
             if(req.files.length != 0) {
                 const newFilesPromise = req.files.map(async file => 
-                    await File.create({...file}))
-    
-                    await Promise.all(newFilesPromise)
-                        .then(function(findId) {
-                            for (let index in findId) {
-            
-                                let getId = findId[index].rows[0];
-                                filesId.push(getId.id)
-                            }            
-                        })
+                await File.create({...file}))
+
+                await Promise.all(newFilesPromise)
+                .then(function(findId) {
+                    for (let index in findId) {
+                        let getId = findId[index].rows[0].id;
+
+                        req.body.file_id = getId
+                    }            
+                })
+                console.log( req.body.file_id )
+                await Chef.update(req.body)
             }
-    
+
             if(req.body.removed_files) {
                 const removedFiles = req.body.removed_files.split(',')
                 const lastIndex = removedFiles.length - 1
@@ -145,16 +146,21 @@ module.exports = {
             
                 await Promise.all(removedFilesPromise)
             }
-    
-            for (let fileId of filesId) {
-                await Chef.update({...req.body, file_id: fileId})
-    
-                return res.redirect(`/admin/chefs/${req.body.id}`)
-            }
+
+            if(req.body.removed_files != "" && req.files[0] == undefined) {
+                return res.render("admin/chefs/edit", {
+                    chef: req.body,
+                    error: "At least, one image must be send."
+                })
+            } 
+            
+            await Chef.update({...req.body})
+
+            return res.redirect(`/admin/chefs/${req.body.id}`)
         }catch(err) {
             console.error(err)
             return res.render("admin/chefs/edit", {
-                recipe: req.body,
+                chef: req.body,
                 error: "Something went wrong!"
             })
         }

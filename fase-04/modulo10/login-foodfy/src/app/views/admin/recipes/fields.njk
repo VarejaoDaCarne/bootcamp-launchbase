@@ -63,16 +63,17 @@
     <div><h2>Ingredientes</h2></div>
         {% if recipe %}
             {% for ingredient in recipe.ingredients %}
-                <div id="ingredient" {% if error %}class="error"{% endif %}>
+                <div class="ingredient" {% if error %}class="error"{% endif %}>
                     <input 
                         type="text" 
                         name="ingredients[]" 
                         value="{{ingredient}}"
+                        placeholder="Coloque um ingrediente por campo."
                     >
                 </div>
             {% endfor %}
             {% else %}
-                <div id="ingredient" {% if error %}class="error"{% endif %}>
+                <div class="ingredient" {% if error %}class="error"{% endif %}>
                     <input 
                         type="text" 
                         name="ingredients[]"
@@ -85,20 +86,21 @@
 
 <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
 
-<div class="input-wrapper" id="prepare">
+<div class="input-wrapper" id="preparation">
     <div><h2>Modo de preparo</h2></div>
         {% if recipe %}
             {% for preparation in recipe.preparation %} 
-                <div id="prepare" {% if error %}class="error"{% endif %}>
+                <div class="prepare" {% if error %}class="error"{% endif %}>
                     <input
                         type="text" 
                         name="preparation[]" 
                         value="{{preparation}}"
+                        placeholder="Coloque uma instrução por campo."
                     >
                 </div>
             {% endfor %}
             {% else %}
-                <div id="prepare" {% if error %}class="error"{% endif %}>
+                <div class="prepare" {% if error %}class="error"{% endif %}>
                     <input
                         type="text" 
                         name="preparation[]" 

@@ -18,10 +18,10 @@ module.exports = {
 
         return db.query(query, values)
     },
-    all() {
+    all(id) {
         return db.query(`
-            SELECT * FROM recipe_files 
-        `)
+            SELECT * FROM recipe_files WHERE id = $1
+        `, [id])
     },
     update({recipe_id,  file_id}) {
         const query = `

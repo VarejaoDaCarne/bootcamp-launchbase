@@ -25,15 +25,15 @@ if(buttons) {
 }
 
 function addIngredient() {
-    const ingredients = document.querySelector("#ingredients");
-    const fieldContainer = document.querySelectorAll(".ingredient");
+    const ingredients = document.querySelector("#ingredients")
+    const fieldContainer = document.querySelectorAll(".ingredient")
   
-    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true)
   
-    if (newField.children[0].value == "") return false;
+    if (newField.children[0].value == "") return false
   
-    newField.children[0].value = "";
-    ingredients.appendChild(newField);
+    newField.children[0].value = ""
+    ingredients.appendChild(newField)
   }
 
 if(ingredientAdd) {
@@ -41,15 +41,15 @@ if(ingredientAdd) {
 }
 
 function addPrepare() {
-    const prepare = document.querySelector("#prepare");
-    const fieldContainer = document.querySelectorAll(".prepare");
+    const prepare = document.querySelector("#preparation")
+    const fieldContainer = document.querySelectorAll(".prepare")
   
-    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true);
+    const newField = fieldContainer[fieldContainer.length - 1].cloneNode(true)
   
-    if (newField.children[0].value == "") return false;
+    if (newField.children[0].value == "") return false
   
-    newField.children[0].value = "";
-    prepare.appendChild(newField);
+    newField.children[0].value = ""
+    prepare.appendChild(newField)
   }
 
 if(prepareAdd) {
@@ -131,7 +131,11 @@ const PhotosUpload = {
         const { files: fileList } = event.target
         PhotosUpload.input = event.target
 
-        if(PhotosUpload.chefHasLimit(event)) return
+        if(PhotosUpload.chefHasLimit(event)) {
+            PhotosUpload.updateInputFiles()
+            return
+        }
+
         Array.from(fileList).forEach(file => {
             
             PhotosUpload.files.push(file)
@@ -149,13 +153,17 @@ const PhotosUpload = {
             reader.readAsDataURL(file)
         })
 
-        PhotosUpload.input.files = PhotosUpload.getAllFiles()
+        PhotosUpload.updateInputFiles()
     },
     handleFileInputRecipes(event) {
         const { files: fileList } = event.target
         PhotosUpload.input = event.target
 
-        if(PhotosUpload.hasLimit(event)) return
+        if(PhotosUpload.hasLimit(event)) {
+            PhotosUpload.updateInputFiles()
+            return
+        } 
+
         Array.from(fileList).forEach(file => {
             
             PhotosUpload.files.push(file)
@@ -173,7 +181,7 @@ const PhotosUpload = {
             reader.readAsDataURL(file)
         })
 
-        PhotosUpload.input.files = PhotosUpload.getAllFiles()
+        PhotosUpload.updateInputFiles()
     },
     hasLimit(event) {
         const { uploadLimit, input, preview } = PhotosUpload
@@ -251,11 +259,14 @@ const PhotosUpload = {
     },
     removePhoto(event) {
         const photoDiv = event.target.parentNode
-        const photosArray = Array.from(PhotosUpload.preview.children)
-        const index = photosArray.indexOf(photoDiv)
+        const newFiles = Array.from(PhotosUpload.preview.children).filter(function(file) {
+            if(file.classList.contains('photo') && !file.getAttribute('id')) return true
+        })
+
+        const index = newFiles.indexOf(photoDiv)
 
         PhotosUpload.files.splice(index, 1)
-        PhotosUpload.input.files = PhotosUpload.getAllFiles()
+        PhotosUpload.updateInputFiles()
 
         photoDiv.remove()
     },
@@ -271,6 +282,9 @@ const PhotosUpload = {
         }
 
         photoDiv.remove()
+    },
+    updateInputFiles() {
+        PhotosUpload.input.files = PhotosUpload.getAllFiles()
     }
 }
 
