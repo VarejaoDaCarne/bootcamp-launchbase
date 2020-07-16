@@ -19,7 +19,7 @@ module.exports = {
         const chefsPromise = chefs.map(async chef => {
             chef.img = await getImage(chef.file_id)
             return chef
-        }).filter((chef, index) => index > 2 ? false: true)
+        }).filter((chef, index) => index > 10 ? false: true)
 
         const lastAdded = await Promise.all(chefsPromise)
         

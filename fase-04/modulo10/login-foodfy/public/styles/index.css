@@ -333,7 +333,7 @@ footer {
 }
 
 .links-admin {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
     display: flex;
@@ -365,7 +365,7 @@ footer {
 }
 
 #section-admin {
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
 }
 
@@ -414,7 +414,7 @@ footer {
 .upper-wrapper {
     display: grid;
     grid-template-columns: 1fr 139px;
-    margin: 20px 0;
+    margin: 20px auto;
     width: 1200px;
     align-items: center;
 }

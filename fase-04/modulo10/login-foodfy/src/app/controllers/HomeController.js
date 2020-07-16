@@ -20,7 +20,7 @@ module.exports = {
         const recipesPromise = recipes.map(async recipe => {
             recipe.img = await getImage(recipe.id)
             return recipe
-        }).filter((recipe, index) => index > 2 ? false: true)
+        }).filter((recipe, index) => index > 6 ? false: true)
 
         const lastAdded = await Promise.all(recipesPromise)
 
@@ -45,7 +45,7 @@ module.exports = {
         const recipesPromise = recipes.map(async recipe => {
             recipe.img = await getImage(recipe.id)
             return recipe
-        }).filter((recipe, index) => index > 2 ? false: true)
+        }).filter((recipe, index) => index > 12 ? false: true)
 
         const lastAdded = await Promise.all(recipesPromise)
 
@@ -81,7 +81,7 @@ module.exports = {
         const chefsPromise = chefs.map(async chef => {
             chef.img = await getImage(chef.file_id)
             return chef
-        }).filter((chef, index) => index > 2 ? false: true)
+        }).filter((chef, index) => index > 12 ? false: true)
 
         const lastAdded = await Promise.all(chefsPromise)
         
