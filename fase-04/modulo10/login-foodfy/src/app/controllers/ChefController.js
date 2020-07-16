@@ -1,59 +1,79 @@
 const Chef = require('../models/Chef')
 const File = require('../models/Files')
 const Recipe = require('../models/Recipe')
-const { get } = require('browser-sync')
 
 module.exports = {
     async index(req, res) {
         let results = await Chef.all()
         const chefs = results.rows
 
-        results = await File.all()
-        const files = results.rows.map(file => ({
-            ...file,
-            src: `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`
-        }))
+        if(!chefs) return res.send("Chefs not found")
+    
+        async function getImage(chefid) {
+            let results = await Chef.files(chefid)
+            const files = results.rows.map(file => `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`)
 
-        return res.render("admin/chefs/index", { chefs, files })
+            return files[0]
+        }
+
+        const chefsPromise = chefs.map(async chef => {
+            chef.img = await getImage(chef.file_id)
+            return chef
+        }).filter((chef, index) => index > 2 ? false: true)
+
+        const lastAdded = await Promise.all(chefsPromise)
+        
+        return res.render("admin/chefs/index", { chefs: lastAdded })
     },
     create(req, res) {
         return res.render("admin/chefs/create")
     },
     async post(req, res) { 
         try {
+            let results,
+            filesId = []
+
             const keys = Object.keys(req.body)
-    
             for(key of keys) {
-                if(req.body[key] == "")  {
+                if(req.body[key] == "" && key != "removed_files")  {
                     return res.render("admin/chefs/create", {
                         recipe: req.body,
                         error: 'Please, fill all fields'
                     })
                 }
             }
-    
-            if(req.files.length == 0)
-                return res.send('Please, send at least one image')
-    
-            let filesId = []
-    
-            const filesPromise = req.files.map(file => File.create({...file}))
-            await Promise.all(filesPromise)
-                .then(function(findId) {
-                    for (let index in findId) {
-    
-                        let getId = findId[index].rows[0];
-                        filesId.push(getId.id)
-                    }            
+
+            if(req.files != "" && req.files.length == 0) {
+                return res.render(`admin/chefs/create`, {
+                    chef: req.body,
+                    error: 'Please, send at least one image'
                 })
+            }else {
+                const filesPromise = req.files.map(file => File.create({...file}))
+                await Promise.all(filesPromise)
+                .then(function(getId) {
+                    for (let index in getId) {
+                        filesId.push(getId[index].rows[0].id)
+                    }            
+                })    
+            }
+
+            if(req.body.removed_files) {
+                const removedFiles = req.body.removed_files.split(',')
+                const lastIndex = removedFiles.length - 1
+                removedFiles.splice(lastIndex, 1)
     
+                const removedFilesPromise = removedFiles.map(async id => await File.chefDelete(id))            
             
-            for (let fileId of filesId) {
-                let results = await Chef.create({...req.body, file_id: fileId})
+                await Promise.all(removedFilesPromise)
+            }
+
+            filesId.map(async fileId => {
+                results = await Chef.create({...req.body, file_id: fileId})
                 const chefId = results.rows[0].id
     
                 return res.redirect(`/admin/chefs/${chefId}`)
-            }
+            })
         }catch(err) {
             console.error(err)
             return res.render("admin/chefs/create", {
@@ -111,16 +131,15 @@ module.exports = {
     async put(req, res) {
         try {
             const keys = Object.keys(req.body)
-
             for(key of keys) {
-               if(req.body[key] == ""  && key != "removed_files" &&  key != "photos")  {
+               if(req.body[key] == ""  && key != "removed_files")  {
                     return res.render("admin/chefs/edit", {
                         chef: req.body,
                         error: 'Please, fill all fields'
                     })
                }
             }
-
+            
             if(req.files.length != 0) {
                 const newFilesPromise = req.files.map(async file => 
                 await File.create({...file}))
@@ -128,14 +147,17 @@ module.exports = {
                 await Promise.all(newFilesPromise)
                 .then(function(findId) {
                     for (let index in findId) {
-                        let getId = findId[index].rows[0].id;
-
-                        req.body.file_id = getId
+                        req.body.file_id = findId[index].rows[0].id
                     }            
                 })
-                console.log( req.body.file_id )
+
                 await Chef.update(req.body)
-            }
+            }else if(req.body.removed_files != "" && req.files[0] == undefined){
+                return res.render(`admin/chefs/edit`, {
+                    chef: req.body,
+                    error: 'Please, send at least one image'
+                })
+            } 
 
             if(req.body.removed_files) {
                 const removedFiles = req.body.removed_files.split(',')
@@ -147,14 +169,7 @@ module.exports = {
                 await Promise.all(removedFilesPromise)
             }
 
-            if(req.body.removed_files != "" && req.files[0] == undefined) {
-                return res.render("admin/chefs/edit", {
-                    chef: req.body,
-                    error: "At least, one image must be send."
-                })
-            } 
-            
-            await Chef.update({...req.body})
+            await Chef.update({ name: req.body.name})
 
             return res.redirect(`/admin/chefs/${req.body.id}`)
         }catch(err) {

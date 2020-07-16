@@ -16,18 +16,11 @@
                 <article class="receipt" id="receipt-admin"> 
                     <div class="receipt__image-container" id="receipt__admin-container">
                         <img
-                            {%for id in ids %}
-                                {%if recipe.id === id.recipe_id %}
-                                    {% for image in files%}
-                                        {% if image.id === id.file_id %}
-                                            src="{{image.src}}" 
-                                            alt="{{image.name}}"
-                                            {% elseif image.src == "" %}
-                                            src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
-                                        {% endif %}
-                                    {% endfor %}
-                                {% endif %}
-                            {% endfor %}
+                            src="{{recipe.img}}" 
+                            alt="{{recipe.title}}"
+                            {% if recipe.img == "" %}
+                            src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
+                            {% endif %}
                         >
                     </div>
                     <div class="receipt__content" id="receipt__content-admin">

@@ -14,16 +14,12 @@
             {% for chef in chefs %}
                 <article class="chef__container"> 
                     <div class="chef-image__container">
-
                         <img    
-                            {% for image in files %}
-                                {% if image.id === chef.file_id %}
-                                    src="{{image.src}}" 
-                                    alt="{{image.name}}"
-                                    {% elseif image.src == "" %}
-                                    src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
-                                {% endif %}
-                            {% endfor %} 
+                            src="{{chef.img}}" 
+                            alt="{{chef.name}}"
+                            {% if chef.img == "" %}
+                                src="http://placehold.it/600x300?text=PRODUTO SEM FOTO"
+                            {% endif %}
                         >
                     </div>
                     <div class="chef-text__container">

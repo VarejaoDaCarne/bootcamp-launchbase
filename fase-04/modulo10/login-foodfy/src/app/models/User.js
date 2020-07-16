@@ -38,7 +38,7 @@ module.exports = {
         `
 
         const passwordHash = await hash(data.password, 8)
-        console.log(passwordHash)
+
         const values = [
             data.name,
             data.email,

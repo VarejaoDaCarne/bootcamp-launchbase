@@ -137,7 +137,6 @@ const PhotosUpload = {
         }
 
         Array.from(fileList).forEach(file => {
-            
             PhotosUpload.files.push(file)
 
             const reader = new FileReader()
@@ -274,7 +273,7 @@ const PhotosUpload = {
         const photoDiv = event.target.parentNode
 
         if(photoDiv.id) {
-            const removedFiles = document.querySelector('input[name="removed_files"')
+            const removedFiles = document.querySelector('input[name="removed_files"]')
 
             if(removedFiles) {
                 removedFiles.value += `${photoDiv.id},`

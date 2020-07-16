@@ -18,10 +18,10 @@ module.exports = {
 
         return db.query(query, values)
     },
-    all() {
+    all(id) {
         return db.query(`
-            SELECT * FROM files 
-        `)
+            SELECT * FROM files WHERE id = $1
+        ` [id])
     },
     async recipeDelete(id) {
         try {
@@ -48,7 +48,6 @@ module.exports = {
 
             fs.unlinkSync(file.path)
 
-            
             return db.query(`
                 DELETE FROM files WHERE id = $1
             `, [id])

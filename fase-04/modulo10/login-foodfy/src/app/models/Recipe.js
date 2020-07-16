@@ -15,20 +15,20 @@ module.exports = {
                 INSERT INTO recipes (
                     chef_id,
                     title,
+                    user_id,
                     ingredients,
                     preparation,
-                    information,
-                    user_id
+                    information
                 ) VALUES ($1, $2, $3, $4, $5, $6)
                 RETURNING id
             `
             const values = [
                 data.chef,
                 data.title,
+                data.user_id,
                 data.ingredients,
                 data.preparation,
-                data.information,
-                data.user_id
+                data.information
             ]
 
             return db.query(query, values)   
@@ -63,7 +63,7 @@ module.exports = {
                 data.information,
                 data.id
             ]
-
+            
             return db.query(query, values)
         }catch(err) {
             console.error(err)
