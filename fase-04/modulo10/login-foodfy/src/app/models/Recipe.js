@@ -2,12 +2,16 @@ const db = require('../../config/db')
 
 module.exports = {
     all() {
-        return db.query(`
-        SELECT recipes.*, chefs.name AS chef_name 
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        ORDER BY created_at DESC
-        `)
+        try {
+            return db.query(`
+            SELECT recipes.*, chefs.name AS chef_name 
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            ORDER BY created_at DESC
+            `)   
+        } catch (error) {
+            console.error(error)
+        }
     },
     create(data) {
         try{
@@ -37,11 +41,15 @@ module.exports = {
         }
     },
     find(id) {
-       return db.query(`
-        SELECT recipes.*, chefs.name AS chef_name 
-        FROM recipes
-        LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-        WHERE recipes.id = $1`, [id])
+        try {
+            return db.query(`
+            SELECT recipes.*, chefs.name AS chef_name 
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            WHERE recipes.id = $1`, [id])
+        } catch (error) {
+            console.error(error)
+        }
     },
     update(data) {
         try{
@@ -84,10 +92,14 @@ module.exports = {
         return db.query(`SELECT name, id FROM chefs`)
     },
     files(id) {
-        return db.query(`
-        SELECT files.*, recipe_id, file_id
-        FROM files
-        LEFT JOIN recipe_files ON (files.id = recipe_files.file_id)
-        WHERE recipe_id = $1`, [id])
+        try {
+            return db.query(`
+            SELECT files.*, recipe_id, file_id
+            FROM files
+            LEFT JOIN recipe_files ON (files.id = recipe_files.file_id)
+            WHERE recipe_id = $1`, [id])
+        } catch (error) {
+            console.error(error)
+        }
     }
 }

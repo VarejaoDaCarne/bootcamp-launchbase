@@ -38,9 +38,6 @@
     background-color: #01B12A;
 }
 
-.input-wrapper .error input,
-.input-wrapper .error textarea,
-.input-wrapper .error select,
-.input-wrapper .error i {
+.input-wrapper .error input {
     animation: inputborder  5s ease-out;
 }

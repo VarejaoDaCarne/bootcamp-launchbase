@@ -23,16 +23,16 @@ module.exports = {
             await mailer.sendMail({
                 to: req.body.email,
                 from: 'no-reply@foodfy.com.br',
-                subject: 'Account ',
-                html: `<h2>Access the system</h2>
-                <p>Your account was successfully created!
+                subject: 'Conta ',
+                html: `<h2>Acessar o sistema</h2>
+                <p>Sua conta foi criada com sucesso!
                 <br/><br/>
-                Your password is: ${password}
+                Sua senha é: ${password}
                 <br/><br/>
-                Click in the link bellow to access it:</p>
+                Clique no link abaixo para acessar sua conta:</p>
                 <p>
                     <a href="http://localhost:3000/login" target="_blank">
-                        ACCESS THE ACCOUNT
+                        ACESSAR A CONTA
                     </a>
                 </p>
                 `,
@@ -41,13 +41,13 @@ module.exports = {
             req.session.destroy()
 
             return res.render('session/login', {
-                success: "Account created with success"
+                success: "Conta criada com sucesso"
             })
         }catch(err) {
             console.error(err)
             return res.render("admin/users/show", {
                 user: req.body,
-                error: "Something went wrong!"
+                error: "Algo deu errado"
             })
         }
     },
@@ -83,13 +83,13 @@ module.exports = {
             
             return res.render("admin/users/index", {
                 users: users,
-                success: "Account updated with success!"
+                success: "Conta atualizada com sucesso"
             })
         }catch(err) {
             console.error(err)
             return res.render("admin/users/show", {
                 user: req.body,
-                error: "Something went wrong!"
+                error: "Algo deu errado"
             })
         }
     },
@@ -102,13 +102,13 @@ module.exports = {
 
             return res.render("admin/users/index", {
                 users: users,
-                success: "Account deleted with success!"
+                success: "Conta deletada com sucesso"
             })
         }catch(err) {
             console.error(err)
             return res.render("admin/users/show", {
                 user: req.body,
-                error: "Error when tried to delete account!"
+                error: "Algo deu errado"
             })
         }
     }

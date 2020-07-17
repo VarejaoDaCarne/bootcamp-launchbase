@@ -2,12 +2,16 @@ const db = require('../../config/db')
 
 module.exports = {
     all() {
-        return db.query(`
-        SELECT chefs.*, count(recipes) AS total_recipes 
-        FROM chefs 
-        LEFT JOIN recipes on (chefs.id = recipes.chef_id)
-        GROUP BY chefs.id
-        ORDER BY total_recipes DESC`)
+        try {
+            return db.query(`
+            SELECT chefs.*, count(recipes) AS total_recipes 
+            FROM chefs 
+            LEFT JOIN recipes on (chefs.id = recipes.chef_id)
+            GROUP BY chefs.id
+            ORDER BY total_recipes DESC`)
+        } catch (error) {
+            console.error(error)
+        }
     },
     create({name, file_id}) {
         try{
@@ -56,18 +60,7 @@ module.exports = {
         }
     },
      async delete(id) {
-        try{
-            let result = await db.query(`SELECT file_id FROM chefs WHERE id = $1`, [id])
-            const fileId = result.rows[0].file_id
-     
-            await db.query(`DELETE FROM chefs WHERE id = $1`, [id])
-    
-            return db.query(`
-                DELETE FROM files WHERE id = $1
-            `, [fileId])
-        }catch(err) {
-             console.error(err)
-        }
+        return db.query(`DELETE FROM chefs WHERE id = $1`, [id])
     },
     recipesChef(id) {
         return db.query(`

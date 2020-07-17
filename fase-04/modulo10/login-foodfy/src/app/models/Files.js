@@ -3,7 +3,8 @@ const fs = require('fs')
 
 module.exports = {
     create({filename, path}) {
-        const query = `
+        try {
+            const query = `
             INSERT INTO files (
                 name,
                 path
@@ -17,6 +18,9 @@ module.exports = {
         ]
 
         return db.query(query, values)
+        } catch (error) {
+            console.error(error)
+        }
     },
     all(id) {
         return db.query(`

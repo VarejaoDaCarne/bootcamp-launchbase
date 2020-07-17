@@ -2,9 +2,18 @@ const User = require('../models/User')
 
 module.exports = {
     async index(req, res) {
-        const { user } = req
-        
-        return res.render("admin/profile/index", { user })
+        try {
+            const { user } = req
+
+            return res.render("admin/profile/index", { user })
+        } catch (error) {
+            console.error(error)
+            return res.render('admin/profile/index', {
+                user: user,
+                error: 'Algo deu errado'
+            })
+        }
+ 
     },
     async put(req, res) {
         const { user } = req
@@ -19,13 +28,13 @@ module.exports = {
             
             return res.render("admin/users/index", {
                 users: users,
-                success: "Account updated with success!"
+                success: "Conta atualizada com sucesso"
             })
         }catch(err) {
             console.error(err)
             return res.render("admin/profile/index", {
                 user: user,
-                error: "Something went wrong!"
+                error: "Algo deu errado"
             })
         }
     }

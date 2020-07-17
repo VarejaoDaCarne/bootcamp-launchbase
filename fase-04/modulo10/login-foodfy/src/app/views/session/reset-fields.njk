@@ -1,6 +1,6 @@
 <div class="input-wrapper">
     <div><h2>Email</h2></div>
-    <div class="input" {% if error %}class="error"{% endif %}>
+    <div {% if error %}class="error"{% endif %}>
         <input 
             type="email" 
             name="email" 
@@ -13,7 +13,7 @@
 
 <div class="input-wrapper">
     <div><h2>Senha</h2></div>
-    <div class="input" {% if error %}class="error"{% endif %}>
+    <div {% if error %}class="error"{% endif %}>
         <input 
             type="password" 
             name="password" 
@@ -24,7 +24,7 @@
 
 <div class="input-wrapper">
     <div><h2>Repetição de Senha</h2></div>
-    <div class="input" {% if error %}class="error"{% endif %}>
+    <div {% if error %}class="error"{% endif %}>
         <input 
             type="password" 
             name="passwordRepeat" 

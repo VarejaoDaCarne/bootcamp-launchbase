@@ -40,24 +40,24 @@ module.exports = {
             await mailer.sendMail({
                 to: user.email,
                 from: 'no-reply@foodfy.com.br',
-                subject: 'Password recover',
-                html: `<h2>Lost your password?</h2>
-                <p>Don't worry, click in the link bellow to recover your password</p>
+                subject: 'Recuperação de senha',
+                html: `<h2>Esqueceu sua senha?</h2>
+                <p>Não se preocupe, clique no link abaixo para recuperar sua senha</p>
                 <p>
                     <a href="http://localhost:3000/password-reset?token=${token}" target="_blank">
-                        PASSWORD RECOVER
+                       RECUPERAR SENHA
                     </a>
                 </p>
                 `,
             })
 
             return res.render("session/forgot-password", {
-                success: "Check your email to reset password!"
+                success: "Cheque seu email para resetar sua senha"
             })
         }catch(err) {
             console.error(err)
             return res.render("session/forgot-password", {
-                error: "Error, try again!"
+                error: "Algo deu errado, tente novamente"
             })
         }
     },
@@ -77,14 +77,14 @@ module.exports = {
 
             return res.render("session/login", {
                 user : req.body,
-                success: "Password updated! Sign in."
+                success: "Senha atualizada! Logue."
             })
         }catch(err) {
             console.error(err)
             return res.render("session/password-reset", {
                 user: req.body,
                 token,
-                error: "Error, try again"
+                error: "Algo deu errado, tente novamente"
             })
         }
     }

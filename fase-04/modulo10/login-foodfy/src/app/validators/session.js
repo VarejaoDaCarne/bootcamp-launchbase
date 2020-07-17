@@ -10,7 +10,7 @@ async function login(req, res, next) {
     
         if(!user) return res.render("session/login", {
             user: req.body,
-            error: "User not registered"
+            error: "Usuário não registrado"
         })
 
         const passed = await compare(password, user.password)
@@ -25,6 +25,10 @@ async function login(req, res, next) {
         next()
     }catch(err) {
         console.error(err)
+        return res.render("session/login", {
+            user: req.body,
+            error: "Algo deu errado"
+        })
     }
 }
 
@@ -36,7 +40,7 @@ async function forgot(req, res, next) {
     
         if(!user) return res.render("session/forgot-password", {
             user: req.body,
-            error: "Email not registered!"
+            error: "Email não registrado"
         })
 
         req.user = user
@@ -44,46 +48,58 @@ async function forgot(req, res, next) {
         next()
     }catch(err) {
         console.error(err)
+        return res.render("session/forgot-password", {
+            user: req.body,
+            error: "Algo deu errado"
+        })
     }
 }
 
 async function reset(req, res, next) {
-    const { email, password, token, passwordRepeat } = req.body
+    try {
+        const { email, password, token, passwordRepeat } = req.body
 
-    const user = await User.findOne({ where: { email }} )
-
-    if(!user) return res.render("session/password-reset", {
-        user: req.body,
-        token,
-        error: "User not registered"
-    })
-
-    if(password != passwordRepeat) return res.render("session/password-reset", {
-        user: req.body,
-        token,
-        error: 'Password Mismatch'
-    })
-
-    if(token != user.reset_token) return res.render("session/password-reset", {
-        user: req.body,
-        token,
-        error: 'Invalid token! Try again.'
-    })
-
-    let now = new Date()
-    now = now.setHours(now.getHours())
-
-    if(now > user.reset_token_expires) return res.render("session/password-reset", {
-        user: req.body,
-        token,
-        error: 'Token expired! Try again.'
-    })
-
-    req.user = user
-
-    next()
+        const user = await User.findOne({ where: { email }} )
+    
+        if(!user) return res.render("session/password-reset", {
+            user: req.body,
+            token,
+            error: "Usuário não registrado"
+        })
+    
+        if(password != passwordRepeat) return res.render("session/password-reset", {
+            user: req.body,
+            token,
+            error: 'Senhas não correspondem'
+        })
+    
+        if(token != user.reset_token) return res.render("session/password-reset", {
+            user: req.body,
+            token,
+            error: 'Token inválido! Tente novamente'
+        })
+    
+        let now = new Date()
+        now = now.setHours(now.getHours())
+    
+        if(now > user.reset_token_expires) return res.render("session/password-reset", {
+            user: req.body,
+            token,
+            error: 'Token expirou! Solicite o formulário de resetar a senha novamente'
+        })
+    
+        req.user = user
+    
+        next()
+    } catch (error) {
+        console.error(error)
+        return res.render("session/password-reset", {
+            user: req.body,
+            token,
+            error: "Algo deu errado"
+        })
+    }
 }
-
 
 module.exports = {
     login,

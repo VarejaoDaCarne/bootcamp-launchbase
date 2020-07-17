@@ -2,7 +2,8 @@ const db = require('../../config/db')
 
 module.exports = {
     create({recipe_id,  file_id}) {
-        const query = `
+        try {
+            const query = `
             INSERT INTO recipe_files (
                 recipe_id,
                 file_id
@@ -16,6 +17,9 @@ module.exports = {
         ]
 
         return db.query(query, values)
+        } catch (error) {
+            console.error(error)
+        }
     },
     all(id) {
         return db.query(`
