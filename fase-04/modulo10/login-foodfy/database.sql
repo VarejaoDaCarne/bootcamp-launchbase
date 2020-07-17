@@ -91,3 +91,10 @@ CREATE TRIGGER delete_recipe_files
 AFTER DELETE ON recipe_files
 FOR EACH ROW
 EXECUTE PROCEDURE delete_files_when_recipe_files_row_was_deleted();
+
+ALTER TABLE "chefs" 
+DROP CONSTRAINT chefs_file_id_fkey,
+ADD CONSTRAINT chefs_file_id_fkey
+FOREIGN KEY ("file_id")
+REFERENCES "files" ("id")
+ON DELETE CASCADE;
