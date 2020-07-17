@@ -270,7 +270,7 @@ module.exports = {
       
             return res.render(`admin/recipes/index`, {
                 recipes: lastAdded,
-                success: 'Receita criada com sucesso'
+                success: 'Receita atualizada com sucesso'
             })
         }catch(err) {
             console.error(err)
